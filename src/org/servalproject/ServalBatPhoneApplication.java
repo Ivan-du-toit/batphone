@@ -358,17 +358,6 @@ public class ServalBatPhoneApplication extends Application {
 	public static boolean terminate_setup = false;
 	public static boolean terminate_main = false;
 
-	private void createEmptyFolders() {
-		// make sure all this folders exist, even if empty
-		String[] dirs = {
-				"/htdocs", "/htdocs/packages"
-		};
-
-		for (String dirname : dirs) {
-			new File(this.coretask.DATA_FILE_PATH + dirname).mkdirs();
-		}
-	}
-
 	public void replaceInFile(String inFile, String outFile,
 			String variables[], String values[]) {
 		try {
@@ -503,12 +492,6 @@ public class ServalBatPhoneApplication extends Application {
 
 	public void installFiles() {
 		try{
-			// if we just reinstalled, the old dna process, or asterisk, might
-			// still be running, and may need to be replaced
-			ServalD.serverStop();
-			this.coretask.killProcess("bin/dna", false);
-			this.coretask.killProcess("bin/asterisk", false);
-
 			{
 				AssetManager m = this.getAssets();
 				Set<String> extractFiles = null;
@@ -561,7 +544,12 @@ public class ServalBatPhoneApplication extends Application {
 				this.coretask.extractZip(m.open("serval.zip"),
 						new File(this.coretask.DATA_FILE_PATH), extractFiles);
 			}
-			createEmptyFolders();
+
+			// if we just reinstalled, the old dna process, or asterisk, might
+			// still be running, and may need to be replaced
+			ServalD.serverStop();
+			this.coretask.killProcess("bin/dna", false);
+			this.coretask.killProcess("bin/asterisk", false);
 
 			// Generate some random data for auto allocating IP / Mac / Phone
 			// number
