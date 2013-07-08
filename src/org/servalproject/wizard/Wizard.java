@@ -146,14 +146,14 @@ public class Wizard extends Activity {
 			if (existingNumber == null) {
 				existingNumber = mTelephonyMgr.getLine1Number();
 			}
-			if (existingNumber == null) {
+			if (existingNumber == null || existingNumber.equals("")) {
 				existingNumber = mTelephonyMgr.getDeviceId();
 			}
 		}
 		else {
 			// try to get number from phone, probably wont work though...
 			existingNumber = mTelephonyMgr.getLine1Number();
-			if (existingNumber == null) {
+			if (existingNumber == null || existingNumber.equals("")) {
 				existingNumber = mTelephonyMgr.getDeviceId();
 			}
 			try {
