@@ -201,18 +201,27 @@ public class SetPhoneNumber extends Activity {
 		String sidAbbrev = null;
 
 		List<Identity> identities = Identity.getIdentities();
+		TelephonyManager mTelephonyMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 
 		if (identities.size() > 0) {
 			identity = identities.get(0);
 
 			existingName = identity.getName();
 			existingNumber = identity.getDid();
+			if (existingNumber == null) {
+				existingNumber = mTelephonyMgr.getLine1Number();
+			}
+			if (existingNumber == null) {
+				existingNumber = mTelephonyMgr.getDeviceId();
+			}
 			sidAbbrev = identity.subscriberId.abbreviation();
-		} else {
+		}
+		else {
 			// try to get number from phone, probably wont work though...
-			TelephonyManager mTelephonyMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 			existingNumber = mTelephonyMgr.getLine1Number();
-
+			if (existingNumber == null) {
+				existingNumber = mTelephonyMgr.getDeviceId();
+			}
 			try {
 				identity = Identity.createIdentity();
 				sidAbbrev = identity.subscriberId.abbreviation();
