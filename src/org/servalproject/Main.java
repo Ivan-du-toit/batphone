@@ -106,8 +106,7 @@ public class Main extends Activity {
 				openMaps();
 				break;
 			case R.id.contactsLabel:
-				startActivity(new Intent(getApplicationContext(),
-						org.servalproject.ui.ContactsActivity.class));
+				myPeerList();
 				break;
 			case R.id.settingsLabel:
 				startActivity(new Intent(getApplicationContext(),
@@ -203,6 +202,16 @@ public class Main extends Activity {
 		super.onResume();
 
 		checkAppSetup();
+		// myPeerList();
+	}
+
+	private final int PEER_LIST_RETURN = 0;
+	private void myPeerList() {
+
+		Intent mIntent;
+
+		mIntent = new Intent(this, org.servalproject.PeerList.class);
+		startActivityForResult(mIntent, PEER_LIST_RETURN);
 	}
 
 	/**
