@@ -167,9 +167,12 @@ public class Main extends Activity {
 			this.findViewById(listenTo[i]).setOnClickListener(listener);
 		}
 
-		// Start the service
+		// Start the mesh service
 		Intent serviceIntent = new Intent(Main.this, Control.class);
 		startService(serviceIntent);
+
+		// Go Straight to the peerlist
+		myPeerList();
 	}
 
 	BroadcastReceiver receiver = new BroadcastReceiver() {
