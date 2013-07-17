@@ -2,5 +2,6 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item android:id="@+id/menu_network" android:title="@string/networkSettingsLabel" android:showAsAction="always"></item>
     <item android:id="@+id/menu_settings" android:title="@string/settingsLabel" android:showAsAction="always"></item>
+    <item android:id="@+id/menu_messages" android:title="@string/messageLabel" android:showAsAction="always"></item>
     <item android:id="@+id/menu_exit" android:title="@string/exitLabel" android:showAsAction="ifRoom"></item>
 </menu>

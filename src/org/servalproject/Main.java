@@ -30,21 +30,14 @@ import org.servalproject.ui.help.HtmlHelp;
 import org.servalproject.wizard.Wizard;
 
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.BroadcastReceiver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
-import android.content.SharedPreferences.Editor;
-import android.content.pm.PackageManager;
-import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.drawable.Drawable;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
@@ -73,24 +66,6 @@ public class Main extends Activity {
 	private Drawable powerOffDrawable;
 	private boolean changingState;
 
-	private void openMaps() {
-		// check to see if maps is installed
-		try {
-			PackageManager mManager = getPackageManager();
-			mManager.getApplicationInfo("org.servalproject.maps",
-					PackageManager.GET_META_DATA);
-
-			Intent mIntent = mManager
-					.getLaunchIntentForPackage("org.servalproject.maps");
-			mIntent.addCategory(Intent.CATEGORY_LAUNCHER);
-			startActivity(mIntent);
-
-		} catch (NameNotFoundException e) {
-			startActivity(new Intent(getApplicationContext(),
-					org.servalproject.ui.MapsActivity.class));
-		}
-	}
-
 	private OnClickListener listener = new OnClickListener(){
 		@Override
 		public void onClick(View view) {
@@ -101,9 +76,6 @@ public class Main extends Activity {
 			case R.id.messageLabel:
 				startActivity(new Intent(getApplicationContext(),
 						org.servalproject.messages.MessagesListActivity.class));
-				break;
-			case R.id.mapsLabel:
-				openMaps();
 				break;
 			case R.id.contactsLabel:
 				myPeerList();
@@ -172,7 +144,7 @@ public class Main extends Activity {
 		startService(serviceIntent);
 
 		// Go Straight to the peerlist
-		myPeerList();
+		// myPeerList();
 	}
 
 	BroadcastReceiver receiver = new BroadcastReceiver() {
@@ -234,12 +206,6 @@ public class Main extends Activity {
 			return;
 		}
 
-		// Don't continue unless they've seen the warning
-		// if (!app.settings.getBoolean(PREF_WARNING_OK, false)) {
-		// showDialog(R.layout.warning_dialog);
-		// return;
-		// }
-
 		if (state == State.Installing || state == State.Upgrading) {
 			new AsyncTask<Void, Void, Void>() {
 				@Override
@@ -298,40 +264,5 @@ public class Main extends Activity {
 			this.unregisterReceiver(receiver);
 			registered = false;
 		}
-	}
-
-	@Override
-	protected Dialog onCreateDialog(int id) {
-		LayoutInflater li = LayoutInflater.from(this);
-		View view = li.inflate(R.layout.warning_dialog, null);
-		AlertDialog.Builder builder = new AlertDialog.Builder(this);
-		builder.setView(view);
-		builder.setPositiveButton(R.string.agree,
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int b) {
-						dialog.dismiss();
-						Editor ed = app.settings.edit();
-						ed.putBoolean(PREF_WARNING_OK, true);
-						ed.commit();
-						checkAppSetup();
-					}
-				});
-		builder.setNegativeButton(R.string.cancel,
-				new DialogInterface.OnClickListener() {
-					@Override
-					public void onClick(DialogInterface dialog, int b) {
-						dialog.dismiss();
-						finish();
-					}
-				});
-		builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
-			@Override
-			public void onCancel(DialogInterface dialog) {
-				dialog.dismiss();
-				finish();
-			}
-		});
-		return builder.create();
 	}
 }

@@ -110,10 +110,10 @@
             android:screenOrientation="portrait"
             android:launchMode="singleTask"
             >
-        <intent-filter>   
+        <!--intent-filter>   
             	<action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            </intent-filter-->
         </activity>
         <activity android:name=".ui.ShareUsActivity"
             android:screenOrientation="portrait"
@@ -196,13 +196,17 @@
             android:launchMode="singleTop"
             />
         <activity android:name=".PeerList" 
-            android:label="Serval BatPhone - Peer List"
+            android:label="Peer List"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             >
             <intent-filter>
                 <action android:name="org.servalproject.PICK_FROM_PEER_LIST" />
                 <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter android:label="@string/app_name">   
+            	<action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 	    <receiver android:name="org.servalproject.batphone.BatPhone">

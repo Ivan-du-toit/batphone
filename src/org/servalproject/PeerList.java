@@ -25,21 +25,28 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
+import org.servalproject.ServalBatPhoneApplication.State;
+import org.servalproject.account.AccountService;
 import org.servalproject.batphone.CallHandler;
 import org.servalproject.servald.AbstractId.InvalidHexException;
 import org.servalproject.servald.AbstractJniResults;
 import org.servalproject.servald.IPeer;
 import org.servalproject.servald.IPeerListListener;
+import org.servalproject.servald.Identity;
 import org.servalproject.servald.Peer;
 import org.servalproject.servald.PeerComparator;
 import org.servalproject.servald.PeerListService;
 import org.servalproject.servald.ServalD;
 import org.servalproject.servald.SubscriberId;
 import org.servalproject.ui.Networks;
+import org.servalproject.wizard.Wizard;
 
 import android.app.Activity;
 import android.app.ListActivity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -61,7 +68,7 @@ import android.widget.ListView;
  *         to resolve the peer by calling ServalD in an async task.
  */
 public class PeerList extends ListActivity {
-
+	public ServalBatPhoneApplication app;
 	PeerListAdapter listAdapter;
 
 	private boolean displayed = false;
@@ -83,6 +90,11 @@ public class PeerList extends ListActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
+		this.app = (ServalBatPhoneApplication) this.getApplication();
+
+		Intent serviceIntent = new Intent(PeerList.this, Control.class);
+		startService(serviceIntent);
 
 		Intent intent = getIntent();
 		if (intent != null) {
@@ -208,6 +220,12 @@ public class PeerList extends ListActivity {
 	@Override
 	protected void onPause() {
 		super.onPause();
+
+		if (registered) {
+			this.unregisterReceiver(receiver);
+			registered = false;
+		}
+
 		PeerListService.removeListener(listener);
 		Control.peerList = null;
 		displayed = false;
@@ -273,6 +291,9 @@ public class PeerList extends ListActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
+
+		checkAppSetup();
+
 		displayed = true;
 		Control.peerList = this;
 
@@ -296,10 +317,6 @@ public class PeerList extends ListActivity {
 		return true;
 	}
 
-	/**
-	 * Event Handling for Individual menu item selected Identify single menu
-	 * item by it's id
-	 * */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item)
 	{
@@ -318,8 +335,79 @@ public class PeerList extends ListActivity {
 			startActivity(new Intent(getApplicationContext(),
 					Networks.class));
 			return true;
+		case R.id.menu_messages:
+			startActivity(new Intent(getApplicationContext(),
+					org.servalproject.messages.MessagesListActivity.class));
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
+		}
+	}
+
+	BroadcastReceiver receiver = new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			int stateOrd = intent.getIntExtra(
+					ServalBatPhoneApplication.EXTRA_STATE, 0);
+			State state = State.values()[stateOrd];
+			stateChanged(state);
+		}
+	};
+
+	boolean registered = false;
+
+	private void stateChanged(State state) {
+		;// TODO remove this function
+	}
+
+	private final int PEER_LIST_RETURN = 0;
+
+	/**
+	 * Run initialisation procedures to setup everything after install. Called
+	 * from onResume()
+	 */
+	private void checkAppSetup() {
+		State state = app.getState();
+		stateChanged(state);
+
+		if (ServalBatPhoneApplication.terminate_main) {
+			ServalBatPhoneApplication.terminate_main = false;
+			finish();
+			return;
+		}
+
+		if (state == State.Installing || state == State.Upgrading) {
+			new AsyncTask<Void, Void, Void>() {
+				@Override
+				protected Void doInBackground(Void... arg0) {
+					app.installFiles();
+					return null;
+				}
+			}.execute();
+
+			if (state == State.Installing) {
+				this.startActivity(new Intent(this, Wizard.class));
+				finish();
+				return;
+			}
+		}
+
+		Identity main = Identity.getMainIdentity();
+		if (main == null || AccountService.getAccount(this) == null
+				|| main.getDid() == null) {
+			Log.v(TAG,
+					"Keyring doesn't seem to be initialised, starting wizard");
+
+			this.startActivity(new Intent(this, Wizard.class));
+			finish();
+			return;
+		}
+
+		if (!registered) {
+			IntentFilter filter = new IntentFilter();
+			filter.addAction(ServalBatPhoneApplication.ACTION_STATE);
+			this.registerReceiver(receiver, filter);
+			registered = true;
 		}
 	}
 }

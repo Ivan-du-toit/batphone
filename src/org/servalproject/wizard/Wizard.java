@@ -22,7 +22,7 @@ package org.servalproject.wizard;
 
 import java.util.List;
 
-import org.servalproject.Main;
+import org.servalproject.PeerList;
 import org.servalproject.R;
 import org.servalproject.ServalBatPhoneApplication;
 import org.servalproject.account.AccountService;
@@ -117,7 +117,7 @@ public class Wizard extends Activity {
 					protected void onPostExecute(Boolean result) {
 						if (result) {
 							Intent intent = new Intent(Wizard.this,
-									Main.class);
+									PeerList.class);
 							intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 							Wizard.this.startActivity(intent);
 							Wizard.this.setResult(RESULT_OK);
