@@ -35,6 +35,7 @@ import org.servalproject.servald.PeerComparator;
 import org.servalproject.servald.PeerListService;
 import org.servalproject.servald.ServalD;
 import org.servalproject.servald.SubscriberId;
+import org.servalproject.ui.Networks;
 
 import android.app.Activity;
 import android.app.ListActivity;
@@ -43,6 +44,9 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
@@ -284,4 +288,38 @@ public class PeerList extends ListActivity {
 		}.execute();
 	}
 
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu)
+	{
+		MenuInflater menuInflater = getMenuInflater();
+		menuInflater.inflate(R.menu.main, menu);
+		return true;
+	}
+
+	/**
+	 * Event Handling for Individual menu item selected Identify single menu
+	 * item by it's id
+	 * */
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item)
+	{
+		switch (item.getItemId())
+		{
+		case R.id.menu_exit:
+			finish();
+			return true;
+
+		case R.id.menu_settings:
+			startActivity(new Intent(getApplicationContext(),
+					org.servalproject.ui.SettingsScreenActivity.class));
+			return true;
+
+		case R.id.menu_network:
+			startActivity(new Intent(getApplicationContext(),
+					Networks.class));
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
 }

@@ -161,10 +161,18 @@ public class Main extends Activity {
 				R.id.sharingLabel,
 				R.id.helpLabel,
 				R.id.servalLabel,
-			};
+		};
+
 		for (int i = 0; i < listenTo.length; i++) {
 			this.findViewById(listenTo[i]).setOnClickListener(listener);
 		}
+
+		// Start the mesh service
+		Intent serviceIntent = new Intent(Main.this, Control.class);
+		startService(serviceIntent);
+
+		// Go Straight to the peerlist
+		myPeerList();
 	}
 
 	BroadcastReceiver receiver = new BroadcastReceiver() {
@@ -186,12 +194,10 @@ public class Main extends Activity {
 		// change the image for the power button
 		// TODO add other drawables for other state if req'd
 		switch (state) {
-		case On:
-			// set the drawable to the power on image
+		case On: // set the drawable to the power on image
 			buttonToggleImg.setImageDrawable(powerOnDrawable);
 			break;
-		default:
-			// for every other state use the power off drawable
+		default: // for every other state use the power off drawable
 			buttonToggleImg.setImageDrawable(powerOffDrawable);
 		}
 
@@ -229,10 +235,10 @@ public class Main extends Activity {
 		}
 
 		// Don't continue unless they've seen the warning
-		if (!app.settings.getBoolean(PREF_WARNING_OK, false)) {
-			showDialog(R.layout.warning_dialog);
-			return;
-		}
+		// if (!app.settings.getBoolean(PREF_WARNING_OK, false)) {
+		// showDialog(R.layout.warning_dialog);
+		// return;
+		// }
 
 		if (state == State.Installing || state == State.Upgrading) {
 			new AsyncTask<Void, Void, Void>() {
