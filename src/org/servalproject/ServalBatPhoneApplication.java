@@ -289,7 +289,7 @@ public class ServalBatPhoneApplication extends Application {
 	void setState(State state) {
 		if (this.state == state)
 			return;
-
+		Log.i("WTF", "App State Change: " + state);
 		this.state = state;
 
 		Intent intent = new Intent(ServalBatPhoneApplication.ACTION_STATE);

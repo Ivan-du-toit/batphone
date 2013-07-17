@@ -39,8 +39,10 @@ import org.servalproject.servald.PeerListService;
 import org.servalproject.servald.ServalD;
 import org.servalproject.servald.SubscriberId;
 import org.servalproject.ui.Networks;
-import org.servalproject.wizard.Wizard;
 
+import android.accounts.Account;
+import android.accounts.AccountAuthenticatorResponse;
+import android.accounts.AccountManager;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.BroadcastReceiver;
@@ -50,6 +52,7 @@ import android.content.IntentFilter;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -70,6 +73,7 @@ import android.widget.ListView;
 public class PeerList extends ListActivity {
 	public ServalBatPhoneApplication app;
 	PeerListAdapter listAdapter;
+	Identity identity;
 
 	private boolean displayed = false;
 	private static final String TAG = "PeerList";
@@ -93,8 +97,7 @@ public class PeerList extends ListActivity {
 
 		this.app = (ServalBatPhoneApplication) this.getApplication();
 
-		Intent serviceIntent = new Intent(PeerList.this, Control.class);
-		startService(serviceIntent);
+		startMeshService();
 
 		Intent intent = getIntent();
 		if (intent != null) {
@@ -357,7 +360,7 @@ public class PeerList extends ListActivity {
 	boolean registered = false;
 
 	private void stateChanged(State state) {
-		;// TODO remove this function
+		Log.i("WTF", "new State: " + app.getState().toString());
 	}
 
 	private final int PEER_LIST_RETURN = 0;
@@ -384,10 +387,10 @@ public class PeerList extends ListActivity {
 					return null;
 				}
 			}.execute();
-
 			if (state == State.Installing) {
-				this.startActivity(new Intent(this, Wizard.class));
-				finish();
+				//this.startActivity(new Intent(this, Wizard.class));
+				//finish();
+				doAppSetup();
 				return;
 			}
 		}
@@ -398,8 +401,9 @@ public class PeerList extends ListActivity {
 			Log.v(TAG,
 					"Keyring doesn't seem to be initialised, starting wizard");
 
-			this.startActivity(new Intent(this, Wizard.class));
-			finish();
+			//this.startActivity(new Intent(this, Wizard.class));
+			//finish();
+			doAppSetup();
 			return;
 		}
 
@@ -409,5 +413,109 @@ public class PeerList extends ListActivity {
 			this.registerReceiver(receiver, filter);
 			registered = true;
 		}
+	}
+
+	private void doAppSetup() {
+		new AsyncTask<Void, Void, Boolean>() {
+
+			@Override
+			protected Boolean doInBackground(Void... params) {
+				try {
+					identity.setDetails(app, getNumber(), "");// name.getText().toString()
+
+					// create the serval android acount if it doesn't
+					// already exist
+					Account account = AccountService
+							.getAccount(PeerList.this);
+					if (account == null) {
+						account = new Account("Serval Mesh",
+								AccountService.TYPE);
+						AccountManager am = AccountManager
+								.get(PeerList.this);
+
+						if (!am.addAccountExplicitly(account, "", null))
+							throw new IllegalStateException(
+									"Failed to create account");
+
+						Intent ourIntent = PeerList.this.getIntent();
+						if (ourIntent != null
+								&& ourIntent.getExtras() != null) {
+							AccountAuthenticatorResponse response = ourIntent
+									.getExtras()
+									.getParcelable(
+											AccountManager.KEY_ACCOUNT_AUTHENTICATOR_RESPONSE);
+							if (response != null) {
+								Bundle result = new Bundle();
+								result.putString(
+										AccountManager.KEY_ACCOUNT_NAME,
+										account.name);
+								result.putString(
+										AccountManager.KEY_ACCOUNT_TYPE,
+										AccountService.TYPE);
+								response.onResult(result);
+							}
+						}
+					}
+					return true;
+				} catch (IllegalArgumentException e) {
+					app.displayToastMessage(e.getMessage());
+				} catch (Exception e) {
+					Log.e("BatPhone", e.getMessage(), e);
+					app.displayToastMessage(e.getMessage());
+				}
+				return false;
+			}
+
+			// @Override
+			// protected void onPostExecute(Boolean result) {
+			// if (result) {
+			// // app.displayToastMessage("The Wizard Succeeded!");
+			// Log.i("WTF", "BAD result, state: "
+			// + app.getState().toString());
+			// }
+			// Log.i("WTF", "Good result, state: " + app.getState().toString());
+			// if (app.getState() == State.Off)
+			// startMeshService();
+			// }
+		}.execute((Void[]) null);
+	}
+
+	private String getNumber() {
+
+		List<Identity> identities = Identity.getIdentities();
+		TelephonyManager mTelephonyMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
+		String existingNumber = null;
+		if (identities.size() > 0) {
+			identity = identities.get(0);
+
+			existingNumber = identity.getDid();
+			if (existingNumber == null) {
+				existingNumber = mTelephonyMgr.getLine1Number();
+			}
+			if (existingNumber == null || existingNumber.equals("")) {
+				existingNumber = mTelephonyMgr.getDeviceId();
+			}
+		}
+		else {
+			// try to get number from phone, probably wont work though...
+			existingNumber = mTelephonyMgr.getLine1Number();
+			if (existingNumber == null || existingNumber.equals("")) {
+				existingNumber = mTelephonyMgr.getDeviceId();
+			}
+			try {
+				identity = Identity.createIdentity();
+			} catch (Exception e) {
+				Log.e("getNumber", e.getMessage(), e);
+				app.displayToastMessage(e.getMessage());
+			}
+		}
+		if (existingNumber == null)
+			Log.e("WTF", "Null value for phone number.");
+		return existingNumber;
+	}
+
+	private void startMeshService() {
+		Intent serviceIntent = new Intent(PeerList.this, Control.class);
+		startService(serviceIntent);
 	}
 }
