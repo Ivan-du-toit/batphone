@@ -309,6 +309,18 @@ public class PeerList extends ListActivity {
 	}
 
 	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+		menu.clear();
+		MenuInflater menuInflater = getMenuInflater();
+		menuInflater.inflate(R.menu.main, menu);
+		if (app.getState() == State.Off)
+			menu.findItem(R.id.menu_toggleMesh).setTitle("Connect");
+		else
+			menu.findItem(R.id.menu_toggleMesh).setTitle("Disconnect");
+		return super.onPrepareOptionsMenu(menu);
+	}
+
+	@Override
 	public boolean onCreateOptionsMenu(Menu menu)
 	{
 		MenuInflater menuInflater = getMenuInflater();
@@ -321,15 +333,19 @@ public class PeerList extends ListActivity {
 	{
 		switch (item.getItemId())
 		{
+		case R.id.menu_toggleMesh:
+			if (app.getState() == State.Off)
+				startMeshService();
+			else
+				stopMeshService();
+			return true;
 		case R.id.menu_exit:
 			finish();
 			return true;
-
 		case R.id.menu_settings:
 			startActivity(new Intent(getApplicationContext(),
 					org.servalproject.ui.SettingsScreenActivity.class));
 			return true;
-
 		case R.id.menu_network:
 			startActivity(new Intent(getApplicationContext(),
 					Networks.class));
@@ -417,6 +433,17 @@ public class PeerList extends ListActivity {
 			Intent serviceIntent = new Intent(PeerList.this, Control.class);
 			startService(serviceIntent);
 		} else
-			Log.i(TAG, "Trying to start service from invalid state");
+			Log.i(TAG, "Trying to start service from invalid state: "
+					+ app.getState());
+	}
+
+	private void stopMeshService() {
+		if (app.getState() == State.On) {
+			Intent serviceIntent = new Intent(PeerList.this, Control.class);
+			stopService(serviceIntent);
+		} else
+			Log.i(TAG,
+					"Trying to stop service from invalid state: "
+							+ app.getState());
 	}
 }

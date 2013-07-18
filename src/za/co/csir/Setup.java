@@ -33,6 +33,8 @@ public class Setup extends Activity {
 		app = (ServalBatPhoneApplication) this.getApplication();
 		setContentView(R.layout.wizard);
 
+		// TODO: move this code to execute after the state changed from
+		// installing to off.
 		new AsyncTask<Void, Void, Boolean>() {
 
 			@Override
@@ -44,7 +46,7 @@ public class Setup extends Activity {
 					Log.i("Setup", "Name: " + name);
 					if (app == null)
 						Log.i("Setup", "App is null");
-					identity.setDetails(app, did, name);// name.getText().toString()
+					identity.setDetails(app, did, name);
 
 					// create the serval android acount if it doesn't
 					// already exist

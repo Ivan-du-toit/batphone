@@ -26,7 +26,6 @@ public class BatPhone extends BroadcastReceiver {
 	}
 
 	public static BatPhone getEngine() {
-		// TODO Auto-generated method stub
 		if (instance == null)
 			instance = new BatPhone();
 		return instance;

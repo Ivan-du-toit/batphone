@@ -30,7 +30,7 @@ package org.servalproject.wizard;
 
 import java.util.List;
 
-import org.servalproject.Main;
+import org.servalproject.PeerList;
 import org.servalproject.R;
 import org.servalproject.ServalBatPhoneApplication;
 import org.servalproject.ServalBatPhoneApplication.State;
@@ -144,7 +144,7 @@ public class SetPhoneNumber extends Activity {
 					protected void onPostExecute(Boolean result) {
 						if (result) {
 							Intent intent = new Intent(SetPhoneNumber.this,
-									Main.class);
+									PeerList.class);
 							intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 							SetPhoneNumber.this.startActivity(intent);
 							SetPhoneNumber.this.setResult(RESULT_OK);

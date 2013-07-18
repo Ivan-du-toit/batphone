@@ -195,7 +195,7 @@
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
-        <activity android:name=".PeerList" 
+        <activity android:name="org.servalproject.PeerList" 
             android:label="Peer List"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
