@@ -93,7 +93,7 @@ public class PeerList extends ListActivity {
 		super.onCreate(savedInstanceState);
 
 		this.app = (ServalBatPhoneApplication) this.getApplication();
-
+		checkAppSetup();
 		startMeshService();
 
 		Intent intent = getIntent();

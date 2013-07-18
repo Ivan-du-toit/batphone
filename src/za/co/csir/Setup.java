@@ -16,15 +16,17 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.ProgressBar;
 
 public class Setup extends Activity {
 	ServalBatPhoneApplication app;
-
+	private static final String TAG = "Setup";
 	Identity identity;
 	ProgressBar busy;
+	private static final long DELAY = 5000;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,10 @@ public class Setup extends Activity {
 		app = (ServalBatPhoneApplication) this.getApplication();
 		setContentView(R.layout.wizard);
 
+		/*
+		 * try { Thread.sleep(5000); } catch (InterruptedException e1) {
+		 * Log.e(TAG, e1.toString(), e1); }
+		 */
 		// TODO: move this code to execute after the state changed from
 		// installing to off.
 		new AsyncTask<Void, Void, Boolean>() {
@@ -40,6 +46,10 @@ public class Setup extends Activity {
 			@Override
 			protected Boolean doInBackground(Void... params) {
 				try {
+
+					while (!sleep()) {
+						;
+					}
 					String did = getNumber();
 					Log.i("Setup", "DID: " + did);
 					String name = getName();
@@ -84,10 +94,11 @@ public class Setup extends Activity {
 
 					return true;
 				} catch (IllegalArgumentException e) {
-					app.displayToastMessage(e.getMessage());
+					Log.e(TAG, e.getMessage(), e);
+					// app.displayToastMessage(e.getMessage());
 				} catch (Exception e) {
-					Log.e("BatPhone", e.getMessage(), e);
-					app.displayToastMessage(e.getMessage());
+					Log.e(TAG, e.getMessage(), e);
+					// app.displayToastMessage(e.getMessage());
 				}
 				return false;
 			}
@@ -103,6 +114,7 @@ public class Setup extends Activity {
 					Setup.this.finish();
 					return;
 				}
+				Log.e(TAG, "Invalid result");
 				app.displayToastMessage("The setup failed unexpectedly please try running the app again.");
 			}
 		}.execute((Void[]) null);
@@ -111,6 +123,8 @@ public class Setup extends Activity {
 	private String getName() {
 		// Just return empty for now should use multiple fallback methods for
 		// deriving a name
+		if (ContactsContract.Profile.DISPLAY_NAME != null)
+			return ContactsContract.Profile.DISPLAY_NAME;
 		return "";
 	}
 
@@ -143,7 +157,7 @@ public class Setup extends Activity {
 				app.displayToastMessage(e.getMessage());
 			}
 		}
-		return existingNumber;
+		return "0760926242";// existingNumber;
 	}
 
 	@Override
@@ -152,5 +166,14 @@ public class Setup extends Activity {
 			setResult(RESULT_OK);
 			finish();
 		}
+	}
+
+	private boolean sleep() {
+		try {
+			Thread.sleep(DELAY);
+		} catch (InterruptedException e) {
+			return false;
+		}
+		return true;
 	}
 }
