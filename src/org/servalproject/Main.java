@@ -27,7 +27,9 @@ import org.servalproject.servald.Identity;
 import org.servalproject.ui.Networks;
 import org.servalproject.ui.ShareUsActivity;
 import org.servalproject.ui.help.HtmlHelp;
-import org.servalproject.wizard.Wizard;
+
+import za.co.csir.Setup;
+
 
 import android.app.Activity;
 import android.content.BroadcastReceiver;
@@ -216,7 +218,7 @@ public class Main extends Activity {
 			}.execute();
 
 			if (state == State.Installing) {
-				this.startActivity(new Intent(this, Wizard.class));
+				this.startActivity(new Intent(this, Setup.class));
 				finish();
 				return;
 			}
@@ -233,7 +235,7 @@ public class Main extends Activity {
 			Log.v("MAIN",
 					"Keyring doesn't seem to be initialised, starting wizard");
 
-			this.startActivity(new Intent(this, Wizard.class));
+			this.startActivity(new Intent(this, Setup.class));
 			finish();
 			return;
 		}

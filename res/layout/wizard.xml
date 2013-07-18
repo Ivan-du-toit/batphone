@@ -53,14 +53,17 @@
             android:id="@+id/wizard_start2"
             style="@style/stext"
             android:layout_below="@+id/wizard_start1"
-            android:text="@string/start2" />
-    
-    	<Button 
-    	    android:id="@+id/btnwizard"
-			android:text="@string/btnwizard"
-			android:layout_below="@+id/wizard_start2"
-            style="@style/sbtnrhizome" /> 
+            android:text="@string/start2" /> 
 
     </RelativeLayout>
+
+    <ProgressBar
+        android:id="@+id/busy"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/wizard_layout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp" />
 
 </RelativeLayout>

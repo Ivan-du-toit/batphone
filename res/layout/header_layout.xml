@@ -35,5 +35,6 @@
          android:layout_alignRight="@+id/warning1"
          android:layout_below="@+id/warning1"
          android:text="@string/warning2" />
+
 </merge>
      

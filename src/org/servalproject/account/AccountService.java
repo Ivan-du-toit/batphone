@@ -4,7 +4,9 @@ import java.util.ArrayList;
 
 import org.servalproject.Main;
 import org.servalproject.servald.SubscriberId;
-import org.servalproject.wizard.Wizard;
+
+import za.co.csir.Setup;
+
 
 import android.accounts.AbstractAccountAuthenticator;
 import android.accounts.Account;
@@ -209,7 +211,7 @@ public class AccountService extends Service {
 				String[] requiredFeatures, Bundle options)
 				throws NetworkErrorException {
 
-			Intent intent = new Intent(context, Wizard.class);
+			Intent intent = new Intent(context, Setup.class);
 			intent.setAction(ACTION_ADD);
 			intent.putExtra(AccountManager.KEY_ACCOUNT_AUTHENTICATOR_RESPONSE,
 					response);

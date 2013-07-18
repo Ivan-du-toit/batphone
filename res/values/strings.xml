@@ -26,9 +26,9 @@
      <!-- Serval General -->
     <string name="header">Walkie Mesh</string>
     <string name="logoid">Serval Project Logo</string>
-    <string name="url">servalproject.org</string>
-    <string name="warning1">EXPERIMENTAL</string>
-    <string name="warning2">SOFTWARE</string>
+    <string name="url"></string>
+    <string name="warning1"></string>
+    <string name="warning2"></string>
 	<string name="app_name">Walkie Mesh</string>
 	<string name="agree">I agree</string>
 	<string name="cancel">Cancel</string>

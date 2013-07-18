@@ -23,9 +23,9 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     
 	<!-- Serval Wizard -->
-	<string name="start1">Serval software is mesh network software designed for use where there is no existing infrastructure.</string>
-    <string name="start2">To configure your phone for first time use, please use the Setup Wizard.</string>
-    <string name="welcome">Welcome to the Serval Mesh.</string>
+	<string name="start1">Walkie Mesh software is mesh network software designed for use where there is no existing infrastructure.</string>
+    <string name="start2">Please wait while your device is being configuared...</string>
+    <string name="welcome">Welcome to the Walkie Mesh.</string>
 
 	<!-- Serval Wizard Wifi Settings -->
     <string-array name="channelvalues">  
