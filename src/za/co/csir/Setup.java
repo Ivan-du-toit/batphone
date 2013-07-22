@@ -123,7 +123,7 @@ public class Setup extends Activity {
 	private String getName() {
 		// Just return empty for now should use multiple fallback methods for
 		// deriving a name
-		if (ContactsContract.Profile.DISPLAY_NAME != null)
+		if (ContactsContract.Profile.DISPLAY_NAME.equals("DISPLAY_NAME"))
 			return ContactsContract.Profile.DISPLAY_NAME;
 		return "";
 	}
@@ -157,7 +157,7 @@ public class Setup extends Activity {
 				app.displayToastMessage(e.getMessage());
 			}
 		}
-		return "0760926242";// existingNumber;
+		return existingNumber;
 	}
 
 	@Override
