@@ -101,5 +101,13 @@
               android:id="@+id/footerLayout"
               layout="@layout/footer_layout" />
 
+          <Button
+              android:id="@+id/SpeakerPhone"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/cancel_call_button"
+              android:layout_centerHorizontal="true"
+              android:layout_marginTop="23dp"
+              android:text="@string/btnSpeakerPhone" />
 
 </RelativeLayout>

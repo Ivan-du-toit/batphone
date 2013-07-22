@@ -13,6 +13,7 @@ import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
+import android.media.AudioManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.SystemClock;
@@ -167,6 +168,19 @@ public class UnsecuredCall extends Activity {
 			}.execute();
 		}
 		updateUI();
+
+		Button speakerButton = (Button) this.findViewById(R.id.SpeakerPhone);
+		speakerButton.setOnClickListener(new OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				AudioManager audioManager = (AudioManager) app
+						.getSystemService(Context.AUDIO_SERVICE);
+				if (audioManager.isSpeakerphoneOn())
+					audioManager.setSpeakerphoneOn(false);
+				else
+					audioManager.setSpeakerphoneOn(true);
+			}
+		});
 
 		endButton = (Button) this.findViewById(R.id.cancel_call_button);
 		endButton.setOnClickListener(new OnClickListener() {

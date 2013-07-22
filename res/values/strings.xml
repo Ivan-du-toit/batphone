@@ -57,6 +57,8 @@
 	<!-- Serval Buttons -->
 	<string name="btnwizard">SETUP WIZARD</string>
 	<string name="btnPhOk">OK</string>
+	<string name="btnSpeakerPhone">Toggle Speakerphone</string>
+	
 	
 	<!-- Serval Phone Set -->
 	<string name="cancelcall">Cancel</string>
