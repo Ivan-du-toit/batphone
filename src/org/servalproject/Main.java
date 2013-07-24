@@ -29,6 +29,7 @@ import org.servalproject.ui.ShareUsActivity;
 import org.servalproject.ui.help.HtmlHelp;
 
 import za.co.csir.Setup;
+import za.co.csir.walkiemesh.R;
 
 
 import android.app.Activity;

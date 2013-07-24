@@ -3,11 +3,11 @@ package za.co.csir;
 import java.util.List;
 
 import org.servalproject.PeerList;
-import org.servalproject.R;
 import org.servalproject.ServalBatPhoneApplication;
 import org.servalproject.account.AccountService;
 import org.servalproject.servald.Identity;
 
+import za.co.csir.walkiemesh.R;
 import android.accounts.Account;
 import android.accounts.AccountAuthenticatorResponse;
 import android.accounts.AccountManager;
@@ -48,7 +48,7 @@ public class Setup extends Activity {
 				try {
 
 					while (!sleep()) {
-						;
+						Log.i("WTF", "sleeping");
 					}
 					String did = getNumber();
 					Log.i("Setup", "DID: " + did);
@@ -56,6 +56,8 @@ public class Setup extends Activity {
 					Log.i("Setup", "Name: " + name);
 					if (app == null)
 						Log.i("Setup", "App is null");
+					if (identity == null)
+						Log.i("Setup", "Identity is null");
 					identity.setDetails(app, did, name);
 
 					// create the serval android acount if it doesn't
@@ -129,13 +131,13 @@ public class Setup extends Activity {
 	}
 
 	private String getNumber() {
-
+		Log.i("WTF", "Getting num");
 		List<Identity> identities = Identity.getIdentities();
 		TelephonyManager mTelephonyMgr = (TelephonyManager) getSystemService(Context.TELEPHONY_SERVICE);
 		String existingNumber = null;
 		if (identities.size() > 0) {
 			identity = identities.get(0);
-
+			Log.i("WTF", "Exiting Ident");
 			existingNumber = identity.getDid();
 			if (existingNumber == null) {
 				existingNumber = mTelephonyMgr.getLine1Number();
@@ -145,6 +147,7 @@ public class Setup extends Activity {
 			}
 		}
 		else {
+			Log.i("WTF", "No Ident");
 			// try to get number from phone, probably wont work though...
 			existingNumber = mTelephonyMgr.getLine1Number();
 			if (existingNumber == null || existingNumber.equals("")) {
@@ -153,8 +156,8 @@ public class Setup extends Activity {
 			try {
 				identity = Identity.createIdentity();
 			} catch (Exception e) {
-				Log.e("getNumber", e.getMessage(), e);
-				app.displayToastMessage(e.getMessage());
+				Log.e("Setup", e.getMessage(), e);
+				// app.displayToastMessage(e.getMessage());
 			}
 		}
 		return existingNumber;

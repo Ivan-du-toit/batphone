@@ -20,7 +20,7 @@
 
 package org.servalproject.rhizome;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.ServalBatPhoneApplication;
 import org.servalproject.servald.BundleId;
 import org.servalproject.servald.ServalD;

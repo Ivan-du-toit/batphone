@@ -21,7 +21,7 @@ package org.servalproject.meshms;
 
 import java.util.List;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.ServalBatPhoneApplication;
 import org.servalproject.messages.MessageUtils;
 import org.servalproject.messages.MessagesListActivity;

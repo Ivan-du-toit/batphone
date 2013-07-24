@@ -21,7 +21,7 @@ package org.servalproject.messages;
 
 import java.io.IOException;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.ServalBatPhoneApplication;
 import org.servalproject.account.AccountService;
 import org.servalproject.meshms.IncomingMeshMS;

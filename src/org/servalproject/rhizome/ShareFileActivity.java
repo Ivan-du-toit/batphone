@@ -4,7 +4,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.InputStream;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.ServalBatPhoneApplication;
 import org.servalproject.servald.Identity;
 import org.servalproject.servald.Peer;

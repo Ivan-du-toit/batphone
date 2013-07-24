@@ -41,6 +41,7 @@ import org.servalproject.servald.SubscriberId;
 import org.servalproject.ui.Networks;
 
 import za.co.csir.Setup;
+import za.co.csir.walkiemesh.R;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.BroadcastReceiver;

@@ -33,6 +33,7 @@ import org.servalproject.system.NetworkManager;
 import org.servalproject.system.WifiControl;
 import org.servalproject.system.WifiControl.Completion;
 import org.servalproject.system.WifiControl.CompletionReason;
+import za.co.csir.walkiemesh.R;
 
 import android.app.Activity;
 import android.content.Context;

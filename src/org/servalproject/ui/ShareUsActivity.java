@@ -3,7 +3,7 @@ package org.servalproject.ui;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.ServalBatPhoneApplication;
 import org.servalproject.system.NetworkConfiguration;
 

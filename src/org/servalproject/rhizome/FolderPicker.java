@@ -25,7 +25,7 @@ import java.io.FileFilter;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 
 import android.app.Dialog;
 import android.content.Context;

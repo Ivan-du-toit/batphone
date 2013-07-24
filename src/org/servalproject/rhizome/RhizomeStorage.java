@@ -22,7 +22,7 @@ package org.servalproject.rhizome;
 
 import java.text.NumberFormat;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 
 import android.app.Activity;
 import android.graphics.Color;

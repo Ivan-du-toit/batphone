@@ -1,6 +1,6 @@
 package org.servalproject.batphone;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 
 public class VoMP {
 	/*

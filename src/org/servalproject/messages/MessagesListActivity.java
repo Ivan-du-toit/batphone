@@ -21,7 +21,7 @@ package org.servalproject.messages;
 
 import java.util.Comparator;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.meshms.IncomingMeshMS;
 import org.servalproject.meshms.SimpleMeshMS;
 import org.servalproject.provider.MessagesContract;

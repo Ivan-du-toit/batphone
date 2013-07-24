@@ -22,7 +22,7 @@ package org.servalproject.messages;
 
 import java.text.DateFormat;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.provider.ThreadsContract;
 import org.servalproject.servald.Peer;
 import org.servalproject.servald.PeerListService;

@@ -5,7 +5,7 @@ import java.util.List;
 
 import org.servalproject.Control;
 import org.servalproject.PreparationWizard;
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.ServalBatPhoneApplication;
 import org.servalproject.ServalBatPhoneApplication.State;
 import org.servalproject.system.NetworkConfiguration;

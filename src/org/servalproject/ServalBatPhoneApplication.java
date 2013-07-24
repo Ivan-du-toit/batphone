@@ -59,6 +59,7 @@ import org.servalproject.system.BluetoothService;
 import org.servalproject.system.ChipsetDetection;
 import org.servalproject.system.CoreTask;
 import org.servalproject.system.NetworkManager;
+import za.co.csir.walkiemesh.R;
 
 import android.app.Application;
 import android.app.Notification;

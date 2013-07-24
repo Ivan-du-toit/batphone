@@ -18,7 +18,7 @@
  */
 package org.servalproject.ui.help;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 
 import android.app.Activity;
 import android.os.Bundle;

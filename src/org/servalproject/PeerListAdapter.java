@@ -32,6 +32,7 @@ import java.util.List;
 
 import org.servalproject.messages.ShowConversationActivity;
 import org.servalproject.servald.IPeer;
+import za.co.csir.walkiemesh.R;
 
 import android.content.Context;
 import android.content.Intent;

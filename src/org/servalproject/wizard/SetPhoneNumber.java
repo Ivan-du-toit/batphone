@@ -31,7 +31,7 @@ package org.servalproject.wizard;
 import java.util.List;
 
 import org.servalproject.PeerList;
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.ServalBatPhoneApplication;
 import org.servalproject.ServalBatPhoneApplication.State;
 import org.servalproject.account.AccountService;

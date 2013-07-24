@@ -23,7 +23,7 @@ package org.servalproject.rhizome;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.ServalBatPhoneApplication;
 import org.servalproject.servald.ServalD;
 

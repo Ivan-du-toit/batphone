@@ -28,7 +28,7 @@ package org.servalproject.ui;
 import java.io.File;
 
 import org.servalproject.PreparationWizard;
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.ServalBatPhoneApplication;
 
 import android.app.Activity;

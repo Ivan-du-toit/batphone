@@ -9,7 +9,7 @@ import java.net.UnknownHostException;
 import java.security.SecureRandom;
 import java.util.Properties;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.ServalBatPhoneApplication;
 
 import android.content.Context;

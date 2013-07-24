@@ -42,6 +42,7 @@ import java.util.Calendar;
 import java.util.List;
 
 import org.servalproject.system.ChipsetDetection;
+import za.co.csir.walkiemesh.R;
 
 import android.app.Activity;
 import android.os.Bundle;

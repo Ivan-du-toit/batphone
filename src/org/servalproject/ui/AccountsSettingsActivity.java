@@ -25,7 +25,7 @@
 
 package org.servalproject.ui;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.servald.Identity;
 
 import android.app.Activity;

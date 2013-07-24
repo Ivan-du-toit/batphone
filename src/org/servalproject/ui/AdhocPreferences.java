@@ -1,6 +1,6 @@
 package org.servalproject.ui;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.ServalBatPhoneApplication;
 
 import android.content.Intent;

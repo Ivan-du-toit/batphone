@@ -1,6 +1,6 @@
 package org.servalproject.batphone;
 
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.ServalBatPhoneApplication;
 import org.servalproject.servald.Peer;
 import org.servalproject.servald.PeerListService;

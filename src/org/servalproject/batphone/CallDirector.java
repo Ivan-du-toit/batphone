@@ -3,7 +3,7 @@ package org.servalproject.batphone;
 import java.util.ArrayList;
 
 import org.servalproject.PeerListAdapter;
-import org.servalproject.R;
+import za.co.csir.walkiemesh.R;
 import org.servalproject.ServalBatPhoneApplication;
 import org.servalproject.servald.DnaResult;
 import org.servalproject.servald.IPeer;
