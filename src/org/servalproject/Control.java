@@ -17,7 +17,6 @@ import org.servalproject.servald.ServalDMonitor;
 import org.servalproject.servald.SubscriberId;
 import org.servalproject.system.WifiControl;
 
-
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -160,7 +159,7 @@ public class Control extends Service {
 				R.drawable.ic_serval_logo, "Serval Mesh",
 				System.currentTimeMillis());
 
-		Intent intent = new Intent(app, Main.class);
+		Intent intent = new Intent(app, PeerList.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
 		notification.setLatestEventInfo(Control.this, "Serval Mesh", peerCount

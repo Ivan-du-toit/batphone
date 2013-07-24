@@ -2,12 +2,10 @@ package org.servalproject.account;
 
 import java.util.ArrayList;
 
-import org.servalproject.Main;
+import org.servalproject.PeerList;
 import org.servalproject.servald.SubscriberId;
 
 import za.co.csir.Setup;
-
-
 import android.accounts.AbstractAccountAuthenticator;
 import android.accounts.Account;
 import android.accounts.AccountAuthenticatorResponse;
@@ -229,7 +227,7 @@ public class AccountService extends Service {
 		@Override
 		public Bundle editProperties(AccountAuthenticatorResponse response,
 				String accountType) {
-			Intent intent = new Intent(context, Main.class);
+			Intent intent = new Intent(context, PeerList.class);
 			Bundle reply = new Bundle();
 			reply.putParcelable(AccountManager.KEY_INTENT, intent);
 			return reply;
