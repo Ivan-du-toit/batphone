@@ -13,7 +13,8 @@
          style="@style/sheader"
          android:layout_alignTop="@+id/logot_image"
          android:layout_toRightOf="@+id/logot_image"
-         android:text="@string/header" />
+         android:text="@string/header"
+         android:textColor="@color/white" />
 
      <TextView
          android:id="@+id/url"

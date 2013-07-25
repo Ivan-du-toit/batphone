@@ -112,4 +112,9 @@
 	<!-- Menu strings -->
 	<string name="exitLabel">Exit</string>
 	<string name="networkSettingsLabel">Mesh Settings</string>
+	
+	<!-- Call strings -->
+	<string name="answer">Answer</string>
+	<string name="decline">Decline</string>
+	<string name="endcall">End Call</string>
 </resources>   

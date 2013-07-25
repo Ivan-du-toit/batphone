@@ -784,9 +784,9 @@
    
    <style name="scall_decline" parent="sbody">	
        	<item name="android:layout_width">90dp</item>
-   		<item name="android:layout_height">35dp</item>
-		<item name="android:layout_marginRight">15dp</item>
-		<item name="android:background">@drawable/phone_decline_button</item>
+   		<!-- item name="android:layout_height">35dp</item>
+		<item name="android:layout_marginRight">15dp</item-->
+		<item name="android:background">@drawable/phone_endcall_button</item>
    </style>  
    
      	

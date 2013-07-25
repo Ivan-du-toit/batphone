@@ -16,7 +16,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.ContactsContract;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.ProgressBar;
@@ -31,16 +30,9 @@ public class Setup extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		Log.i("WTF", "Started Wizard");
 		app = (ServalBatPhoneApplication) this.getApplication();
 		setContentView(R.layout.wizard);
 
-		/*
-		 * try { Thread.sleep(5000); } catch (InterruptedException e1) {
-		 * Log.e(TAG, e1.toString(), e1); }
-		 */
-		// TODO: move this code to execute after the state changed from
-		// installing to off.
 		new AsyncTask<Void, Void, Boolean>() {
 
 			@Override
@@ -123,8 +115,16 @@ public class Setup extends Activity {
 	private String getName() {
 		// Just return empty for now should use multiple fallback methods for
 		// deriving a name
-		if (ContactsContract.Profile.DISPLAY_NAME.equals("DISPLAY_NAME"))
-			return ContactsContract.Profile.DISPLAY_NAME;
+		// if (!ContactsContract.Profile.DISPLAY_NAME.equals("display_name"))
+		// return ContactsContract.Profile.DISPLAY_NAME;
+		try {
+			AccountManager accountMan = AccountManager.get(app);
+			Account[] accounts = accountMan.getAccountsByType("com.google");
+			return accountMan.getUserData(accounts[0],
+					AccountManager.KEY_USERDATA);
+		} catch (Exception e) {
+			Log.i(TAG, "Could not get account name");
+		}
 		return "";
 	}
 

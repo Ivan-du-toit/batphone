@@ -41,7 +41,6 @@
 
     <!-- end call information -->
 
-
     <TextView
         android:id="@+id/call_action_type"
         style="@style/scall_action_type"
@@ -70,44 +69,26 @@
         android:layout_centerHorizontal="true"
         android:text="@string/phone_number" />
     
-    <!-- Speaker commented until enabled -->
-    
-   <!--  <Button
-        android:id="@+id/speaker_button"
-        style="@style/sph_controlButtons"
-        android:layout_alignTop="@+id/cancel_call_button"
-        android:layout_toLeftOf="@+id/cancel_call_button"
-        android:background="@drawable/phone_speaker_button"
-        android:layout_marginRight="20dp" />-->
-
     <Button
         android:id="@+id/cancel_call_button"
-        style="@style/sph_controlButtons"
+        android:layout_width="wrap_content" 
+   		android:layout_height="wrap_content"
         android:layout_below="@+id/ph_no_display"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/phone_endcall_button" />
+        android:text="@string/endcall"
+        android:drawableLeft="@drawable/phone_endcall_button" />
     
-    <!-- DTMF commented until enabled -->
-         <!--   <Button
-              android:id="@+id/dialpad_button"
-              style="@style/sph_controlButtons"
-              android:layout_alignTop="@+id/cancel_call_button"
-              android:layout_toRightOf="@+id/cancel_call_button"
-              android:layout_marginLeft="20dp" 
-              android:background="@drawable/phone_dialpad_button" />-->
+    <Button
+        android:id="@+id/SpeakerPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cancel_call_button"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:text="@string/btnSpeakerPhone" />
     
-              <!-- Footer -->
-          <include
-              android:id="@+id/footerLayout"
-              layout="@layout/footer_layout" />
-
-          <Button
-              android:id="@+id/SpeakerPhone"
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:layout_below="@+id/cancel_call_button"
-              android:layout_centerHorizontal="true"
-              android:layout_marginTop="23dp"
-              android:text="@string/btnSpeakerPhone" />
-
+    <!-- Footer -->
+    <include
+        android:id="@+id/footerLayout"
+        layout="@layout/footer_layout" />
 </RelativeLayout>

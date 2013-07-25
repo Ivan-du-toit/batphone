@@ -20,10 +20,10 @@
  -->
  
   <!-- @author Romana Challans <romana@servalproject.org> -->
-  
-	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-          android:layout_width="fill_parent"
-          android:layout_height="fill_parent" >
+  	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    style="@style/sbtnwizard"
+	    android:layout_width="fill_parent"
+	    android:layout_height="fill_parent" >
 
           <!-- Header -->
 
@@ -50,9 +50,9 @@
             android:id="@+id/tableAccounts2"
             style="@style/srhizomeTableRow">
 		
-            <Button android:id="@+id/btnphoneReset"
-                style="@style/sbtnrhizome"
-                android:text="@string/PhoneResetLabel"/>  
+            <Button
+                android:id="@+id/btnphoneReset"
+                android:text="@string/PhoneResetLabel" />
     		        
 		<TextView android:id="@+id/PhoneResetText"
     		style="@style/stextsettings"
