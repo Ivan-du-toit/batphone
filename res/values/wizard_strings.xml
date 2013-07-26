@@ -24,7 +24,7 @@
     
 	<!-- Serval Wizard -->
 	<string name="start1">Walkie Mesh software is mesh network software designed for use where there is no existing infrastructure.</string>
-    <string name="start2">Please wait while your device is being configuared...</string>
+    <string name="start2">Please wait while your device is being configured...</string>
     <string name="welcome">Welcome to the Walkie Mesh.</string>
 
 	<!-- Serval Wizard Wifi Settings -->
