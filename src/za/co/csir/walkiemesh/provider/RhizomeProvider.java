@@ -11,9 +11,8 @@ import za.co.csir.walkiemesh.rhizome.RhizomeManifest_File;
 import za.co.csir.walkiemesh.servald.BundleId;
 import za.co.csir.walkiemesh.servald.Identity;
 import za.co.csir.walkiemesh.servald.ServalD;
-import za.co.csir.walkiemesh.servald.SubscriberId;
 import za.co.csir.walkiemesh.servald.ServalD.RhizomeAddFileResult;
-
+import za.co.csir.walkiemesh.servald.SubscriberId;
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.database.Cursor;
@@ -22,7 +21,7 @@ import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
 public class RhizomeProvider extends ContentProvider {
-	public static final String AUTHORITY = "org.servalproject.files";
+	public static final String AUTHORITY = "za.co.csir.walkiemesh.files";
 	private static final String TAG = "RhizomeProvider";
 
 	@Override

@@ -23,7 +23,6 @@ import java.io.File;
 
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.servald.Identity;
-
 import android.content.ContentProvider;
 import android.content.ContentUris;
 import android.content.ContentValues;
@@ -45,7 +44,7 @@ public class MainContentProvider extends ContentProvider {
 	/**
 	 * authority string for the content provider
 	 */
-	public static final String AUTHORITY = "org.servalproject.provider";
+	public static final String AUTHORITY = "za.co.csir.walkiemesh.provider";
 
 	/*
 	 * private class level constants

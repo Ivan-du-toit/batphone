@@ -4,8 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
 
-
-import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication.State;
 import za.co.csir.walkiemesh.batphone.CallHandler;
 import za.co.csir.walkiemesh.batphone.VoMP;
@@ -145,7 +143,7 @@ public class Control extends Service {
 		if (multicastLock == null)
 		{
 			WifiManager wm = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-			multicastLock = wm.createMulticastLock("org.servalproject");
+			multicastLock = wm.createMulticastLock("za.co.csir.walkiemesh");
 		}
 
 		if (wifiOn) {

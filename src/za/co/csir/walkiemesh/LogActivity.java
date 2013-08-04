@@ -41,9 +41,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
 
-import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.system.ChipsetDetection;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebSettings;
@@ -95,7 +93,7 @@ public class LogActivity extends Activity {
         String data = "";
 
 		List<String> logfiles = ChipsetDetection
-				.getList("/data/data/org.servalproject/conf/logfiles.list");
+				.getList("/data/data/za.co.csir.walkiemesh/conf/logfiles.list");
 
         for (String l : logfiles) {
 			if (l.indexOf(":") == -1)
@@ -107,7 +105,7 @@ public class LogActivity extends Activity {
 			data = data
 				+ "<div class=\"heading\">"+description+"</div>\n";
 			try {
-				File file = new File("/data/data/org.servalproject/var/"
+				File file = new File("/data/data/za.co.csir.walkiemesh/var/"
 						+ logfile + ".log");
 				fis = new FileInputStream(file);
 				isr = new InputStreamReader(fis, "utf-8");
@@ -138,7 +136,7 @@ public class LogActivity extends Activity {
 		BufferedWriter writer = null;
 		try {
 			writer = new BufferedWriter(new FileWriter(
-					"/data/data/org.servalproject/var/" + logname + ".log",
+					"/data/data/za.co.csir.walkiemesh/var/" + logname + ".log",
 					true), 256);
 			Calendar currentDate = Calendar.getInstance();
 			SimpleDateFormat formatter = new SimpleDateFormat(
@@ -168,7 +166,7 @@ public class LogActivity extends Activity {
 		BufferedWriter writer = null;
 		try {
 			writer = new BufferedWriter(new FileWriter(
-					"/data/data/org.servalproject/var/" + logname + ".log",
+					"/data/data/za.co.csir.walkiemesh/var/" + logname + ".log",
 					false), 256);
 			writer.close();
 		} catch (IOException e) {
