@@ -38,9 +38,9 @@ public abstract class BluetoothService {
 
 	        int sdkVersion = Integer.parseInt(Build.VERSION.SDK);
 	        if (sdkVersion < Build.VERSION_CODES.ECLAIR) {
-	            className = "org.servalproject.system.BluetoothService_cupcake";
+				className = "za.co.csir.walkiemesh.system.BluetoothService_cupcake";
 	        } else {
-	            className = "org.servalproject.system.BluetoothService_eclair";
+				className = "za.co.csir.walkiemesh.system.BluetoothService_eclair";
 	        }
 
 	        try {

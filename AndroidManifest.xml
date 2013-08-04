@@ -97,16 +97,16 @@
     
     
     <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" 
-		android:name="org.servalproject.ServalBatPhoneApplication">
+		android:name="za.co.csir.walkiemesh.ServalBatPhoneApplication">
         
-        <activity android:name="org.servalproject.PreparationWizard"
+        <activity android:name="za.co.csir.walkiemesh.PreparationWizard"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.PREPARATION" />
 
             </intent-filter>
         </activity>
-        <activity android:name="org.servalproject.Main"
+        <activity android:name=".Main"
             android:screenOrientation="portrait"
             android:launchMode="singleTask"
             >
@@ -115,65 +115,61 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter-->
         </activity>
-        <activity android:name="org.servalproject.ui.ShareUsActivity"
+        <activity android:name=".ui.ShareUsActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
-  		<activity android:name="org.servalproject.ui.SettingsScreenActivity"
+  		<activity android:name=".ui.SettingsScreenActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />     
             
-    <activity android:name="org.servalproject.ui.AccountsSettingsActivity"
+    <activity android:name=".ui.AccountsSettingsActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />   
-    <activity android:name="org.servalproject.ui.Networks"
+    <activity android:name=".ui.Networks"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
         />
-    <activity android:name="org.servalproject.ui.AdhocPreferences"
+    <activity android:name=".ui.AdhocPreferences"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />             
-    <activity android:name="org.servalproject.ui.SetupActivity"
+    <activity android:name=".ui.SetupActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
-            />             
-      
- 		<activity android:name="org.servalproject.ui.help.HtmlHelp"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"
-            />
-        		<activity android:name="org.servalproject.ui.help.LicenceScreen"
+            />            
+            
+    <activity android:name=".ui.help.HtmlHelp"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
- 		<activity android:name="org.servalproject.ui.help.DonateScreen"
+    <activity android:name=".ui.help.LicenceScreen"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
-		<activity android:name="org.servalproject.ui.help.AboutScreen"
+    <activity android:name=".ui.help.DonateScreen"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTop"
+            />
+    <activity android:name=".ui.help.AboutScreen"
            	android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
         
         <activity android:name="za.co.csir.Setup"
             android:screenOrientation="portrait"
-            android:launchMode="singleTop"
-            />
-        <activity android:name="org.servalproject.wizard.SetPhoneNumber"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"
+            android:launchMode="singleTask"
             />
 
-        <activity android:name="org.servalproject.batphone.CallDirector"
+        <activity android:name=".batphone.CallDirector"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"
             android:taskAffinity="org.servalproject.Call"
             />
 
-        <activity android:name="org.servalproject.batphone.UnsecuredCall"
+        <activity android:name=".batphone.UnsecuredCall"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"
             android:taskAffinity="org.servalproject.Call"
@@ -185,17 +181,17 @@
 	        </intent-filter>
 	    </activity>
 	    
-        <activity android:name="org.servalproject.batphone.CompletedCall"
+        <activity android:name=".batphone.CompletedCall"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"
             android:taskAffinity="org.servalproject.Call"
             />
 
-        <activity android:name="org.servalproject.LogActivity" 
+        <activity android:name=".LogActivity" 
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
-        <activity android:name="org.servalproject.PeerList" 
+        <activity android:name=".PeerList" 
             android:label="Peer List"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
@@ -209,7 +205,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-	    <receiver android:name="org.servalproject.batphone.BatPhone">
+	    <receiver android:name="za.co.csir.walkiemesh.batphone.BatPhone">
 	        <intent-filter android:priority="1">
 	        	<action android:name="android.intent.action.NEW_OUTGOING_CALL" />
  	        </intent-filter>
@@ -233,18 +229,17 @@
 	        </intent-filter>
 	    </receiver>
 		 
-	    <service android:name="org.servalproject.Control"
+	    <service android:name=".Control"
 	             android:enabled="true"/>
 	    
-	    <service android:name="org.servalproject.account.AccountService">  
+	   <service android:name=".account.AccountService">  
 	        <intent-filter>  
 	            <action android:name="android.accounts.AccountAuthenticator" />
 	        </intent-filter>  
 	        <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator" />  
 	    </service>
 	    
-	    <service 
-	        android:name="org.servalproject.account.SyncService"
+	    <service android:name=".account.SyncService"
 	        android:process=":contacts"
 	        android:exported="true">
 			<intent-filter>
@@ -259,35 +254,25 @@
 	    </service>
 	    
 
-        <!-- Rhizome application activities -->
-        <activity android:name="org.servalproject.rhizome.RhizomeMain" 
+        <!-- Rhizome applicationza.co.csir.walkiemesh.rhizome.RhizomeMainroid:name="org.servalproject.rhizome.RhizomeMain" 
             android:label="@string/rhizome_main_appname"
             android:screenOrientation="portrait"
-            android:launchMode="singleTop"
-            />
-        <activity android:name="org.servalproject.rhizome.RhizomeList" 
+            android:launchMode="singleTop"za.co.csir.walkiemesh.rhizome.RhizomeListroid:name="org.servalproject.rhizome.RhizomeList" 
             android:label="@string/rhizome_list_appname"
             android:screenOrientation="portrait"
-            android:launchMode="singleTop"
-            />
-        <activity android:name="org.servalproject.rhizome.RhizomeSaved" 
+            android:launchMode="singleTop"za.co.csir.walkiemesh.rhizome.RhizomeSavedoid:name="org.servalproject.rhizome.RhizomeSaved" 
             android:label="@string/rhizome_saved_appname"
             android:screenOrientation="portrait"
-            android:launchMode="singleTop"
-            />
-    	<activity android:name="org.servalproject.rhizome.RhizomeStorage" 
+            android:launchMode="singleTza.co.csir.walkiemesh.rhizome.RhizomeStoraged:name="org.servalproject.rhizome.RhizomeStorage" 
     	    android:screenOrientation="portrait"
-            android:launchMode="singleTop"
-    	    />
-
-    	<activity android:name="org.servalproject.rhizome.ShareFileActivity" 
+            android:launchMode="singlza.co.csir.walkiemesh.rhizome.ShareFileActivityame="org.servalproject.rhizome.ShareFileActivity" 
     	    android:label="@string/sf_name">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:mimeType="*/*" />
             </intent-filter>
-        </activity>
+        </activity-->
 
         <!-- manifest view/edit -->
         <!--
@@ -295,8 +280,8 @@
         <activity android:name=".rhizome.ManifestViewActivity" android:label="@string/mv_name" />
         -->
 
-		<service android:label="@string/rhizome_share_file_permission_label" 
-		    android:name="org.servalproject.rhizome.RhizomeIntentService" 
+		<service android:label="@string/rhizome_share_file_permission_label"
+		    android:name=".rhizome.RhizomeIntentService" 
 		    android:permission="org.servalproject.rhizome.ADD_FILE">
 			<intent-filter>
 				<action android:name="org.servalproject.rhizome.ADD_FILE"/>
@@ -304,7 +289,7 @@
 		</service>
 
         <!-- serval meshms service -->
-        <service android:name="org.servalproject.meshms.OutgoingMeshMS"
+        <service android:name=".meshms.OutgoingMeshMS"
                  android:enabled="true"
                  android:exported="true"
                  android:permission="org.servalproject.meshms.SEND_MESHMS"
@@ -314,25 +299,25 @@
             </intent-filter>
         </service>
 
-        <provider android:authorities="@string/system_content_provider_authority"
-                  android:name="org.servalproject.provider.MainContentProvider"
+        <provider android:authorities="@string/system_content_provider_authority" 
+            	  android:name=".provider.MainContentProvider"
                   android:exported="false"
                   android:enabled="true"
                   android:label="@string/system_content_provider_label"
                   />
 
-        <provider android:authorities="org.servalproject.files"
-                  android:name="org.servalproject.provider.RhizomeProvider"
+        <!--provider android:authorities="org.sza.co.csir.walkiemesh.provider.RhizomeProvideroid:name="org.servalproject.provider.RhizomeProvider"
                   android:exported="true"
                   android:enabled="true"
                   android:label="Shared Files"
-                  />
-        
-        <activity android:name="org.servalproject.messages.MessagesListActivity"
+                  /-->
+                  
+        <activity android:name=".messages.MessagesListActivity"
 		    android:screenOrientation="portrait"
             android:launchMode="singleTop"
-		    ></activity>
-		<activity android:name="org.servalproject.messages.ShowConversationActivity"
+            ></activity>
+        
+          <activity  android:name=".messages.ShowConversationActivity"
 		    android:screenOrientation="portrait"
 		    >
 		    <intent-filter>
@@ -344,21 +329,14 @@
 		        <action android:name="android.intent.action.SENDTO" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="smsto" />
-			</intent-filter>
+                </intent-filter>
 		</activity>
-		<activity android:name="org.servalproject.ui.ContactsActivity"
+		<activity android:name=".ui.ContactsActivity"
 		    android:screenOrientation="portrait"
             android:launchMode="singleTop"
 		    ></activity>
 		
-		<!--  
-		<activity android:name=".ourPeerlist"
-		    android:screenOrientation="portrait"
-		    android:launchMode="singleTop"
-		    ></activity>
-		 -->
-		
-		<service android:enabled="true" android:exported="true" android:name="org.servalproject.system.StateCheckIntentService">
+		<service android:enabled="true" android:exported="true" android:name="system.StateCheckIntentService">
 			<intent-filter>
 				<action android:name="org.servalproject.ACTION_STATE_CHECK"/>
 			</intent-filter>
