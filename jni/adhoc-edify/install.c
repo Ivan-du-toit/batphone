@@ -341,7 +341,7 @@ char* WhiteListMacsFn(const char* name, State* state, int argc, Expr* argv[]) {
     while(fgets(buffer, sizeof(buffer), macs) && returncode == 0) {
         /* process the line */
       sscanf(buffer, "%s", buffer);
-      sprintf(command,"/data/data/org.servalproject/bin/iptables -t nat -I PREROUTING -m mac --mac-source %s -j ACCEPT", buffer);
+      sprintf(command,"/data/data/za.co.csir.walkiemesh/bin/iptables -t nat -I PREROUTING -m mac --mac-source %s -j ACCEPT", buffer);
       //fprintf(stdout, "Enabling whitelist for: %s \n", command);
       returncode = system(command);
     }
