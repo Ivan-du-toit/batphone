@@ -26,10 +26,10 @@ import android.util.Log;
 
 public class AccountService extends Service {
 	private static AccountAuthenticator authenticator=null;
-	public static final String ACTION_ADD = "org.servalproject.account.add";
-	public static final String TYPE = "org.servalproject.account";
+	public static final String ACTION_ADD = "za.co.csir.walkiemesh.account.add";
+	public static final String TYPE = "za.co.csir.walkiemesh.account";
 
-	public static final String SID_FIELD_MIMETYPE = "vnd.android.cursor.item/org.servalproject.unsecuredSid";
+	public static final String SID_FIELD_MIMETYPE = "vnd.android.cursor.item/za.co.csir.walkiemesh.unsecuredSid";
 
 	public static long getContactId(ContentResolver resolver,
 			SubscriberId sid) {

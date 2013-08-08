@@ -31,7 +31,6 @@ import za.co.csir.walkiemesh.servald.Peer;
 import za.co.csir.walkiemesh.servald.PeerListService;
 import za.co.csir.walkiemesh.servald.ServalD;
 import za.co.csir.walkiemesh.servald.SubscriberId;
-
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -51,7 +50,7 @@ public class IncomingMeshMS {
 	private static final String TAG = "IncomingMeshMS";
 	private static final int NOTIFICATION_ID = 999;
 
-	public static final String NEW_MESSAGES = "org.servalproject.meshms.NEW";
+	public static final String NEW_MESSAGES = "za.co.csir.walkiemesh.meshms.NEW";
 	// add new incoming messages
 	public static void addMessages(List<SimpleMeshMS> messages) {
 		if (messages.size() == 0)

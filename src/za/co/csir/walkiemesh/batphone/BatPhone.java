@@ -5,7 +5,6 @@ import za.co.csir.walkiemesh.ServalBatPhoneApplication.State;
 import za.co.csir.walkiemesh.rhizome.Rhizome;
 import za.co.csir.walkiemesh.system.WifiAdhocControl;
 import za.co.csir.walkiemesh.system.WifiApControl;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
@@ -19,7 +18,7 @@ import android.util.Log;
 public class BatPhone extends BroadcastReceiver {
 
 	static BatPhone instance = null;
-	public static final String ACTION_MODE_ALARM = "org.servalproject.MODE_ALARM";
+	public static final String ACTION_MODE_ALARM = "za.co.csir.walkiemesh.MODE_ALARM";
 
 	public BatPhone() {
 		instance = this;
