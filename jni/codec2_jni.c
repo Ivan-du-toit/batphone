@@ -1,7 +1,7 @@
 #include "codec2/codec2.h"
 #include <jni.h>
 
-JNIEXPORT jlong JNICALL Java_org_servalproject_audio_Codec2_init(JNIEnv *env, jobject this, jint mode)
+JNIEXPORT jlong JNICALL Java_za_co_csir_walkiemesh_audio_Codec2_init(JNIEnv *env, jobject this, jint mode)
 {
   switch(mode){
   case 3200:
@@ -29,13 +29,13 @@ JNIEXPORT jlong JNICALL Java_org_servalproject_audio_Codec2_init(JNIEnv *env, jo
   return (jlong)c2;
 }
 
-JNIEXPORT void JNICALL Java_org_servalproject_audio_Codec2_release(JNIEnv *env, jobject this, jlong ptr)
+JNIEXPORT void JNICALL Java_za_co_csir_walkiemesh_audio_Codec2_release(JNIEnv *env, jobject this, jlong ptr)
 {
   struct CODEC2 *c2=(struct CODEC2*)ptr;
   codec2_destroy(c2);
 }
 
-JNIEXPORT jint JNICALL Java_org_servalproject_audio_Codec2_encode(JNIEnv *env, jobject this, jlong ptr, jint data_size, jbyteArray in, jbyteArray out)
+JNIEXPORT jint JNICALL Java_za_co_csir_walkiemesh_audio_Codec2_encode(JNIEnv *env, jobject this, jlong ptr, jint data_size, jbyteArray in, jbyteArray out)
 {
   struct CODEC2 *c2=(struct CODEC2*)ptr;
   int input_block_size = codec2_samples_per_frame(c2)*2;
@@ -62,7 +62,7 @@ JNIEXPORT jint JNICALL Java_org_servalproject_audio_Codec2_encode(JNIEnv *env, j
   return output_block_size * block_count;
 }
 
-JNIEXPORT jint JNICALL Java_org_servalproject_audio_Codec2_decode(JNIEnv *env, jobject this, jlong ptr, jint data_size, jbyteArray in, jbyteArray out)
+JNIEXPORT jint JNICALL Java_za_co_csir_walkiemesh_audio_Codec2_decode(JNIEnv *env, jobject this, jlong ptr, jint data_size, jbyteArray in, jbyteArray out)
 {
   struct CODEC2 *c2=(struct CODEC2*)ptr;
   int output_block_size = codec2_samples_per_frame(c2)*2;
