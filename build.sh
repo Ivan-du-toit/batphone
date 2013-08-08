@@ -27,7 +27,7 @@ if [ -z "$(which android)" ]; then
 fi
 
 # Update android SDK directory in local.properties.
-target_id=$(android list targets | grep '"android-14"' | awk '{print $2}')
+target_id=$(android list targets | grep '"android-17"' | awk '{print $2}')
 if [ -z "$target_id" ]; then
   echo "Unable to find 'android-14' target."
   echo "Have you installed the Android SDK for API level 8?"

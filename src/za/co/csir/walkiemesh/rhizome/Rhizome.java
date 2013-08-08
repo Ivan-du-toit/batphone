@@ -34,17 +34,16 @@ import za.co.csir.walkiemesh.meshms.SimpleMeshMS;
 import za.co.csir.walkiemesh.provider.RhizomeProvider;
 import za.co.csir.walkiemesh.rhizome.RhizomeManifest.MissingField;
 import za.co.csir.walkiemesh.rhizome.RhizomeMessageLogEntry.TooLongException;
+import za.co.csir.walkiemesh.servald.AbstractId.InvalidBinaryException;
 import za.co.csir.walkiemesh.servald.BundleId;
 import za.co.csir.walkiemesh.servald.FileHash;
 import za.co.csir.walkiemesh.servald.Identity;
 import za.co.csir.walkiemesh.servald.ServalD;
+import za.co.csir.walkiemesh.servald.ServalD.RhizomeAddFileResult;
+import za.co.csir.walkiemesh.servald.ServalD.RhizomeExtractFileResult;
 import za.co.csir.walkiemesh.servald.ServalDFailureException;
 import za.co.csir.walkiemesh.servald.ServalDInterfaceError;
 import za.co.csir.walkiemesh.servald.SubscriberId;
-import za.co.csir.walkiemesh.servald.AbstractId.InvalidBinaryException;
-import za.co.csir.walkiemesh.servald.ServalD.RhizomeAddFileResult;
-import za.co.csir.walkiemesh.servald.ServalD.RhizomeExtractFileResult;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -56,8 +55,8 @@ public class Rhizome {
 	/** TAG for debugging */
 	public static final String TAG = "Rhizome";
 
-	public static final String ACTION_RECEIVE_FILE = "org.servalproject.rhizome.RECEIVE_FILE";
-	public static final String RECEIVE_PERMISSION = "org.servalproject.rhizome.RECEIVE_FILE";
+	public static final String ACTION_RECEIVE_FILE = "za.co.csir.walkiemesh.rhizome.RECEIVE_FILE";
+	public static final String RECEIVE_PERMISSION = "za.co.csir.walkiemesh.rhizome.RECEIVE_FILE";
 
 	/** Display a toast message in a toast.
 	 */

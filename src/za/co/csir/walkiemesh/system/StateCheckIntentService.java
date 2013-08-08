@@ -21,7 +21,6 @@ package za.co.csir.walkiemesh.system;
 
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication.State;
-
 import android.app.IntentService;
 import android.content.Intent;
 import android.util.Log;
@@ -59,7 +58,8 @@ public class StateCheckIntentService extends IntentService {
 		}
 
 		// check on the intent
-		if (intent.getAction().equals("org.servalproject.ACTION_STATE_CHECK") == false) {
+		if (intent.getAction().equals(
+				"za.co.csir.walkiemesh.ACTION_STATE_CHECK") == false) {
 			Log.w(TAG, "service called with the wrong intent");
 			return;
 		}
@@ -70,7 +70,7 @@ public class StateCheckIntentService extends IntentService {
 
 		// prepare a new intent
 		Intent mIntent = new Intent(
-				"org.servalproject.ACTION_STATE_CHECK_UPDATE");
+				"za.co.csir.walkiemesh.ACTION_STATE_CHECK_UPDATE");
 		mIntent.putExtra(
 				ServalBatPhoneApplication.EXTRA_STATE,
 				mState.ordinal());

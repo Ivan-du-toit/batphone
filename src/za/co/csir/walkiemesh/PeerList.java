@@ -25,12 +25,11 @@ import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.ConcurrentMap;
 
-
 import za.co.csir.Setup;
-import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication.State;
 import za.co.csir.walkiemesh.account.AccountService;
 import za.co.csir.walkiemesh.batphone.CallHandler;
+import za.co.csir.walkiemesh.servald.AbstractId.InvalidHexException;
 import za.co.csir.walkiemesh.servald.AbstractJniResults;
 import za.co.csir.walkiemesh.servald.IPeer;
 import za.co.csir.walkiemesh.servald.IPeerListListener;
@@ -40,7 +39,6 @@ import za.co.csir.walkiemesh.servald.PeerComparator;
 import za.co.csir.walkiemesh.servald.PeerListService;
 import za.co.csir.walkiemesh.servald.ServalD;
 import za.co.csir.walkiemesh.servald.SubscriberId;
-import za.co.csir.walkiemesh.servald.AbstractId.InvalidHexException;
 import za.co.csir.walkiemesh.ui.Networks;
 import android.app.Activity;
 import android.app.ListActivity;
@@ -76,14 +74,14 @@ public class PeerList extends ListActivity {
 	private boolean displayed = false;
 	private static final String TAG = "PeerList";
 
-	public static final String PICK_PEER_INTENT = "org.servalproject.PICK_FROM_PEER_LIST";
+	public static final String PICK_PEER_INTENT = "za.co.csir.walkiemesh.PICK_FROM_PEER_LIST";
 
-	public static final String CONTACT_NAME = "org.servalproject.PeerList.contactName";
-	public static final String CONTACT_ID = "org.servalproject.PeerList.contactId";
-	public static final String DID = "org.servalproject.PeerList.did";
-	public static final String SID = "org.servalproject.PeerList.sid";
-	public static final String NAME = "org.servalproject.PeerList.name";
-	public static final String RESOLVED = "org.servalproject.PeerList.resolved";
+	public static final String CONTACT_NAME = "za.co.csir.walkiemesh.PeerList.contactName";
+	public static final String CONTACT_ID = "za.co.csir.walkiemesh.PeerList.contactId";
+	public static final String DID = "za.co.csir.walkiemesh.PeerList.did";
+	public static final String SID = "za.co.csir.walkiemesh.PeerList.sid";
+	public static final String NAME = "za.co.csir.walkiemesh.PeerList.name";
+	public static final String RESOLVED = "za.co.csir.walkiemesh.PeerList.resolved";
 
 	private boolean returnResult = false;
 

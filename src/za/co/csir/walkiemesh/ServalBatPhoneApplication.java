@@ -46,21 +46,19 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.batphone.CallHandler;
 import za.co.csir.walkiemesh.meshms.IncomingMeshMS;
 import za.co.csir.walkiemesh.rhizome.Rhizome;
 import za.co.csir.walkiemesh.servald.BundleId;
 import za.co.csir.walkiemesh.servald.Identity;
 import za.co.csir.walkiemesh.servald.ServalD;
-import za.co.csir.walkiemesh.servald.ServalDMonitor;
 import za.co.csir.walkiemesh.servald.ServalD.RhizomeManifestResult;
+import za.co.csir.walkiemesh.servald.ServalDMonitor;
 import za.co.csir.walkiemesh.shell.Shell;
 import za.co.csir.walkiemesh.system.BluetoothService;
 import za.co.csir.walkiemesh.system.ChipsetDetection;
 import za.co.csir.walkiemesh.system.CoreTask;
 import za.co.csir.walkiemesh.system.NetworkManager;
-
 import android.app.Application;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -128,9 +126,9 @@ public class ServalBatPhoneApplication extends Application {
 		}
 	}
 
-	public static final String ACTION_STATE = "org.servalproject.ACTION_STATE";
+	public static final String ACTION_STATE = "za.co.csir.walkiemesh.ACTION_STATE";
 	public static final String EXTRA_STATE = "state";
-	public static final String ACTION_STATUS = "org.servalproject.ACTION_STATUS";
+	public static final String ACTION_STATUS = "za.co.csir.walkiemesh.ACTION_STATUS";
 	public static final String EXTRA_STATUS = "status";
 	private State state = State.Broken;
 	private String status = "Off";
@@ -185,7 +183,7 @@ public class ServalBatPhoneApplication extends Application {
 		List<Identity> identities = Identity.getIdentities();
 		if (identities.size() >= 1) {
 			Identity main = identities.get(0);
-			Intent intent = new Intent("org.servalproject.SET_PRIMARY");
+			Intent intent = new Intent("za.co.csir.walkiemesh.SET_PRIMARY");
 			intent.putExtra("did", main.getDid());
 			intent.putExtra("sid", main.subscriberId.toString());
 			this.sendStickyBroadcast(intent);
