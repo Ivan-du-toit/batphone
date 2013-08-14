@@ -331,6 +331,7 @@ public class PeerList extends ListActivity {
 				stopMeshService();
 			return true;
 		case R.id.menu_exit:
+			stopMeshService();
 			finish();
 			return true;
 		case R.id.menu_settings:
