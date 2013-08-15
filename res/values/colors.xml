@@ -18,28 +18,21 @@
   General Public License
  * along with this source code; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- -->
+-->
 <resources>
-    
-     <!-- Serval UI -->
-     <color name="white">#ffffffff</color>
-     <color name="green">#859554</color>
-     <color name="palegreen">#cccc99ff</color>
-     <color name="red">#ff00</color>
-     <color name="black">#000000ff</color>
-     <color name="grey">#f999</color>
-     <color name="customblack">#ff000000</color>
-     <color name="orange">#ffcc7948</color>   
-    
-<!--     SIPDroid In-call UI - to be removed
-    <color name="incall_textConnected">#99CE3F</color>  green
-    <color name="incall_textConnected">#40CEA3</color>   
-    <color name="incall_textEnded">#FF6072</color> red
-    <color name="incall_textOnHold">#FF9524</color> orange
-    
-    SIPDroid DTMF Dialer
-    <color name="dtmf_dialer_background">#333333</color> green
-    <color name="recording_time_elapsed_text">#FFFFFFFF</color>
-    <color name="recording_time_remaining_text">#FFFF0033</color> -->
 
-  </resources>
+    <!-- Serval UI -->
+    <color name="white">#ffffffff</color>
+    <color name="green">#859554</color>
+    <color name="palegreen">#cccc99ff</color>
+    <color name="red">#ff00</color>
+    <color name="black">#000000ff</color>
+    <color name="grey">#f999</color>
+    <color name="customblack">#ff000000</color>
+    <color name="orange">#ffcc7948</color>
+    
+    <!--  ICS background gradient colors -->
+    <color name="ics_background_start">#ff020202</color>
+    <color name="ics_background_end">#ff272D33</color>
+
+</resources>
