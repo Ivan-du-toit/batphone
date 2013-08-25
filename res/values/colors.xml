@@ -31,6 +31,9 @@
     <color name="customblack">#ff000000</color>
     <color name="orange">#ffcc7948</color>
     
+    <color name="answerButtonGreen">#0F870F</color>
+    <color name="declineButtonRed">#D20A0A</color>
+    
     <!--  ICS background gradient colors -->
     <color name="ics_background_start">#ff020202</color>
     <color name="ics_background_end">#ff272D33</color>

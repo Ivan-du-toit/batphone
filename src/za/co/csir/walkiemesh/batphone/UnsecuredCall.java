@@ -5,7 +5,6 @@ import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.account.AccountService;
 import za.co.csir.walkiemesh.servald.PeerListService;
 import za.co.csir.walkiemesh.servald.SubscriberId;
-
 import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -25,6 +24,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class UnsecuredCall extends Activity {
@@ -48,8 +48,8 @@ public class UnsecuredCall extends Activity {
 		}
 	};
 	private Button endButton;
-	private Button incomingEndButton;
-	private Button incomingAnswerButton;
+	private ImageView incomingEndButton;
+	private ImageView incomingAnswerButton;
 	private Chronometer chron;
 
 	private String stateSummary()
@@ -190,7 +190,7 @@ public class UnsecuredCall extends Activity {
 			}
 		});
 
-		incomingEndButton = (Button) this.findViewById(R.id.incoming_decline);
+		incomingEndButton = (ImageView) this.findViewById(R.id.incoming_decline);
 		incomingEndButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -198,7 +198,7 @@ public class UnsecuredCall extends Activity {
 			}
 		});
 
-		incomingAnswerButton = (Button) this
+		incomingAnswerButton = (ImageView) this
 				.findViewById(R.id.answer_button_incoming);
 		incomingAnswerButton.setOnClickListener(new OnClickListener() {
 			@Override

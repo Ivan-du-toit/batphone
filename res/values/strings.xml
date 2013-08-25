@@ -117,6 +117,9 @@
 	<string name="answer">Answer</string>
 	<string name="decline">Decline</string>
 	<string name="endcall">End Call</string>
+	<string name="calling">Calling&#8230;</string>
+	<string name="contentDescAnswerButton">Answer the incoming call.</string>
+	<string name="contentDescDeclineButton">Decline the incoming call.</string>
 	
 	<!-- Peerlist screen -->
 	<string name="contentDescCall">Call the contact</string>
