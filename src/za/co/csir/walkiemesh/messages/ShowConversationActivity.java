@@ -21,7 +21,7 @@ package za.co.csir.walkiemesh.messages;
 
 import java.io.IOException;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.account.AccountService;
 import za.co.csir.walkiemesh.meshms.IncomingMeshMS;

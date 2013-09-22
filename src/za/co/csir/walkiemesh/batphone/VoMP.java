@@ -1,6 +1,6 @@
 package za.co.csir.walkiemesh.batphone;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 
 public class VoMP {
 	/*

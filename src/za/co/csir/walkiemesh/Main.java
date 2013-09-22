@@ -20,7 +20,7 @@
 
 package za.co.csir.walkiemesh;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.Setup;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication.State;
 import za.co.csir.walkiemesh.account.AccountService;

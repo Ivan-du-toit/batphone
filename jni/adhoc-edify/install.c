@@ -341,7 +341,7 @@ char* WhiteListMacsFn(const char* name, State* state, int argc, Expr* argv[]) {
     while(fgets(buffer, sizeof(buffer), macs) && returncode == 0) {
         /* process the line */
       sscanf(buffer, "%s", buffer);
-      sprintf(command,"/data/data/za.co.csir/bin/iptables -t nat -I PREROUTING -m mac --mac-source %s -j ACCEPT", buffer);
+      sprintf(command,"/data/data/za.co.csir.walkiemesh/bin/iptables -t nat -I PREROUTING -m mac --mac-source %s -j ACCEPT", buffer);
       //fprintf(stdout, "Enabling whitelist for: %s \n", command);
       returncode = system(command);
     }
@@ -441,7 +441,7 @@ char* GetCfgFn(const char* name, State* state, int argc, Expr* argv[]) {
     char* result = NULL;
     char* buffer = NULL;
     char* key;
-    char *filename = "/data/data/za.co.csir/conf/adhoc.conf";
+    char *filename = "/data/data/za.co.csir.walkiemesh/conf/adhoc.conf";
     if (ReadArgs(state, argv, 1, &key) < 0) {
         return NULL;
     }

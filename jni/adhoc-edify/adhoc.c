@@ -31,7 +31,7 @@ extern int yyparse(Expr** root, int* error_count);
 
 
 // Where in the package we expect to find the edify script to execute.
-#define SCRIPT_NAME "/data/data/za.co.csir/conf/adhoc.edify"
+#define SCRIPT_NAME "/data/data/za.co.csir.walkiemesh/conf/adhoc.edify"
 
 int main(int argc, char** argv) {
 FILE *f;
@@ -91,7 +91,7 @@ FILE *f;
 
     UpdaterInfo updater_info;
     updater_info.cmd_pipe = cmd_pipe;
-    updater_info.log_fd = fopen ("/data/data/za.co.csir/var/adhoc.log","w");
+    updater_info.log_fd = fopen ("/data/data/za.co.csir.walkiemesh/var/adhoc.log","w");
 
     updater_info.action = strdup(argv[1]);
 

@@ -19,7 +19,7 @@
  */
 package za.co.csir.walkiemesh.ui;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import android.app.Activity;
 import android.os.Bundle;
 

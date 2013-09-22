@@ -27,7 +27,7 @@ package za.co.csir.walkiemesh;
 
 import java.io.IOException;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.shell.Shell;
 import za.co.csir.walkiemesh.system.LogOutput;
 import za.co.csir.walkiemesh.system.NetworkManager;

@@ -27,7 +27,7 @@ package za.co.csir.walkiemesh.ui;
 
 import java.io.File;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.PreparationWizard;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import android.app.Activity;

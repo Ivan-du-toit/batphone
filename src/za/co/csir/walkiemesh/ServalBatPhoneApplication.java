@@ -46,7 +46,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.batphone.CallHandler;
 import za.co.csir.walkiemesh.meshms.IncomingMeshMS;
 import za.co.csir.walkiemesh.rhizome.Rhizome;

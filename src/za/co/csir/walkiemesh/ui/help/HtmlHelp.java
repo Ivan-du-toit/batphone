@@ -18,7 +18,7 @@
  */
 package za.co.csir.walkiemesh.ui.help;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import android.annotation.SuppressLint;
 import android.app.Activity;

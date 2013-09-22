@@ -21,7 +21,7 @@ package za.co.csir.walkiemesh.messages;
 
 import java.util.Comparator;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.meshms.IncomingMeshMS;
 import za.co.csir.walkiemesh.meshms.SimpleMeshMS;
 import za.co.csir.walkiemesh.provider.MessagesContract;

@@ -25,7 +25,7 @@
 
 package za.co.csir.walkiemesh.ui;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.servald.Identity;
 import android.app.Activity;
 import android.content.Intent;

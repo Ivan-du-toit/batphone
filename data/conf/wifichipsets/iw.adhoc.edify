@@ -4,7 +4,7 @@
 # activate WiFi interface
 log(
   run_program(
-    "/data/data/za.co.csir/bin/ifconfig " +
+    "/data/data/za.co.csir.walkiemesh/bin/ifconfig " +
           getcfg("wifi.interface") + " up"
   ), "Activating WiFi interface"
 );
@@ -12,7 +12,7 @@ log(
 # configure IP/netmask
 log(
   run_program(
-    "/data/data/za.co.csir/bin/ifconfig " +
+    "/data/data/za.co.csir.walkiemesh/bin/ifconfig " +
           getcfg("wifi.interface") + " " + getcfg("ip.gateway") +
           " netmask " + getcfg("ip.netmask")
   ), "Configuring " + getcfg("wifi.interface")
@@ -21,7 +21,7 @@ log(
 # set wifi mode ad-hoc (IBSS)
 log(
   run_program(
-    "/data/data/za.co.csir/bin/iw dev " +
+    "/data/data/za.co.csir.walkiemesh/bin/iw dev " +
           getcfg("wifi.interface") + " set type ibss"
   ), "Setting ad-hoc mode"
 );
@@ -29,7 +29,7 @@ log(
 # leave any existing IBSS before configuring a new one
 log(
   run_program(
-    "/data/data/za.co.csir/bin/iw dev " +
+    "/data/data/za.co.csir.walkiemesh/bin/iw dev " +
           getcfg("wifi.interface") + " ibss leave"
   ), "Leaving previous associated IBSS"
 );
@@ -37,7 +37,7 @@ log(
 # join a new IBSS
 log(
   run_program(
-    "/data/data/za.co.csir/bin/iw dev " +
+    "/data/data/za.co.csir.walkiemesh/bin/iw dev " +
           getcfg("wifi.interface") + " ibss join " +
           getcfg("wifi.essid") + " " + getcfg("wifi.frequency")
   ), "Joining IBSS"

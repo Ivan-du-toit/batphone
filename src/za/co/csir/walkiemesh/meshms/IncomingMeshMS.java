@@ -21,7 +21,7 @@ package za.co.csir.walkiemesh.meshms;
 
 import java.util.List;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.messages.MessageUtils;
 import za.co.csir.walkiemesh.messages.MessagesListActivity;

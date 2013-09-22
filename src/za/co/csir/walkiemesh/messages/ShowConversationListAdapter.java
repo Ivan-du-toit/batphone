@@ -22,7 +22,7 @@ package za.co.csir.walkiemesh.messages;
 
 import java.text.DateFormat;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.provider.MessagesContract;
 import za.co.csir.walkiemesh.servald.Identity;
 import za.co.csir.walkiemesh.servald.SubscriberId;

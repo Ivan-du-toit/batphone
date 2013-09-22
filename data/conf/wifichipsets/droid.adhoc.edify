@@ -1,17 +1,17 @@
 module_loaded("tiwlan_drv") || log(insmod("/system/lib/modules/tiwlan_drv.ko", ""), "Loading tiwlan_drv.ko module");
 run_program("/system/bin/wlan_loader -f /system/etc/wifi/fw_wlan1271.bin -e " +
-              "/proc/calibration -i /data/data/za.co.csir/conf/tiwlan.ini");
+              "/proc/calibration -i /data/data/za.co.csir.walkiemesh/conf/tiwlan.ini");
 sleep("3");
-log(run_program("/data/data/za.co.csir/bin/ifconfig " + getcfg("wifi.interface") + " " +
+log(run_program("/data/data/za.co.csir.walkiemesh/bin/ifconfig " + getcfg("wifi.interface") + " " +
               getcfg("ip.gateway") + " netmask " + getcfg("ip.netmask")) &&
-              run_program("/data/data/za.co.csir/bin/ifconfig " + getcfg("wifi.interface") + " up"),  "Activating WiFi interface");
-log(run_program("/data/data/za.co.csir/bin/iwconfig " + getcfg("wifi.interface")
+              run_program("/data/data/za.co.csir.walkiemesh/bin/ifconfig " + getcfg("wifi.interface") + " up"),  "Activating WiFi interface");
+log(run_program("/data/data/za.co.csir.walkiemesh/bin/iwconfig " + getcfg("wifi.interface")
                   + " mode ad-hoc"), "Setting ad-hoc mode");
-log(run_program("/data/data/za.co.csir/bin/iwconfig " + getcfg("wifi.interface")
+log(run_program("/data/data/za.co.csir.walkiemesh/bin/iwconfig " + getcfg("wifi.interface")
                   + " essid " + getcfg("wifi.essid")), "Setting essid");
-log(run_program("/data/data/za.co.csir/bin/iwconfig " + getcfg("wifi.interface")
+log(run_program("/data/data/za.co.csir.walkiemesh/bin/iwconfig " + getcfg("wifi.interface")
                   + " channel " + getcfg("wifi.channel")), "Setting channel");
-run_program("/data/data/za.co.csir/bin/iwconfig " + getcfg("wifi.interface")
+run_program("/data/data/za.co.csir.walkiemesh/bin/iwconfig " + getcfg("wifi.interface")
                   + " commit");
-run_program("/data/data/za.co.csir/bin/iwconfig "+getcfg("wifi.interface")+" mode ad-hoc essid "+getcfg("wifi.essid")+ " persist &");
+run_program("/data/data/za.co.csir.walkiemesh/bin/iwconfig "+getcfg("wifi.interface")+" mode ad-hoc essid "+getcfg("wifi.essid")+ " persist &");
  

@@ -3,7 +3,7 @@ package za.co.csir.walkiemesh.ui;
 import java.util.ArrayList;
 import java.util.List;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.Control;
 import za.co.csir.walkiemesh.PreparationWizard;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;

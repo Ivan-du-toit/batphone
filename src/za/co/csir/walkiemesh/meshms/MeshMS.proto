@@ -18,7 +18,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  */
 // define some options
-option java_package = "org.servalproject.meshms";
+option java_package = "za.co.csir.walkiemesh.meshms";
 option java_outer_classname = "MeshMSProtobuf";
 
 // define the main message

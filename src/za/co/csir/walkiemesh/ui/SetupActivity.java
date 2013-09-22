@@ -32,7 +32,7 @@
 
 package za.co.csir.walkiemesh.ui;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import android.app.Dialog;
 import android.app.ProgressDialog;

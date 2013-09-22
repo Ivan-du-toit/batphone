@@ -30,7 +30,7 @@ package za.co.csir.walkiemesh.wizard;
 
 import java.util.List;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.PeerList;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication.State;

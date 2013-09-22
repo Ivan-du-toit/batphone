@@ -19,7 +19,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="za.co.csir" android:versionName="@string/version"
+      package="za.co.csir.walkiemesh" android:versionName="@string/version"
       android:installLocation="auto">
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="14"/>
     
@@ -97,16 +97,16 @@
     
     
     <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" 
-		android:name=".walkiemesh.ServalBatPhoneApplication">
+		android:name=".ServalBatPhoneApplication">
         
-        <activity android:name=".walkiemesh.PreparationWizard"
+        <activity android:name=".PreparationWizard"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.PREPARATION" />
 
             </intent-filter>
         </activity>
-        <activity android:name=".walkiemesh.Main"
+        <activity android:name=".Main"
             android:screenOrientation="portrait"
             android:launchMode="singleTask"
             >
@@ -115,45 +115,45 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter-->
         </activity>
-        <activity android:name=".walkiemesh.ui.ShareUsActivity"
+        <activity android:name=".ui.ShareUsActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
-  		<activity android:name=".walkiemesh.ui.SettingsScreenActivity"
+  		<activity android:name=".ui.SettingsScreenActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />     
             
-    <activity android:name=".walkiemesh.ui.AccountsSettingsActivity"
+    <activity android:name=".ui.AccountsSettingsActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />   
-    <activity android:name=".walkiemesh.ui.Networks"
+    <activity android:name=".ui.Networks"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
         />
-    <activity android:name=".walkiemesh.ui.AdhocPreferences"
+    <activity android:name=".ui.AdhocPreferences"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />             
-    <activity android:name=".walkiemesh.ui.SetupActivity"
+    <activity android:name=".ui.SetupActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />             
       
- 		<activity android:name=".walkiemesh.ui.help.HtmlHelp"
+ 		<activity android:name=".ui.help.HtmlHelp"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
-        		<activity android:name=".walkiemesh.ui.help.LicenceScreen"
+        		<activity android:name=".ui.help.LicenceScreen"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
- 		<activity android:name=".walkiemesh.ui.help.DonateScreen"
+ 		<activity android:name=".ui.help.DonateScreen"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
-		<activity android:name=".walkiemesh.ui.help.AboutScreen"
+		<activity android:name=".ui.help.AboutScreen"
            	android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
@@ -162,18 +162,18 @@
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
-        <activity android:name=".walkiemesh.wizard.SetPhoneNumber"
+        <activity android:name=".wizard.SetPhoneNumber"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
 
-        <activity android:name=".walkiemesh.batphone.CallDirector"
+        <activity android:name=".batphone.CallDirector"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"
             android:taskAffinity="org.servalproject.Call"
             />
 
-        <activity android:name=".walkiemesh.batphone.UnsecuredCall"
+        <activity android:name=".batphone.UnsecuredCall"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"
             android:taskAffinity="org.servalproject.Call"
@@ -185,17 +185,17 @@
 	        </intent-filter>
 	    </activity>
 	    
-        <activity android:name=".walkiemesh.batphone.CompletedCall"
+        <activity android:name=".batphone.CompletedCall"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"
             android:taskAffinity="org.servalproject.Call"
             />
 
-        <activity android:name=".walkiemesh.LogActivity" 
+        <activity android:name=".LogActivity" 
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
-        <activity android:name=".walkiemesh.PeerList" 
+        <activity android:name=".PeerList" 
             android:label="Peer List"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
@@ -209,7 +209,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-	    <receiver android:name=".walkiemesh.batphone.BatPhone">
+	    <receiver android:name=".batphone.BatPhone">
 	        <intent-filter android:priority="1">
 	        	<action android:name="android.intent.action.NEW_OUTGOING_CALL" />
  	        </intent-filter>
@@ -233,10 +233,10 @@
 	        </intent-filter>
 	    </receiver>
 		 
-	    <service android:name=".walkiemesh.Control"
+	    <service android:name=".Control"
 	             android:enabled="true"/>
 	    
-	    <service android:name=".walkiemesh.account.AccountService">  
+	    <service android:name=".account.AccountService">  
 	        <intent-filter>  
 	            <action android:name="android.accounts.AccountAuthenticator" />
 	        </intent-filter>  
@@ -244,7 +244,7 @@
 	    </service>
 	    
 	    <service 
-	        android:name=".walkiemesh.account.SyncService"
+	        android:name=".account.SyncService"
 	        android:process=":contacts"
 	        android:exported="true">
 			<intent-filter>
@@ -260,27 +260,27 @@
 	    
 
         <!-- Rhizome application activities -->
-        <activity android:name=".walkiemesh.rhizome.RhizomeMain" 
+        <activity android:name=".rhizome.RhizomeMain" 
             android:label="@string/rhizome_main_appname"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
-        <activity android:name=".walkiemesh.rhizome.RhizomeList" 
+        <activity android:name=".rhizome.RhizomeList" 
             android:label="@string/rhizome_list_appname"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
-        <activity android:name=".walkiemesh.rhizome.RhizomeSaved" 
+        <activity android:name=".rhizome.RhizomeSaved" 
             android:label="@string/rhizome_saved_appname"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
-    	<activity android:name=".walkiemesh.rhizome.RhizomeStorage" 
+    	<activity android:name=".rhizome.RhizomeStorage" 
     	    android:screenOrientation="portrait"
             android:launchMode="singleTop"
     	    />
 
-    	<activity android:name=".walkiemesh.rhizome.ShareFileActivity" 
+    	<activity android:name=".rhizome.ShareFileActivity" 
     	    android:label="@string/sf_name">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
@@ -296,7 +296,7 @@
         -->
 
 		<service android:label="@string/rhizome_share_file_permission_label" 
-		    android:name=".walkiemesh.rhizome.RhizomeIntentService" 
+		    android:name=".rhizome.RhizomeIntentService" 
 		    android:permission="org.servalproject.rhizome.ADD_FILE">
 			<intent-filter>
 				<action android:name="org.servalproject.rhizome.ADD_FILE"/>
@@ -304,7 +304,7 @@
 		</service>
 
         <!-- serval meshms service -->
-        <service android:name=".walkiemesh.meshms.OutgoingMeshMS"
+        <service android:name=".meshms.OutgoingMeshMS"
                  android:enabled="true"
                  android:exported="true"
                  android:permission="org.servalproject.meshms.SEND_MESHMS"
@@ -315,24 +315,24 @@
         </service>
 
         <provider android:authorities="@string/system_content_provider_authority"
-                  android:name=".walkiemesh.provider.MainContentProvider"
+                  android:name=".provider.MainContentProvider"
                   android:exported="false"
                   android:enabled="true"
                   android:label="@string/system_content_provider_label"
                   />
 
         <provider android:authorities="org.servalproject.files"
-                  android:name=".walkiemesh.provider.RhizomeProvider"
+                  android:name=".provider.RhizomeProvider"
                   android:exported="true"
                   android:enabled="true"
                   android:label="Shared Files"
                   />
         
-        <activity android:name=".walkiemesh.messages.MessagesListActivity"
+        <activity android:name=".messages.MessagesListActivity"
 		    android:screenOrientation="portrait"
             android:launchMode="singleTop"
 		    ></activity>
-		<activity android:name=".walkiemesh.messages.ShowConversationActivity"
+		<activity android:name=".messages.ShowConversationActivity"
 		    android:screenOrientation="portrait"
 		    >
 		    <intent-filter>
@@ -346,7 +346,7 @@
                 <data android:scheme="smsto" />
 			</intent-filter>
 		</activity>
-		<activity android:name=".walkiemesh.ui.ContactsActivity"
+		<activity android:name=".ui.ContactsActivity"
 		    android:screenOrientation="portrait"
             android:launchMode="singleTop"
 		    ></activity>
@@ -358,7 +358,7 @@
 		    ></activity>
 		 -->
 		
-		<service android:enabled="true" android:exported="true" android:name=".walkiemesh.system.StateCheckIntentService">
+		<service android:enabled="true" android:exported="true" android:name=".system.StateCheckIntentService">
 			<intent-filter>
 				<action android:name="org.servalproject.ACTION_STATE_CHECK"/>
 			</intent-filter>

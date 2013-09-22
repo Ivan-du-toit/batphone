@@ -20,7 +20,7 @@
 
 package za.co.csir.walkiemesh.rhizome;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.servald.BundleId;
 import za.co.csir.walkiemesh.servald.ServalD;

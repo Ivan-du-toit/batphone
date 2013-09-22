@@ -23,7 +23,7 @@ package za.co.csir.walkiemesh.rhizome;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.servald.ServalD;
 import android.app.Activity;

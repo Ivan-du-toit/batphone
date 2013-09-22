@@ -3,7 +3,7 @@ package za.co.csir.walkiemesh.ui;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-import za.co.csir.R;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.system.NetworkConfiguration;
 import android.app.Activity;
