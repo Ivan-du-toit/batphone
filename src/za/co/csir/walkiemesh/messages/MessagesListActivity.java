@@ -294,7 +294,7 @@ public class MessagesListActivity extends ListActivity implements
 			}
 
 			Intent mIntent = new Intent(this,
-					org.servalproject.messages.ShowConversationActivity.class);
+					za.co.csir.walkiemesh.messages.ShowConversationActivity.class);
 			mIntent.putExtra("threadId", mThreadId);
 			mIntent.putExtra("recipient", otherParty);
 			startActivity(mIntent);
@@ -324,7 +324,7 @@ public class MessagesListActivity extends ListActivity implements
 			imm.hideSoftInputFromWindow(actv.getWindowToken(), 0);
 			// show the show conversation activity
 			Intent mIntent = new Intent(this,
-					org.servalproject.messages.ShowConversationActivity.class);
+					za.co.csir.walkiemesh.messages.ShowConversationActivity.class);
 			mIntent.putExtra("recipient", recipient.sid.toString());
 			startActivity(mIntent);
 			break;

@@ -77,7 +77,7 @@ public class ContactsActivity extends Activity implements OnClickListener {
 			break;
 		case R.id.contacts_ui_lookup_serval_contact:
 			// show the peer list screen
-			mIntent = new Intent(this, org.servalproject.PeerList.class);
+			mIntent = new Intent(this, za.co.csir.walkiemesh.PeerList.class);
 			startActivityForResult(mIntent, PEER_LIST_RETURN);
 			break;
 		default:

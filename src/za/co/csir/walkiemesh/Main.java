@@ -77,14 +77,14 @@ public class Main extends Activity {
 				break;
 			case R.id.messageLabel:
 				startActivity(new Intent(getApplicationContext(),
-						org.servalproject.messages.MessagesListActivity.class));
+						za.co.csir.walkiemesh.messages.MessagesListActivity.class));
 				break;
 			case R.id.contactsLabel:
 				myPeerList();
 				break;
 			case R.id.settingsLabel:
 				startActivity(new Intent(getApplicationContext(),
-						org.servalproject.ui.SettingsScreenActivity.class));
+						za.co.csir.walkiemesh.ui.SettingsScreenActivity.class));
 				break;
 			case R.id.sharingLabel:
 				startActivity(new Intent(getApplicationContext(),
@@ -190,7 +190,7 @@ public class Main extends Activity {
 
 		Intent mIntent;
 
-		mIntent = new Intent(this, org.servalproject.PeerList.class);
+		mIntent = new Intent(this, za.co.csir.walkiemesh.PeerList.class);
 		startActivityForResult(mIntent, PEER_LIST_RETURN);
 	}
 

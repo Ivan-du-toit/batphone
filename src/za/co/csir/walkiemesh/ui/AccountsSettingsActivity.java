@@ -49,7 +49,7 @@ public class AccountsSettingsActivity extends Activity {
 			public void onClick(View arg0) {
 				AccountsSettingsActivity.this.startActivity(new Intent(
 						AccountsSettingsActivity.this,
-						org.servalproject.wizard.SetPhoneNumber.class));
+						za.co.csir.walkiemesh.wizard.SetPhoneNumber.class));
 
 			}
 		});

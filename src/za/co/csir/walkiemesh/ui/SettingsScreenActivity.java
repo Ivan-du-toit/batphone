@@ -63,7 +63,7 @@ public class SettingsScreenActivity extends Activity {
 			public void onClick(View arg0) {
 				SettingsScreenActivity.this.startActivity(new Intent(
 						SettingsScreenActivity.this,
-						org.servalproject.LogActivity.class));
+						za.co.csir.walkiemesh.LogActivity.class));
 			}
 		});
 
