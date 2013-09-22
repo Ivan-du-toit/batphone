@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Iterator;
 
-import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication.State;
 import za.co.csir.walkiemesh.batphone.CallHandler;
 import za.co.csir.walkiemesh.batphone.VoMP;
@@ -17,6 +16,8 @@ import za.co.csir.walkiemesh.servald.ServalDFailureException;
 import za.co.csir.walkiemesh.servald.ServalDMonitor;
 import za.co.csir.walkiemesh.servald.SubscriberId;
 import za.co.csir.walkiemesh.system.WifiControl;
+
+
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;

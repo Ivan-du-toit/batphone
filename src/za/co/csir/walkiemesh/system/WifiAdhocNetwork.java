@@ -11,6 +11,7 @@ import java.util.Properties;
 
 import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
+
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;

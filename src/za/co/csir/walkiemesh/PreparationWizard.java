@@ -27,13 +27,13 @@ package za.co.csir.walkiemesh;
 
 import java.io.IOException;
 
-import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.shell.Shell;
 import za.co.csir.walkiemesh.system.LogOutput;
 import za.co.csir.walkiemesh.system.NetworkManager;
 import za.co.csir.walkiemesh.system.WifiControl;
 import za.co.csir.walkiemesh.system.WifiControl.Completion;
 import za.co.csir.walkiemesh.system.WifiControl.CompletionReason;
+
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;

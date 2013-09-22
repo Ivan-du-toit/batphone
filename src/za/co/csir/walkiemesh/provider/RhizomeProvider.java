@@ -11,8 +11,8 @@ import za.co.csir.walkiemesh.rhizome.RhizomeManifest_File;
 import za.co.csir.walkiemesh.servald.BundleId;
 import za.co.csir.walkiemesh.servald.Identity;
 import za.co.csir.walkiemesh.servald.ServalD;
-import za.co.csir.walkiemesh.servald.SubscriberId;
 import za.co.csir.walkiemesh.servald.ServalD.RhizomeAddFileResult;
+import za.co.csir.walkiemesh.servald.SubscriberId;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

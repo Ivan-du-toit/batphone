@@ -2,13 +2,14 @@ package za.co.csir.walkiemesh.batphone;
 
 import java.util.ArrayList;
 
-import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.PeerListAdapter;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.servald.DnaResult;
 import za.co.csir.walkiemesh.servald.IPeer;
 import za.co.csir.walkiemesh.servald.LookupResults;
 import za.co.csir.walkiemesh.servald.ServalD;
+
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.AsyncTask;

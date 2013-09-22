@@ -35,6 +35,7 @@ import java.util.NoSuchElementException;
 import java.util.regex.Pattern;
 
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
+
 import android.net.LocalSocket;
 import android.net.LocalSocketAddress;
 import android.os.Process;
@@ -44,7 +45,7 @@ public class ServalDMonitor implements Runnable {
 	private final ServalBatPhoneApplication app;
 	private LocalSocket socket = null;
 	private LocalSocketAddress serverSocketAddress = new LocalSocketAddress(
-			"za.co.csirwalkiemesh.servald.monitor.socket",
+			"org.servalproject.servald.monitor.socket",
 			LocalSocketAddress.Namespace.ABSTRACT);
 
 	// Use a filesystem binding point from inside our app dir at our end,

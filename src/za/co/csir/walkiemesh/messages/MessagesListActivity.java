@@ -29,6 +29,7 @@ import za.co.csir.walkiemesh.provider.ThreadsContract;
 import za.co.csir.walkiemesh.servald.IPeerListListener;
 import za.co.csir.walkiemesh.servald.Peer;
 import za.co.csir.walkiemesh.servald.PeerListService;
+
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.app.ListActivity;
@@ -293,7 +294,7 @@ public class MessagesListActivity extends ListActivity implements
 			}
 
 			Intent mIntent = new Intent(this,
-					za.co.csir.walkiemesh.messages.ShowConversationActivity.class);
+					org.servalproject.messages.ShowConversationActivity.class);
 			mIntent.putExtra("threadId", mThreadId);
 			mIntent.putExtra("recipient", otherParty);
 			startActivity(mIntent);
@@ -323,7 +324,7 @@ public class MessagesListActivity extends ListActivity implements
 			imm.hideSoftInputFromWindow(actv.getWindowToken(), 0);
 			// show the show conversation activity
 			Intent mIntent = new Intent(this,
-					za.co.csir.walkiemesh.messages.ShowConversationActivity.class);
+					org.servalproject.messages.ShowConversationActivity.class);
 			mIntent.putExtra("recipient", recipient.sid.toString());
 			startActivity(mIntent);
 			break;

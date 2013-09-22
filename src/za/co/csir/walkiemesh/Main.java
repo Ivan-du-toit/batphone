@@ -20,8 +20,6 @@
 
 package za.co.csir.walkiemesh;
 
-import za.co.csir.walkiemesh.R;
-import za.co.csir.Setup;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication.State;
 import za.co.csir.walkiemesh.account.AccountService;
 import za.co.csir.walkiemesh.rhizome.RhizomeMain;
@@ -29,6 +27,10 @@ import za.co.csir.walkiemesh.servald.Identity;
 import za.co.csir.walkiemesh.ui.Networks;
 import za.co.csir.walkiemesh.ui.ShareUsActivity;
 import za.co.csir.walkiemesh.ui.help.HtmlHelp;
+
+import za.co.csir.Setup;
+
+
 import android.app.Activity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -75,14 +77,14 @@ public class Main extends Activity {
 				break;
 			case R.id.messageLabel:
 				startActivity(new Intent(getApplicationContext(),
-						za.co.csir.walkiemesh.messages.MessagesListActivity.class));
+						org.servalproject.messages.MessagesListActivity.class));
 				break;
 			case R.id.contactsLabel:
 				myPeerList();
 				break;
 			case R.id.settingsLabel:
 				startActivity(new Intent(getApplicationContext(),
-						za.co.csir.walkiemesh.ui.SettingsScreenActivity.class));
+						org.servalproject.ui.SettingsScreenActivity.class));
 				break;
 			case R.id.sharingLabel:
 				startActivity(new Intent(getApplicationContext(),
@@ -188,7 +190,7 @@ public class Main extends Activity {
 
 		Intent mIntent;
 
-		mIntent = new Intent(this, za.co.csir.walkiemesh.PeerList.class);
+		mIntent = new Intent(this, org.servalproject.PeerList.class);
 		startActivityForResult(mIntent, PEER_LIST_RETURN);
 	}
 

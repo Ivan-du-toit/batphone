@@ -5,6 +5,7 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 import za.co.csir.walkiemesh.R;
+
 import android.content.Context;
 import android.net.wifi.WifiConfiguration;
 

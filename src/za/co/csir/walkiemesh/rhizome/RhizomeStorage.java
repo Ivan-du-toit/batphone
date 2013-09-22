@@ -23,6 +23,7 @@ package za.co.csir.walkiemesh.rhizome;
 import java.text.NumberFormat;
 
 import za.co.csir.walkiemesh.R;
+
 import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;

@@ -19,12 +19,13 @@
 package za.co.csir.walkiemesh.ui.help;
 
 import za.co.csir.walkiemesh.R;
+
 import android.app.Activity;
 import android.os.Bundle;
 
 /**
  * help screens - main interface guide
- *
+ * 
  * @author Romana Challans <romana@servalproject.org>
  */
 

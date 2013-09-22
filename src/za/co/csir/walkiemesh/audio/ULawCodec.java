@@ -1,5 +1,6 @@
 package za.co.csir.walkiemesh.audio;
 
+import za.co.csir.walkiemesh.batphone.VoMP;
 
 import uk.co.mmscomputing.sound.ALawCompressor;
 import uk.co.mmscomputing.sound.ALawDecompressor;
@@ -7,7 +8,6 @@ import uk.co.mmscomputing.sound.Compressor;
 import uk.co.mmscomputing.sound.Decompressor;
 import uk.co.mmscomputing.sound.ULawDecompressor;
 import uk.co.mmscomputing.sound.uLawCompressor;
-import za.co.csir.walkiemesh.batphone.VoMP;
 
 public class ULawCodec extends Codec {
 

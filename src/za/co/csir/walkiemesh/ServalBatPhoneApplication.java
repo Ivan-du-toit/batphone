@@ -46,7 +46,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.batphone.CallHandler;
 import za.co.csir.walkiemesh.meshms.IncomingMeshMS;
 import za.co.csir.walkiemesh.rhizome.Rhizome;
@@ -60,6 +59,7 @@ import za.co.csir.walkiemesh.system.BluetoothService;
 import za.co.csir.walkiemesh.system.ChipsetDetection;
 import za.co.csir.walkiemesh.system.CoreTask;
 import za.co.csir.walkiemesh.system.NetworkManager;
+
 import android.app.Application;
 import android.app.Notification;
 import android.app.NotificationManager;

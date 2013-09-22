@@ -9,6 +9,7 @@ import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.servald.Identity;
 import za.co.csir.walkiemesh.servald.Peer;
 import za.co.csir.walkiemesh.servald.ServalD;
+
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;

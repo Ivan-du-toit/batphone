@@ -27,6 +27,7 @@ import za.co.csir.walkiemesh.provider.ThreadsContract;
 import za.co.csir.walkiemesh.servald.Peer;
 import za.co.csir.walkiemesh.servald.PeerListService;
 import za.co.csir.walkiemesh.servald.SubscriberId;
+
 import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;

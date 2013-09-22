@@ -5,6 +5,7 @@ import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.account.AccountService;
 import za.co.csir.walkiemesh.servald.PeerListService;
 import za.co.csir.walkiemesh.servald.SubscriberId;
+
 import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;

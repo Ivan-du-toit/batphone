@@ -27,6 +27,7 @@ package za.co.csir.walkiemesh.ui;
 
 import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.servald.Identity;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -48,7 +49,7 @@ public class AccountsSettingsActivity extends Activity {
 			public void onClick(View arg0) {
 				AccountsSettingsActivity.this.startActivity(new Intent(
 						AccountsSettingsActivity.this,
-						za.co.csir.walkiemesh.wizard.SetPhoneNumber.class));
+						org.servalproject.wizard.SetPhoneNumber.class));
 
 			}
 		});

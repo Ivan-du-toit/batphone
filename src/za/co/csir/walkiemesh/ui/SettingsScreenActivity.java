@@ -27,9 +27,10 @@ package za.co.csir.walkiemesh.ui;
 
 import java.io.File;
 
-import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.PreparationWizard;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -62,7 +63,7 @@ public class SettingsScreenActivity extends Activity {
 			public void onClick(View arg0) {
 				SettingsScreenActivity.this.startActivity(new Intent(
 						SettingsScreenActivity.this,
-						za.co.csir.walkiemesh.LogActivity.class));
+						org.servalproject.LogActivity.class));
 			}
 		});
 

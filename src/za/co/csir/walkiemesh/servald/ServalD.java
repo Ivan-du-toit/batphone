@@ -29,7 +29,6 @@ import java.util.Map;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.rhizome.RhizomeManifest;
 import za.co.csir.walkiemesh.rhizome.RhizomeManifestParseException;
-
 import android.database.Cursor;
 import android.net.Uri;
 import android.util.Log;
@@ -44,7 +43,7 @@ public class ServalD
 
 	public static final String TAG = "ServalD";
 	private static long started = -1;
-	static boolean log = false;
+	static boolean log = true;
 
 	private ServalD() {
 	}
@@ -468,13 +467,13 @@ public class ServalD
 
 	/**
 	 * Export a manifest into a file at the given path.
-	 * 
+	 *
 	 * @param manifestId
 	 *            The manifest ID of the manifest to extract.
 	 * @param path
 	 *            The path of the file into which the manifest is to be written.
 	 * @return RhizomeExtractManifestResult
-	 * 
+	 *
 	 * @author Andrew Bettison <andrew@servalproject.com>
 	 */
 	public static RhizomeExtractManifestResult rhizomeExportManifest(BundleId manifestId, File path) throws ServalDFailureException, ServalDInterfaceError

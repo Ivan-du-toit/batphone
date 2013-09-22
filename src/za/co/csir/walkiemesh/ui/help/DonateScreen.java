@@ -19,6 +19,7 @@
 package za.co.csir.walkiemesh.ui.help;
 
 import za.co.csir.walkiemesh.R;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
@@ -30,7 +31,7 @@ import android.widget.Button;
 
 /**
  * help screens - donate screen
- *
+ * 
  * @author Romana Challans <romana@servalproject.org>
  */
 

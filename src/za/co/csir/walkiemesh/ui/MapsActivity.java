@@ -20,6 +20,7 @@
 package za.co.csir.walkiemesh.ui;
 
 import za.co.csir.walkiemesh.R;
+
 import android.app.Activity;
 import android.os.Bundle;
 
@@ -30,7 +31,7 @@ public class MapsActivity extends Activity {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see android.app.Activity#onCreate(android.os.Bundle)
 	 */
 	@Override

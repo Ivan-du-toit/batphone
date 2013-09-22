@@ -26,6 +26,7 @@ import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.provider.MessagesContract;
 import za.co.csir.walkiemesh.servald.Identity;
 import za.co.csir.walkiemesh.servald.SubscriberId;
+
 import android.database.Cursor;
 import android.text.format.DateUtils;
 import android.text.format.Time;
