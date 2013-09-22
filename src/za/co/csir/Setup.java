@@ -3,6 +3,7 @@ package za.co.csir;
 import java.util.List;
 
 import za.co.csir.walkiemesh.PeerList;
+import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.account.AccountService;
 import za.co.csir.walkiemesh.servald.Identity;
