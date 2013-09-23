@@ -1,0 +1,140 @@
+#!/bin/bash
+
+# Tests for Serval DNA server operations.
+#
+# Copyright 2012 Serval Project, Inc.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+source "${0%/*}/../testframework.sh"
+source "${0%/*}/../testdefs.sh"
+
+setup() {
+   setup_servald
+   assert_no_servald_processes
+}
+
+setup_interfaces() {
+   >$TFWTMP/dummy
+   executeOk_servald config \
+      set interfaces "+>$TFWTMP/dummy" \
+      set monitor.socket "org.servalproject.servald.monitor.socket.$TFWUNIQUE.$instance_name" \
+      set mdp.socket "org.servalproject.servald.mdp.socket.$TFWUNIQUE.$instance_name"
+}
+
+teardown() {
+   get_servald_server_pidfile && stop_servald_server
+   kill_all_servald_processes
+   assert_no_servald_processes
+}
+
+doc_StartCreateInstanceDir="Starting server creates instance directory"
+setup_StartCreateInstanceDir() {
+   setup
+   assert [ ! -d "$SERVALINSTANCE_PATH" ]
+}
+test_StartCreateInstanceDir() {
+   executeOk $servald start
+   assert [ -d "$SERVALINSTANCE_PATH" ]
+}
+
+doc_StartLogfile="Starting server gives no errors"
+setup_StartLogfile() {
+   setup
+   executeOk_servald config set log.file.directory_path "$PWD/log"
+}
+test_StartLogfile() {
+   executeOk_servald start
+   sleep 0.1
+   assert [ -s log/*.log ]
+   tfw_cat log/*.log
+}
+
+doc_StartNoInterfaces="Starting server with no configured interfaces gives warning"
+setup_StartNoInterfaces() {
+   setup
+}
+test_StartNoInterfaces() {
+   start_servald_server
+   sleep 0.1
+   assertGrep --message="log contains 'no interfaces' warning" "$instance_servald_log" '^WARN:.*interfaces'
+   tfw_cat "$instance_servald_log"
+}
+
+doc_StartNoErrors="Starting server on dummy interface gives no errors"
+setup_StartNoErrors() {
+   setup
+   setup_interfaces
+}
+test_StartNoErrors() {
+   start_servald_server
+   sleep 0.1
+   assert_servald_server_no_errors
+   tfw_cat "$instance_servald_log"
+}
+
+doc_StartStart="Start server while already running"
+setup_StartStart() {
+   setup
+   setup_interfaces
+   start_servald_server
+}
+test_StartStart() {
+   execute --exit-status=10 $servald start
+   extract_stdout_keyvalue start_instance_path 'instancepath' '.*'
+   extract_stdout_keyvalue start_pid 'pid' '[0-9]\+'
+   assert [ "$start_instance_path" = "$SERVALINSTANCE_PATH" ]
+   assert [ "$servald_pid" = "$start_pid" ]
+}
+
+doc_StartStopFast="Stop server before it finishes starting"
+setup_StartStopFast() {
+   setup
+   setup_interfaces
+   export SERVALD_SERVER_START_DELAY=250
+}
+test_StartStopFast() {
+   start_servald_server
+   stop_servald_server
+}
+
+doc_NoZombie="Server process does not become a zombie"
+setup_NoZombie() {
+   setup
+   setup_interfaces
+   export SERVALD_START_POST_SLEEP=1000
+   servald_start &
+   start_pid=$!
+   wait_until get_servald_server_pidfile servald_pid
+   assert kill -0 $start_pid
+}
+test_NoZombie() {
+   tfw_log "Before kill -KILL $servald_pid"
+   ps -l $start_pid $servald_pid
+   assert kill -KILL $servald_pid
+   tfw_log "After kill -KILL $servald_pid"
+   ps -l $start_pid $servald_pid
+   wait_until --timeout=2 ! kill -0 $servald_pid 2>/dev/null
+   tfw_log "After waiting"
+   ps -l $start_pid $servald_pid
+   assert --message="zombie servald process does not exist" ! kill -0 $servald_pid 2>/dev/null
+}
+teardown_NoZombie() {
+   kill -TERM $start_pid
+   kill_all_servald_processes
+   assert_no_servald_processes
+}
+
+runTests "$@"

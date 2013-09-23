@@ -19,7 +19,7 @@
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
  -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="org.servalproject" android:versionName="@string/version"
+      package="za.co.csir.walkiemesh" android:versionName="@string/version"
       android:installLocation="auto">
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="14"/>
     
@@ -97,7 +97,7 @@
     
     
     <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" 
-		android:name=".ServalBatPhoneApplication">
+		android:name="ServalBatPhoneApplication">
         
         <activity android:name="PreparationWizard"
             android:screenOrientation="portrait">
@@ -106,7 +106,7 @@
 
             </intent-filter>
         </activity>
-        <activity android:name=".Main"
+        <activity android:name="Main"
             android:screenOrientation="portrait"
             android:launchMode="singleTask"
             >
@@ -195,7 +195,7 @@
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
-        <activity android:name="org.servalproject.PeerList" 
+        <activity android:name="PeerList" 
             android:label="Peer List"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
@@ -209,7 +209,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-	    <receiver android:name="org.servalproject.batphone.BatPhone">
+	    <receiver android:name=".batphone.BatPhone">
 	        <intent-filter android:priority="1">
 	        	<action android:name="android.intent.action.NEW_OUTGOING_CALL" />
  	        </intent-filter>

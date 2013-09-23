@@ -2,11 +2,11 @@ package za.co.csir;
 
 import java.util.List;
 
-import org.servalproject.PeerList;
-import org.servalproject.R;
-import org.servalproject.ServalBatPhoneApplication;
-import org.servalproject.account.AccountService;
-import org.servalproject.servald.Identity;
+import za.co.csir.walkiemesh.PeerList;
+import za.co.csir.walkiemesh.R;
+import za.co.csir.walkiemesh.ServalBatPhoneApplication;
+import za.co.csir.walkiemesh.account.AccountService;
+import za.co.csir.walkiemesh.servald.Identity;
 
 import android.accounts.Account;
 import android.accounts.AccountAuthenticatorResponse;
