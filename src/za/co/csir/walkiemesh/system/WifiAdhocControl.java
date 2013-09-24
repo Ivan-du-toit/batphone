@@ -13,7 +13,6 @@ import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.shell.CommandLog;
 import za.co.csir.walkiemesh.shell.Shell;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -29,7 +28,7 @@ public class WifiAdhocControl {
 	private int state = ADHOC_STATE_DISABLED;
 	private WifiAdhocNetwork config;
 
-	public static final String ADHOC_STATE_CHANGED_ACTION = "org.servalproject.ADHOC_STATE_CHANGED_ACTION";
+	public static final String ADHOC_STATE_CHANGED_ACTION = "za.co.csir.walkiemesh.ADHOC_STATE_CHANGED_ACTION";
 	public static final String EXTRA_SSID = "extra_ssid";
 	public static final String EXTRA_STATE = "extra_state";
 	public static final String EXTRA_PREVIOUS_STATE = "extra_previous_state";

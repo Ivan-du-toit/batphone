@@ -1612,7 +1612,8 @@ za.co.csir.walkiemesh.meshms.MeshMSProtobuf.MeshMS.ContentElem, za.co.csir.walki
       "peInt\030\004 \001(\005\022\021\n\ttimestamp\030\005 \001(\003\022$\n\007conten" +
       "t\030\006 \003(\0132\023.MeshMS.ContentElem\032=\n\013ContentE" +
       "lem\022\014\n\004type\030\001 \001(\t\022\017\n\007typeInt\030\002 \001(\005\022\017\n\007co" +
-      "ntent\030\003 \001(\tB*\n\030org.servalproject.meshmsB" +
+						"ntent\030\003 \001(\tB*\n\030za.co.csir.walkiemesh.meshmsB"
+						+
       "\016MeshMSProtobuf"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =

@@ -33,7 +33,6 @@ import java.io.FileNotFoundException;
 import za.co.csir.walkiemesh.servald.Identity;
 import za.co.csir.walkiemesh.servald.ServalD;
 import za.co.csir.walkiemesh.servald.ServalD.RhizomeAddFileResult;
-
 import android.app.IntentService;
 import android.content.Intent;
 import android.net.Uri;
@@ -63,7 +62,7 @@ public class RhizomeIntentService extends IntentService {
 						"service called without an intent");
 
 			if (!intent.getAction()
-					.equals("org.servalproject.rhizome.ADD_FILE"))
+					.equals("za.co.csir.walkiemesh.rhizome.ADD_FILE"))
 				throw new IllegalArgumentException(
 						"service called with incorrect intent action");
 

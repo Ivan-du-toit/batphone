@@ -5,7 +5,6 @@ import java.util.List;
 
 import za.co.csir.walkiemesh.Control;
 import za.co.csir.walkiemesh.servald.AbstractId.InvalidHexException;
-
 import android.content.Context;
 import android.content.Intent;
 import android.telephony.PhoneNumberUtils;
@@ -87,7 +86,7 @@ public class Identity {
 		Control.reloadConfig();
 
 		if (main) {
-			Intent intent = new Intent("org.servalproject.SET_PRIMARY");
+			Intent intent = new Intent("za.co.csir.walkiemesh.SET_PRIMARY");
 			intent.putExtra("did", this.did);
 			intent.putExtra("sid", this.subscriberId.toString());
 			context.sendStickyBroadcast(intent);

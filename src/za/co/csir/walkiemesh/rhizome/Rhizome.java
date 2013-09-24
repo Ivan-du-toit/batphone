@@ -44,7 +44,6 @@ import za.co.csir.walkiemesh.servald.ServalD.RhizomeExtractFileResult;
 import za.co.csir.walkiemesh.servald.ServalDFailureException;
 import za.co.csir.walkiemesh.servald.ServalDInterfaceError;
 import za.co.csir.walkiemesh.servald.SubscriberId;
-
 import android.content.Intent;
 import android.database.Cursor;
 import android.net.Uri;
@@ -56,8 +55,8 @@ public class Rhizome {
 	/** TAG for debugging */
 	public static final String TAG = "Rhizome";
 
-	public static final String ACTION_RECEIVE_FILE = "org.servalproject.rhizome.RECEIVE_FILE";
-	public static final String RECEIVE_PERMISSION = "org.servalproject.rhizome.RECEIVE_FILE";
+	public static final String ACTION_RECEIVE_FILE = "za.co.csir.walkiemesh.rhizome.RECEIVE_FILE";
+	public static final String RECEIVE_PERMISSION = "za.co.csir.walkiemesh.rhizome.RECEIVE_FILE";
 
 	/** Display a toast message in a toast.
 	 */

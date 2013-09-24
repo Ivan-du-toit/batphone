@@ -16,8 +16,6 @@ import za.co.csir.walkiemesh.servald.ServalDFailureException;
 import za.co.csir.walkiemesh.servald.ServalDMonitor;
 import za.co.csir.walkiemesh.servald.SubscriberId;
 import za.co.csir.walkiemesh.system.WifiControl;
-
-
 import android.app.Notification;
 import android.app.PendingIntent;
 import android.app.Service;
@@ -145,7 +143,7 @@ public class Control extends Service {
 		if (multicastLock == null)
 		{
 			WifiManager wm = (WifiManager) getSystemService(Context.WIFI_SERVICE);
-			multicastLock = wm.createMulticastLock("org.servalproject");
+			multicastLock = wm.createMulticastLock("za.co.csir.walkiemesh");
 		}
 
 		if (wifiOn) {

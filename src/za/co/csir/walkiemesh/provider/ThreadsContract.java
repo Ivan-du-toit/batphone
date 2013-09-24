@@ -42,14 +42,14 @@ public class ThreadsContract implements BaseColumns {
 	 * content type for a list of items
 	 */
 	public static final String CONTENT_TYPE_LIST =
-			"vnd.android.cursor.dir/vnd.org.servalproject.provider."
+			"vnd.android.cursor.dir/vnd.za.co.csir.walkiemesh.provider."
 			+ CONTENT_URI_PATH;
 
 	/**
 	 * content type for an individual item
 	 */
 	public static final String CONTENT_TYPE_ITEM =
-			"vnd.android.cursor.item/vnd.org.servalproject.provider."
+			"vnd.android.cursor.item/vnd.za.co.csir.walkiemesh.provider."
 			+ CONTENT_URI_PATH;
 
 
