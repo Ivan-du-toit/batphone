@@ -1,7 +1,7 @@
 #include "opus.h"
 #include <jni.h>
 
-JNIEXPORT jlong JNICALL Java_org_servalproject_audio_Opus_encodercreate(JNIEnv *env, jobject this, jint sample_rate)
+JNIEXPORT jlong JNICALL Java_za_co_csir_walkiemesh_audio_Opus_encodercreate(JNIEnv *env, jobject this, jint sample_rate)
 {
   int error;
   OpusEncoder *enc = opus_encoder_create(sample_rate, 1, OPUS_APPLICATION_VOIP, &error);
@@ -9,25 +9,25 @@ JNIEXPORT jlong JNICALL Java_org_servalproject_audio_Opus_encodercreate(JNIEnv *
   return (jlong)enc;
 }
 
-JNIEXPORT void JNICALL Java_org_servalproject_audio_Opus_encoderbitrate(JNIEnv *env, jobject this, jlong ptr, jint bitrate)
+JNIEXPORT void JNICALL Java_za_co_csir_walkiemesh_audio_Opus_encoderbitrate(JNIEnv *env, jobject this, jlong ptr, jint bitrate)
 {
   OpusEncoder *enc = (OpusEncoder *)ptr;
   opus_encoder_ctl(enc, OPUS_SET_BITRATE(bitrate));
 }
 
-JNIEXPORT void JNICALL Java_org_servalproject_audio_Opus_encodercomplexity(JNIEnv *env, jobject this, jlong ptr, jint complexity)
+JNIEXPORT void JNICALL Java_za_co_csir_walkiemesh_audio_Opus_encodercomplexity(JNIEnv *env, jobject this, jlong ptr, jint complexity)
 {
   OpusEncoder *enc = (OpusEncoder *)ptr;
   opus_encoder_ctl(enc, OPUS_SET_COMPLEXITY(complexity));
 }
 
-JNIEXPORT void JNICALL Java_org_servalproject_audio_Opus_encoderdestroy(JNIEnv *env, jobject this, jlong ptr)
+JNIEXPORT void JNICALL Java_za_co_csir_walkiemesh_audio_Opus_encoderdestroy(JNIEnv *env, jobject this, jlong ptr)
 {
   OpusEncoder *enc = (OpusEncoder *)ptr;
   opus_encoder_destroy(enc);
 }
 
-JNIEXPORT jint JNICALL Java_org_servalproject_audio_Opus_encode(JNIEnv *env, jobject this, jlong ptr, jint data_size, jbyteArray in, jbyteArray out)
+JNIEXPORT jint JNICALL Java_za_co_csir_walkiemesh_audio_Opus_encode(JNIEnv *env, jobject this, jlong ptr, jint data_size, jbyteArray in, jbyteArray out)
 {
   OpusEncoder *enc = (OpusEncoder *)ptr;
 
@@ -47,7 +47,7 @@ JNIEXPORT jint JNICALL Java_org_servalproject_audio_Opus_encode(JNIEnv *env, job
   return ret;
 }
 
-JNIEXPORT jlong JNICALL Java_org_servalproject_audio_Opus_decodercreate(JNIEnv *env, jobject this, jint sample_rate)
+JNIEXPORT jlong JNICALL Java_za_co_csir_walkiemesh_audio_Opus_decodercreate(JNIEnv *env, jobject this, jint sample_rate)
 {
   int error;
   OpusDecoder *dec = opus_decoder_create(sample_rate, 1, &error);
@@ -55,13 +55,13 @@ JNIEXPORT jlong JNICALL Java_org_servalproject_audio_Opus_decodercreate(JNIEnv *
   return (jlong)dec;
 }
 
-JNIEXPORT jlong JNICALL Java_org_servalproject_audio_Opus_decoderdestroy(JNIEnv *env, jobject this, jlong ptr)
+JNIEXPORT jlong JNICALL Java_za_co_csir_walkiemesh_audio_Opus_decoderdestroy(JNIEnv *env, jobject this, jlong ptr)
 {
   OpusDecoder *dec = (OpusDecoder *)ptr;
   opus_decoder_destroy(dec);
 }
 
-JNIEXPORT jint JNICALL Java_org_servalproject_audio_Opus_decode(JNIEnv *env, jobject this, jlong ptr, jint data_size, jbyteArray in, jint output_size, jbyteArray out)
+JNIEXPORT jint JNICALL Java_za_co_csir_walkiemesh_audio_Opus_decode(JNIEnv *env, jobject this, jlong ptr, jint data_size, jbyteArray in, jint output_size, jbyteArray out)
 {
   OpusDecoder *dec = (OpusDecoder *)ptr;
 
