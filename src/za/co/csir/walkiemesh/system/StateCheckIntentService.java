@@ -21,6 +21,9 @@ package za.co.csir.walkiemesh.system;
 
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication.State;
+
+import za.co.csir.walkiemesh.ServalBatPhoneApplication;
+import za.co.csir.walkiemesh.ServalBatPhoneApplication.State;
 import android.app.IntentService;
 import android.content.Intent;
 import android.util.Log;

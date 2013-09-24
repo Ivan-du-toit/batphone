@@ -1,0 +1,81 @@
+#!/bin/bash
+
+# Tests for Serval DNA JNI entry points.
+#
+# Copyright 2012 Serval Project, Inc.
+#
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU General Public License
+# as published by the Free Software Foundation; either version 2
+# of the License, or (at your option) any later version.
+# 
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+# 
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+source "${0%/*}/../testframework.sh"
+source "${0%/*}/../testdefs.sh"
+source "${0%/*}/../testconfig.sh"
+
+setup() {
+   setup_servald
+   executeOk_servald config set debug.verbose 1
+   assert_echo_works
+   compile_java_classes
+   setup_servald_so
+}
+
+compile_java_classes() {
+   assert --message='Java compiler was detected by ./configure' [ "$JAVAC" ]
+   mkdir classes
+   assert $JAVAC -Xlint:unchecked -d classes "$servald_source_root"/java/za/co/csir/walkiemesh/servald/*.java
+   assert [ -r classes/za/co/csir/walkiemesh/servald/ServalD.class ]
+   assert [ -r classes/za/co/csir/walkiemesh/servald/IJniResults.class ]
+   assert [ -r classes/za/co/csir/walkiemesh/servald/ServalDTests.class ]
+}
+
+# Make sure that the normal echo command-line works, without JNI.
+assert_echo_works() {
+   executeOk $servald echo -e 'Hello,\ttab' 'world\0!'
+   assertStdoutIs -e 'Hello,\ttab\nworld\0!\n'
+}
+
+doc_Echo="Serval JNI echo Hello world"
+test_Echo() {
+   executeOk java "-Djava.library.path=$LD_LIBRARY_PATH" -classpath "$PWD/classes" za.co.csir.walkiemesh.servald.ServalD 'echo' '-e' 'Hello,\ttab' 'world\0!'
+   assertStdoutIs -e 'Hello,\ttab\nworld\0!\n'
+}
+
+doc_Delim="Serval non-JNI output delimiter environment variable"
+setup_Delim() {
+   setup_servald
+   assert_echo_works
+}
+test_Delim() {
+   export SERVALD_OUTPUT_DELIMITER=:::
+   executeOk $servald echo 'Hello,' 'world!'
+   assertStdoutIs 'Hello,:::world!:::'
+}
+
+doc_Repeat="Serval JNI repeated calls in same process"
+test_Repeat() {
+   executeOk --core-backtrace java "-Djava.library.path=$LD_LIBRARY_PATH" -classpath "$PWD/classes" za.co.csir.walkiemesh.servald.ServalDTests repeat 50 'echo' 'Hello,' 'world!'
+   assertStdoutLineCount '==' 50
+   assertStdoutGrep --matches=50 '^0:Hello,:world!$'
+}
+
+doc_NullArg="Serval JNI null arguments throw exception"
+test_NullArg() {
+   execute --core-backtrace java "-Djava.library.path=$LD_LIBRARY_PATH" -classpath "$PWD/classes" za.co.csir.walkiemesh.servald.ServalDTests nullArg 'echo' '(null)'
+   tfw_cat --stdout --stderr
+   assertExitStatus '!=' 0
+   assertStderrGrep 'NullPointerException: null element in argv'
+}
+
+
+runTests "$@"

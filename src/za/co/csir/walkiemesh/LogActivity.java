@@ -40,7 +40,6 @@ import java.io.InputStreamReader;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.List;
-
 import za.co.csir.walkiemesh.system.ChipsetDetection;
 import android.app.Activity;
 import android.os.Bundle;

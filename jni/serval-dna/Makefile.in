@@ -1,0 +1,119 @@
+NACL_BASE=	nacl/src
+include $(NACL_BASE)/nacl.mk
+SERVAL_BASE=
+include sourcefiles.mk
+include headerfiles.mk
+
+HAVE_ALSA= @HAVE_ALSA@
+ifeq (HAVE_ALSA,1)
+SERVAL_SOURCES+=	$(SERVAL_BASE)/audio_alsa.c
+endif
+
+HAVE_VOIPTEST=	@HAVE_VOIPTEST@
+ifeq ($(HAVE_VOIPTEST), 1)
+SERVAL_SOURCES+=	$(SERVAL_BASE)/pa_phone.c
+VOIPTEST_CFLAGS=-DHAVE_VOIPTEST=1
+endif
+
+SRCS=	$(NACL_SOURCES) $(SERVAL_SOURCES)
+
+MONITORCLIENTSRCS=conf.c \
+        conf_om.c \
+        conf_parse.c \
+        conf_schema.c \
+	dataformats.c \
+	log.c \
+        xprintf.c \
+	os.c \
+	mem.c \
+	monitor-client.c \
+        instance.c \
+	net.c \
+	str.c \
+	strbuf.c \
+	strbuf_helpers.c \
+	rotbuf.c
+
+MDPCLIENTSRCS=conf.c \
+        conf_om.c \
+        conf_parse.c \
+        conf_schema.c \
+	dataformats.c \
+	os.c \
+	mem.c \
+	log.c \
+        xprintf.c \
+	mdp_client.c \
+        instance.c \
+	net.c \
+	str.c \
+	strbuf.c \
+	strbuf_helpers.c \
+	rotbuf.c
+
+OBJS=	$(SRCS:.c=.o)
+SERVAL_OBJS=	$(SERVAL_SOURCES:.c=.o)
+MONITORCLIENTOBJS=	$(MONITORCLIENTSRCS:.c=.o)
+MDPCLIENTOBJS=	$(MDPCLIENTSRCS:.c=.o)
+
+
+LDFLAGS=@LDFLAGS@ @LIBS@ @PORTAUDIO_LIBS@ @SRC_LIBS@ @SPANDSP_LIBS@ @CODEC2_LIBS@ @PTHREAD_LIBS@
+
+CFLAGS=	-Isqlite-amalgamation-3070900 @CPPFLAGS@ @CFLAGS@ @PORTAUDIO_CFLAGS@ @SRC_CFLAGS@ @SPANDSP_CFLAGS@ @PTHREAD_CFLAGS@ $(VOIPTEST_CFLAGS) -Inacl/include
+CFLAGS+=-fPIC
+CFLAGS+=-Wall -Wno-unused-value
+# Solaris magic
+CFLAGS+=-DSHA2_USE_INTTYPES_H -D_XOPEN_SOURCE=600 -D_XOPEN_SOURCE_EXTENDED=1 -D__EXTENSIONS__=1
+# OSX magic to compensate for the Solaris magic
+CFLAGS+=-D_DARWIN_C_SOURCE
+-include Makefile.dbg
+
+DEFS=	@DEFS@
+
+all:	servald libmonitorclient.so libmonitorclient.a tfw_createfile
+
+sqlite-amalgamation-3070900/sqlite3.o:	sqlite-amalgamation-3070900/sqlite3.c
+	@echo CC $<
+	@$(CC) $(CFLAGS) $(DEFS) -c $< -o sqlite-amalgamation-3070900/sqlite3.o
+
+%.o:	%.c
+	@echo CC $<
+	@$(CC) $(CFLAGS) $(DEFS) -c $< -o $@
+
+$(SERVAL_OBJS): $(HDRS)
+$(MONITORCLIENTOBJS): $(HDRS)
+$(MDPCLIENTOBJS): $(HDRS)
+
+servald:	$(OBJS)
+	@echo LINK $@
+	@v=`./version_string.sh` \
+            && $(CC) $(CFLAGS) -Wall -o $@ -DSERVALD_VERSION="\"$$v\"" version_servald.c $(OBJS) $(LDFLAGS)
+
+directory_service: $(MDPCLIENTOBJS) directory_service.o
+	@echo LINK $@
+	@v=`./version_string.sh` \
+            && $(CC) $(CFLAGS) -Wall -o $@ -DSERVALD_VERSION="\"$$v\"" version_servald.c $(MDPCLIENTOBJS) directory_service.o $(LDFLAGS)
+
+tfw_createfile: tfw_createfile.o str.o strbuf.o strbuf_helpers.o
+	@echo LINK $@
+	@$(CC) $(CFLAGS) -Wall -o $@ tfw_createfile.o str.o strbuf.o strbuf_helpers.o
+
+# This does not build on 64 bit elf platforms as NaCL isn't built with -fPIC
+# DOC 20120615
+libservald.so: $(OBJS)
+	@echo LINK $@
+	@v=`./version_string.sh` && $(CC) $(CFLAGS) $(DEFS) -DSERVALD_VERSION="\"$$v\"" -Wall -o version_servald.o -c version_servald.c
+	@$(CC) $(CFLAGS) -Wall -shared -o $@ $(OBJS) version_servald.o $(LDFLAGS)
+
+libmonitorclient.so: $(MONITORCLIENTOBJS)
+	@echo LINK $@
+	@v=`./version_string.sh` && $(CC) $(CFLAGS) $(DEFS) -DSERVALD_VERSION="\"$$v\"" -Wall -o version_libmonitorclient.o -c version_servald.c
+	@$(CC) $(CFLAGS) -Wall -shared -o $@ $(MONITORCLIENTOBJS) version_libmonitorclient.o $(LDFLAGS)
+
+libmonitorclient.a: $(MONITORCLIENTOBJS)
+	@echo AR $@
+	@v=`./version_string.sh` && $(CC) $(CFLAGS) $(DEFS) -DSERVALD_VERSION="\"$$v\"" -Wall -o version_libmonitorclient.o -c version_servald.c
+	@$(AR) -cr $@ $(MONITORCLIENTOBJS) version_libmonitorclient.o
+
+clean:
+	@rm -f $(OBJS) servald libservald.so libmonitorclient.so version_libmonitorclient.o libmonitorclient.a

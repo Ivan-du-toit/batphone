@@ -1,5 +1,6 @@
 package za.co.csir.walkiemesh.audio;
 
+import za.co.csir.walkiemesh.batphone.VoMP;
 
 import uk.co.mmscomputing.sound.ALawCompressor;
 import uk.co.mmscomputing.sound.ALawDecompressor;

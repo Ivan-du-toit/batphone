@@ -1,0 +1,136 @@
+dnl Process this file with autoconf to produce a configure script.
+AC_INIT(servald, 0.9)
+AC_CONFIG_MACRO_DIR([m4])
+
+CPPFLAGS=-D_GNU_SOURCE
+
+dnl Set $host_os, which is needed by javac detection.
+AC_CANONICAL_SYSTEM
+
+dnl Init pkg-config
+PKG_PROG_PKG_CONFIG()
+
+dnl VoIP test app
+AC_ARG_ENABLE(voiptest,
+AS_HELP_STRING([--enable-voiptest], [Require VoIP test program (default: only build if dependencies are present)])
+AS_HELP_STRING([--disable-voiptest], [Disable VoIP test program (don't test for dependencies)])dnl'
+)
+
+have_voip=0
+AS_IF([test "x$enable_voiptest" != "xno"], [
+    have_voip=1
+    PKG_CHECK_MODULES([PORTAUDIO], [portaudio-2.0],,[have_voip=0])
+    PKG_CHECK_MODULES([SRC], [samplerate],,[have_voip=0])
+    PKG_CHECK_MODULES([SPANDSP], [spandsp],,[have_voip=0])
+    AC_CHECK_HEADER([codec2.h],, [have_voip=0])
+    AC_CHECK_LIB([codec2], [codec2_create], [AC_SUBST(CODEC2_LIBS, -lcodec2)], [have_voip=0])
+])
+AS_IF([test "x$enable_voiptest" = "xyes" -a "x$have_voip" != "x1" ], [
+    AC_MSG_ERROR([Missing VoIP dependencies])
+])
+AC_SUBST([HAVE_VOIPTEST], $have_voip)
+
+dnl Check for programs.
+AC_PROG_CC
+
+dnl Threading
+ACX_PTHREAD()
+
+dnl Math library functions for spandsp
+AC_CHECK_HEADERS([math.h], [INSERT_MATH_HEADER="#include <math.h>"])
+AC_CHECK_HEADERS([float.h])
+
+dnl Check for a working Java compiler, keep going if unsuccessful.
+dnl *** Kludge: override AC_MSG_ERROR because AC_PROG_JAVAC does not have
+dnl *** [if-found] and [if-not-found] action parameters.
+pushdef([AC_MSG_ERROR], defn([AC_MSG_WARN]))
+AC_PROG_JAVAC
+popdef([AC_MSG_ERROR])
+AC_SUBST([JAVAC])
+
+dnl Check for JNI includes, keep going if not present.
+if test -n "$JAVAC"; then
+    dnl *** Kludge: override AC_MSG_ERROR because AC_JNI_INCLUDE_DIR does not have
+    dnl *** [if-found] and [if-not-found] action parameters.
+    pushdef([AC_MSG_ERROR], defn([AC_MSG_WARN]))
+    AC_JNI_INCLUDE_DIR
+    for JNI_INCLUDE_DIR in $JNI_INCLUDE_DIRS; do
+    CPPFLAGS="$CPPFLAGS -I$JNI_INCLUDE_DIR"
+    done
+    popdef([AC_MSG_ERROR])
+fi
+
+AC_ARG_ENABLE(instance-path,"Set default instance path for servald",
+				  CPPFLAGS="$CPPFLAGS -DINSTANCE_PATH=\\\"$enableval\\\"")
+
+dnl XXX Isn't this pointless? we are always linked against libc
+AC_CHECK_LIB(c,srandomdev)
+
+dnl Solaris hides nanosleep here
+AC_CHECK_LIB(rt,nanosleep)
+
+AC_CHECK_FUNCS([getpeereid bcopy bzero bcmp])
+
+AC_CHECK_HEADERS(
+    stdio.h \
+    errno.h \
+    stdlib.h \
+    strings.h \
+    unistd.h \
+    string.h \
+    arpa/inet.h \
+    sys/socket.h \
+    sys/mman.h \
+    sys/time.h \
+    sys/ucred.h \
+    poll.h \
+    netdb.h \
+    linux/if.h \
+    linux/ioctl.h \
+    linux/netlink.h \
+    linux/rtnetlink.h \
+    net/if.h \
+    netinet/in.h \
+    ifaddrs.h \
+    net/route.h \
+    signal.h \
+    jni.h \
+    ucred.h \
+    sys/filio.h \
+    sys/endian.h \
+    sys/byteorder.h \
+    sys/sockio.h
+)
+
+dnl Check for ALSA
+AC_CHECK_HEADER([alsa/asoundlib.h], [have_alsa=1], [have_alsa=0])
+AS_IF([test x"$have_alsa" = "x1"], [AC_DEFINE([HAVE_ALSA_ASOUNDLIB_H])])
+AS_IF([test x"$have_alsa" = "x1"], [AC_SUBST(HAVE_ALSA,1)], [AC_SUBST(HAVE_ALSA,0)])
+
+AC_CHECK_LIB(m,sqrtf,[LDFLAGS="$LDFLAGS -lm"])
+AC_CHECK_LIB(nsl,callrpc,[LDFLAGS="$LDFLAGS -lnsl"])
+AC_CHECK_LIB(socket,socket,[LDFLAGS="$LDFLAGS -lsocket"])
+AC_CHECK_LIB(dl,dlopen,[LDFLAGS="$LDFLAGS -ldl"])
+
+dnl Some platforms still seem to lack the basic single precision trig and power related function.
+AC_SEARCH_LIBS([sinf], [m], AC_DEFINE([HAVE_SINF], [1], [Define to 1 if you have the sinf() function.]))
+AC_SEARCH_LIBS([cosf], [m], AC_DEFINE([HAVE_COSF], [1], [Define to 1 if you have the cosf() function.]))
+AC_SEARCH_LIBS([tanf], [m], AC_DEFINE([HAVE_TANF], [1], [Define to 1 if you have the tanf() function.]))
+AC_SEARCH_LIBS([asinf], [m], AC_DEFINE([HAVE_ASINF], [1], [Define to 1 if you have the asinf() function.]))
+AC_SEARCH_LIBS([acosf], [m], AC_DEFINE([HAVE_ACOSF], [1], [Define to 1 if you have the acosf() function.]))
+AC_SEARCH_LIBS([atanf], [m], AC_DEFINE([HAVE_ATANF], [1], [Define to 1 if you have the atanf() function.]))
+AC_SEARCH_LIBS([atan2f], [m], AC_DEFINE([HAVE_ATAN2F], [1], [Define to 1 if you have the atan2f() function.]))
+AC_SEARCH_LIBS([ceilf], [m], AC_DEFINE([HAVE_CEILF], [1], [Define to 1 if you have the ceilf() function.]))
+AC_SEARCH_LIBS([floorf], [m], AC_DEFINE([HAVE_FLOORF], [1], [Define to 1 if you have the floorf() function.]))
+AC_SEARCH_LIBS([powf], [m], AC_DEFINE([HAVE_POWF], [1], [Define to 1 if you have the powf() function.]))
+AC_SEARCH_LIBS([expf], [m], AC_DEFINE([HAVE_EXPF], [1], [Define to 1 if you have the expf() function.]))
+AC_SEARCH_LIBS([logf], [m], AC_DEFINE([HAVE_LOGF], [1], [Define to 1 if you have the logf() function.]))
+AC_SEARCH_LIBS([log10f], [m], AC_DEFINE([HAVE_LOG10F], [1], [Define to 1 if you have the log10f() function.]))
+
+dnl Check for strlcpy (eg Ubuntu)
+AC_SEARCH_LIBS([strlcpy], [], AC_DEFINE([HAVE_STRLCPY], [1], [Define to 1 if you have the strlcpy() function.]))
+
+AC_OUTPUT([
+    Makefile
+    testconfig.sh
+])

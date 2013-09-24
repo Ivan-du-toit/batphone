@@ -30,7 +30,6 @@ package za.co.csir.walkiemesh;
  */
 import java.util.List;
 
-import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.messages.ShowConversationActivity;
 import za.co.csir.walkiemesh.servald.IPeer;
 

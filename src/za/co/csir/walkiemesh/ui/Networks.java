@@ -10,11 +10,11 @@ import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication.State;
 import za.co.csir.walkiemesh.system.NetworkConfiguration;
 import za.co.csir.walkiemesh.system.NetworkManager;
+import za.co.csir.walkiemesh.system.NetworkManager.OnNetworkChange;
 import za.co.csir.walkiemesh.system.WifiAdhocControl;
 import za.co.csir.walkiemesh.system.WifiAdhocNetwork;
 import za.co.csir.walkiemesh.system.WifiApControl;
 import za.co.csir.walkiemesh.system.WifiApNetwork;
-import za.co.csir.walkiemesh.system.NetworkManager.OnNetworkChange;
 import za.co.csir.walkiemesh.ui.SimpleAdapter.ViewBinder;
 
 import android.app.Activity;

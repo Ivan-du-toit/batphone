@@ -59,6 +59,7 @@ import za.co.csir.walkiemesh.system.BluetoothService;
 import za.co.csir.walkiemesh.system.ChipsetDetection;
 import za.co.csir.walkiemesh.system.CoreTask;
 import za.co.csir.walkiemesh.system.NetworkManager;
+
 import android.app.Application;
 import android.app.Notification;
 import android.app.NotificationManager;
