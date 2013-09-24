@@ -24,7 +24,7 @@ HERE=`dirname "$0"`
 DEV=DEVICE
 APK="$HERE/bin/batphone.apk"
 APK_DEBUG="$HERE/bin/batphone-debug.apk"
-AHOME=/data/data/org.servalproject
+AHOME=/data/data/za.co.csir.walkiemesh
 ATMPFILE="/sdcard/.serval-$ME.tmp"
 SERVALD_BINS="
   $HERE/libs/armeabi/servald
@@ -53,19 +53,19 @@ usage() {
   echo	  "Actions (run in sequence on all devices in parallel):"
   echo	  "   ps                                  List all serval processes"
   echo	  "   sh|shell [cmd args... ;]            Run shell command as shell user (interactive if no cmd)"
-  echo	  "   ash|app-shell [cmd args... ;]       Run shell command as org.servalproject user (if installed)"
+  echo	  "   ash|app-shell [cmd args... ;]       Run shell command as za.co.csir.walkiemesh user (if installed)"
   echo	  "   su|sudo cmd [args... ;]             Run shell command as superuser"
-  echo	  "   au|app-uninstall                    Uninstall org.servalproject application"
+  echo	  "   au|app-uninstall                    Uninstall za.co.csir.walkiemesh application"
   echo	  "   ai|app-install                      Install $APK"
   echo	  "   aid|app-install-debug               Install $APK_DEBUG"
   echo	  "   ar|app-reinstall                    Reinstall $APK"
   echo	  "   ard|app-reinstall-debug             Reinstall $APK_DEBUG"
   echo	  "   aif|app-install-file FILE.apk       Install FILE.apk"
   echo	  "   arf|app-reinstall-file FILE.apk     Reinstall FILE.apk"
-  echo	  "   as|app-start                        Start org.servalproject application"
-  echo	  "   ak|app-kill                         Kill org.servalproject processes"
-  echo	  "   aB|app-backup [: dir ;]             Backup org.servalproject state files to local directory"
-  echo	  "   aR|app-restore [: dir ;]            Restore org.servalproject state files from local directory"
+  echo	  "   as|app-start                        Start za.co.csir.walkiemesh application"
+  echo	  "   ak|app-kill                         Kill za.co.csir.walkiemesh processes"
+  echo	  "   aB|app-backup [: dir ;]             Backup za.co.csir.walkiemesh state files to local directory"
+  echo	  "   aR|app-restore [: dir ;]            Restore za.co.csir.walkiemesh state files from local directory"
   echo	  "   du|servald-unlock                   Unlock servald binary (chmod a+rwx various files)"
   echo	  "   dl|servald-lock                     Lock servald binary (chmod go-rwx various files)"
   echo	  "   dp|servald-push                     Push servald binary, if no permission then unlock and retry"
@@ -126,11 +126,11 @@ serval_processes() {
 }
 
 app_shell() {
-  run adb -s $DEV shell run-as org.servalproject "$@"
+  run adb -s $DEV shell run-as za.co.csir.walkiemesh "$@"
 }
 
 app_uninstall() {
-  run adb -s $DEV uninstall org.servalproject
+  run adb -s $DEV uninstall za.co.csir.walkiemesh
 }
 
 app_install() {
@@ -142,7 +142,7 @@ app_reinstall() {
 }
 
 app_start() {
-  run adb -s $DEV shell am start -a android.intent.action.MAIN -n org.servalproject/.Main
+  run adb -s $DEV shell am start -a android.intent.action.MAIN -n za.co.csir.walkiemesh/.Main
 }
 
 app_kill() {
@@ -318,7 +318,7 @@ _servald_pids() {
 
 _serval_pids() {
   if [ $flag_dryrun -le 1 ]; then
-    adb -s $DEV shell ps | tr -d '\r' | awk '$9 == "'"org.servalproject"'" { print $2 }'
+    adb -s $DEV shell ps | tr -d '\r' | awk '$9 == "'"za.co.csir.walkiemesh"'" { print $2 }'
   fi
 }
 
@@ -353,7 +353,7 @@ meshms_send() {
   local recipient
   _resolve_dst recipient "$1"
   local text="$2"
-  app_shell am startservice -a "org.servalproject.meshms.SEND_MESHMS" --es recipient "$recipient" --es text "$text"
+  app_shell am startservice -a "za.co.csir.walkiemesh.meshms.SEND_MESHMS" --es recipient "$recipient" --es text "$text"
 }
 
 _resolve_dst() {
