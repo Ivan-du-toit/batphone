@@ -170,25 +170,25 @@
         <activity android:name=".batphone.CallDirector"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"
-            android:taskAffinity="org.servalproject.Call"
+            android:taskAffinity="za.co.csir.walkiemesh.Call"
             />
 
         <activity android:name=".batphone.UnsecuredCall"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"
-            android:taskAffinity="org.servalproject.Call"
+            android:taskAffinity="za.co.csir.walkiemesh.Call"
             >
             <intent-filter>
 	            <action android:name="android.intent.action.VIEW"/>
                 <category android:name="android.intent.category.DEFAULT" />
-	            <data android:mimeType="vnd.android.cursor.item/org.servalproject.unsecuredSid"/>
+	            <data android:mimeType="vnd.android.cursor.item/za.co.csir.walkiemesh.unsecuredSid"/>
 	        </intent-filter>
 	    </activity>
 	    
         <activity android:name=".batphone.CompletedCall"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"
-            android:taskAffinity="org.servalproject.Call"
+            android:taskAffinity="za.co.csir.walkiemesh.Call"
             />
 
         <activity android:name=".LogActivity" 
@@ -201,7 +201,7 @@
             android:launchMode="singleTop"
             >
             <intent-filter>
-                <action android:name="org.servalproject.PICK_FROM_PEER_LIST" />
+                <action android:name="za.co.csir.walkiemesh.PICK_FROM_PEER_LIST" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <intent-filter android:label="@string/app_name">   
@@ -222,8 +222,8 @@
 	        	<action android:name="android.net.wifi.STATE_CHANGE"/>
 	        	<action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
 	        	<action android:name="android.net.wifi.SCAN_RESULTS"/>
-	        	<action android:name="org.servalproject.ADHOC_STATE_CHANGED_ACTION" />
-	        	<action android:name="org.servalproject.MODE_ALARM"/>
+	        	<action android:name="za.co.csir.walkiemesh.ADHOC_STATE_CHANGED_ACTION" />
+	        	<action android:name="za.co.csir.walkiemesh.MODE_ALARM"/>
 	        </intent-filter>
 	        <intent-filter>
 	        	<action android:name="android.intent.action.MEDIA_EJECT" />
@@ -297,9 +297,9 @@
 
 		<service android:label="@string/rhizome_share_file_permission_label" 
 		    android:name=".rhizome.RhizomeIntentService" 
-		    android:permission="org.servalproject.rhizome.ADD_FILE">
+		    android:permission="za.co.csir.walkiemesh.rhizome.ADD_FILE">
 			<intent-filter>
-				<action android:name="org.servalproject.rhizome.ADD_FILE"/>
+				<action android:name="za.co.csir.walkiemesh.rhizome.ADD_FILE"/>
 			</intent-filter>
 		</service>
 
@@ -307,10 +307,10 @@
         <service android:name=".meshms.OutgoingMeshMS"
                  android:enabled="true"
                  android:exported="true"
-                 android:permission="org.servalproject.meshms.SEND_MESHMS"
+                 android:permission="za.co.csir.walkiemesh.meshms.SEND_MESHMS"
                  >
             <intent-filter>
-                <action android:name="org.servalproject.meshms.SEND_MESHMS" />
+                <action android:name="za.co.csir.walkiemesh.meshms.SEND_MESHMS" />
             </intent-filter>
         </service>
 
@@ -321,7 +321,7 @@
                   android:label="@string/system_content_provider_label"
                   />
 
-        <provider android:authorities="org.servalproject.files"
+        <provider android:authorities="za.co.csir.walkiemesh.files"
                   android:name=".provider.RhizomeProvider"
                   android:exported="true"
                   android:enabled="true"
@@ -360,7 +360,7 @@
 		
 		<service android:enabled="true" android:exported="true" android:name=".system.StateCheckIntentService">
 			<intent-filter>
-				<action android:name="org.servalproject.ACTION_STATE_CHECK"/>
+				<action android:name="za.co.csir.walkiemesh.ACTION_STATE_CHECK"/>
 			</intent-filter>
 		</service>
 
