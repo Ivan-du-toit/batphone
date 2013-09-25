@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Peerlist screen -->
+	<string name="contentDescCall">Call the contact</string>
+	<string name="contentDescChat">Chat with the contact</string>
+	<string name="contentDescSave">Save the contact</string>
+</resources>

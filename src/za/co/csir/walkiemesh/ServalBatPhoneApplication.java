@@ -473,7 +473,7 @@ public class ServalBatPhoneApplication extends Application {
 					.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
 			Notification n = new Notification(R.drawable.ic_serval_logo,
-					"A new version of Serval Mesh is available",
+					"A new version of Walkie Mesh is available",
 					System.currentTimeMillis());
 
 			n.setLatestEventInfo(this, "Software Update",
