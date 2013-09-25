@@ -28,19 +28,19 @@
         android:label="@string/rhizome_share_file_permission_label" 
         android:protectionLevel="dangerous" 
         android:description="@string/rhizome_share_file_permission_description" 
-        android:name="org.servalproject.rhizome.ADD_FILE">
+        android:name="za.co.csir.walkiemesh.rhizome.ADD_FILE">
     </permission>
     <permission 
         android:label="@string/rhizome_receive_file_permission_label" 
         android:protectionLevel="dangerous" 
         android:description="@string/rhizome_receive_file_permission_description" 
-        android:name="org.servalproject.rhizome.RECEIVE_FILE">
+        android:name="za.co.csir.walkiemesh.rhizome.RECEIVE_FILE">
     </permission>
     <permission android:description="@string/system_permission_control_label" 
         android:icon="@drawable/ic_launcher" 
         android:label="@string/system_permission_control_label" 
         android:protectionLevel="signature" 
-        android:name="org.servalproject.START_STOP"
+        android:name="za.co.csir.walkiemesh.START_STOP"
         /-->
     
     <!-- Serval MeshMS Permissions -->
@@ -53,7 +53,7 @@
 
     <!-- Serval Specific permissions -->
     <uses-permission android:name="za.co.csir.walkiemesh.meshms.SEND_MESHMS"/>
-    <!-- uses-permission android:name="org.servalproject.rhizome.RECEIVE_FILE"/-->
+    <!-- uses-permission android:name="za.co.csir.walkiemesh.rhizome.RECEIVE_FILE"/-->
     
     <!--  android permissions -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
