@@ -24,7 +24,7 @@
     <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="14"/>
     
     <!-- Batphone permissions -->
-    <permission 
+    <!-- permission 
         android:label="@string/rhizome_share_file_permission_label" 
         android:protectionLevel="dangerous" 
         android:description="@string/rhizome_share_file_permission_description" 
@@ -41,10 +41,10 @@
         android:label="@string/system_permission_control_label" 
         android:protectionLevel="signature" 
         android:name="org.servalproject.START_STOP"
-        />
+        /-->
     
     <!-- Serval MeshMS Permissions -->
-    <permission android:name="org.servalproject.meshms.SEND_MESHMS" 
+    <permission android:name="za.co.csir.walkiemesh.meshms.SEND_MESHMS" 
         android:description="@string/system_permission_meshms_send_description" 
         android:protectionLevel="dangerous" 
         android:permissionGroup="android.permission-group.MESSAGES" 
@@ -52,8 +52,8 @@
         />
 
     <!-- Serval Specific permissions -->
-    <uses-permission android:name="org.servalproject.meshms.SEND_MESHMS"/>
-    <uses-permission android:name="org.servalproject.rhizome.RECEIVE_FILE"/>
+    <uses-permission android:name="za.co.csir.walkiemesh.meshms.SEND_MESHMS"/>
+    <!-- uses-permission android:name="org.servalproject.rhizome.RECEIVE_FILE"/-->
     
     <!--  android permissions -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
@@ -84,14 +84,14 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
     <uses-permission android:name="android.permission.READ_PROFILE"/>
         <!-- uses features -->
-    <uses-feature android:name="android.hardware.camera" android:required="false" />
+    <!-- uses-feature android:name="android.hardware.camera" android:required="false" /-->
 	<uses-feature android:name="android.hardware.wifi" android:required="true" />
 	<uses-feature android:name="android.hardware.bluetooth" android:required="false" />
 	<uses-feature android:name="android.hardware.telephony" android:required="false" />
 	<uses-feature android:name="android.hardware.microphone" android:required="false" />
-	<uses-feature android:name="android.hardware.location" android:required="false" />
+	<!-- uses-feature android:name="android.hardware.location" android:required="false" />
 	<uses-feature android:name="android.hardware.location.gps" android:required="false" />
-	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
+	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" /-->
 	<uses-feature android:name="android.hardware.touchscreen" android:required="false" />
 	
     
@@ -115,10 +115,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter-->
         </activity>
-        <activity android:name=".ui.ShareUsActivity"
+        <!-- activity android:name=".ui.ShareUsActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
-            />
+            /-->
   		<activity android:name=".ui.SettingsScreenActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
@@ -149,10 +149,10 @@
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
             />
- 		<activity android:name=".ui.help.DonateScreen"
+ 		<!-- activity android:name=".ui.help.DonateScreen"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
-            />
+            /-->
 		<activity android:name=".ui.help.AboutScreen"
            	android:screenOrientation="portrait"
             android:launchMode="singleTop"
@@ -335,7 +335,7 @@
 		<activity android:name=".messages.ShowConversationActivity"
 		    android:screenOrientation="portrait"
 		    >
-		    <intent-filter>
+		    <!-- intent-filter>
 		        <action android:name="android.intent.action.SENDTO" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="sms" />
@@ -344,7 +344,7 @@
 		        <action android:name="android.intent.action.SENDTO" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="smsto" />
-			</intent-filter>
+			</intent-filter-->
 		</activity>
 		<activity android:name=".ui.ContactsActivity"
 		    android:screenOrientation="portrait"

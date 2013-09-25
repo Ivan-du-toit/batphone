@@ -477,7 +477,7 @@ public class ServalBatPhoneApplication extends Application {
 					System.currentTimeMillis());
 
 			n.setLatestEventInfo(this, "Software Update",
-					"A new version of Serval Mesh is available",
+					"A new version of Walkie Mesh is available",
 					PendingIntent.getActivity(this, 0, i,
 							PendingIntent.FLAG_ONE_SHOT));
 

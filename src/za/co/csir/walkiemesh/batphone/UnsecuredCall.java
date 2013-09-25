@@ -5,7 +5,6 @@ import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.account.AccountService;
 import za.co.csir.walkiemesh.servald.PeerListService;
 import za.co.csir.walkiemesh.servald.SubscriberId;
-
 import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -225,7 +224,7 @@ public class UnsecuredCall extends Activity {
 			Intent intent = new Intent(app, UnsecuredCall.class);
 			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
 					| Intent.FLAG_ACTIVITY_SINGLE_TOP);
-			inCall.setLatestEventInfo(app, "Serval Phone Call",
+			inCall.setLatestEventInfo(app, "Walkie Mesh Phone Call",
 					callHandler.remotePeer.getDisplayName(),
 					PendingIntent.getActivity(app, 0,
 							intent,

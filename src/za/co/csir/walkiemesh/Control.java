@@ -158,7 +158,7 @@ public class Control extends Service {
 				R.drawable.ic_serval_logo, "Walkie Mesh",
 				System.currentTimeMillis());
 
-		Intent intent = new Intent(app, Main.class);
+		Intent intent = new Intent(app, PeerList.class);
 		intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
 
 		notification.setLatestEventInfo(Control.this, "Walkie Mesh", peerCount
