@@ -20,12 +20,14 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_marginBottom="5dp"
+            android:textColor="@color/walkieMeshBlack"
             android:textSize="20dp" />
 
         <TextView
             android:id="@+id/show_conversation_item_time_us"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="@color/grey"
             android:layout_alignLeft="@id/show_conversation_item_content_us"
             android:layout_below="@id/show_conversation_item_content_us"
              />

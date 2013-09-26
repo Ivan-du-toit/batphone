@@ -6,4 +6,9 @@
 	
 	<color name="answerButtonGreen">#0F870F</color>
     <color name="declineButtonRed">#D20A0A</color>
+    
+    <color name="transparent">#FF000000</color>
+    
+    <color name="buttonFontColor">#000000</color>
+    <color name="walkieMeshBlack">#000000</color>
 </resources>

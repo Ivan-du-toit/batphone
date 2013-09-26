@@ -11,4 +11,5 @@
     <string name="contentDescDeclineButton">Decline the incoming call.</string>
     
     <string name="callSummaryDone">Done</string>
+    <string name="deleteMessageThread">Delete</string>
 </resources>

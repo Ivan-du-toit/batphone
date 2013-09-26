@@ -24,15 +24,7 @@
 -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
-
-    <!-- Header -->
-
-    <include
-        android:id="@+id/headerLayout"
-        layout="@layout/header_layout" />
-
-    <!-- Body -->
+    android:layout_height="fill_parent" android:background="@drawable/app_background_ics">
 
     <RelativeLayout
         android:id="@+id/wizard_layout"

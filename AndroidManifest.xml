@@ -100,7 +100,8 @@
 		android:name="ServalBatPhoneApplication">
         
         <activity android:name="PreparationWizard"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"
+            android:label="Walkie Mesh Setup">
             <intent-filter>
                 <action android:name="android.intent.action.PREPARATION" />
 

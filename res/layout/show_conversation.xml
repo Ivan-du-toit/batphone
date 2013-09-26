@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent" android:background="@drawable/app_background_ics">
 
     <TextView
         android:id="@+id/show_conversation_ui_recipient"
@@ -21,7 +21,7 @@
         android:layout_height="40dp"
     	android:layout_alignParentTop="true"
     	android:layout_alignParentRight="true"
-        android:text="Delete" />
+        android:text="@string/deleteMessageThread" />
 
     <EditText
         android:id="@+id/show_conversation_ui_txt_content"
@@ -51,7 +51,9 @@
         android:layout_height="fill_parent"
         android:layout_above="@id/show_conversation_ui_txt_content"
         android:layout_below="@id/delete"
-        android:divider="@color/black"
+        android:background="@drawable/app_background_ics"
+        android:divider="@color/walkieMeshBlack"
+        android:cacheColorHint="#00000000"
         android:dividerHeight="0px" />
 
 </RelativeLayout>
