@@ -9,4 +9,6 @@
 	<string name="calling">Calling&#8230;</string>
     <string name="contentDescAnswerButton">Answer the incoming call.</string>
     <string name="contentDescDeclineButton">Decline the incoming call.</string>
+    
+    <string name="callSummaryDone">Done</string>
 </resources>

@@ -12,8 +12,8 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.widget.Button;
 import android.widget.Chronometer;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 public class CompletedCall extends Activity {
@@ -76,11 +76,17 @@ public class CompletedCall extends Activity {
 		View incall = findViewById(R.id.incall);
 		if (incall != null)
 			incall.setVisibility(View.VISIBLE);
-		// Changed Help System to local HTML files.
 
-		ImageView endButton = (ImageView) this
-				.findViewById(R.id.cancel_call_button);
-		endButton.setOnClickListener(new OnClickListener() {
+
+		this.findViewById(R.id.cancel_call_button)
+				.setVisibility(View.INVISIBLE);
+
+		this.findViewById(R.id.SpeakerPhone).setVisibility(View.INVISIBLE);
+
+		Button doneButton = (Button) this
+				.findViewById(R.id.call_summary_done_button);
+		doneButton.setVisibility(View.VISIBLE);
+		doneButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				finish();
