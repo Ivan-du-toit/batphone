@@ -47,7 +47,7 @@ public class UnsecuredCall extends Activity {
 			updateUI();
 		}
 	};
-	private Button endButton;
+	private ImageView endButton;
 	private ImageView incomingEndButton;
 	private ImageView incomingAnswerButton;
 	private Chronometer chron;
@@ -182,7 +182,7 @@ public class UnsecuredCall extends Activity {
 			}
 		});
 
-		endButton = (Button) this.findViewById(R.id.cancel_call_button);
+		endButton = (ImageView) this.findViewById(R.id.cancel_call_button);
 		endButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {

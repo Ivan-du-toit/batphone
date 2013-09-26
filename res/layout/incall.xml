@@ -20,7 +20,8 @@
  -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent" 
+    android:background="@drawable/app_background_ics">
 
     <!-- call information -->
 
@@ -80,28 +81,24 @@
         android:background="@drawable/phone_speaker_button"
         android:layout_marginRight="20dp" />-->
 
-    <Button
+    <ImageView
         android:id="@+id/cancel_call_button"
-        style="@style/sph_controlButtons"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/ph_no_display"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/phone_endcall_button" />
+        android:background="@color/declineButtonRed"
+        android:contentDescription="@string/contentDescEndCall"
+        android:src="@drawable/device_access_end_call" 
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="5dp"/>
     
-    <!-- DTMF commented until enabled -->
-         <!--   <Button
-              android:id="@+id/dialpad_button"
-              style="@style/sph_controlButtons"
-              android:layout_alignTop="@+id/cancel_call_button"
-              android:layout_toRightOf="@+id/cancel_call_button"
-              android:layout_marginLeft="20dp" 
-              android:background="@drawable/phone_dialpad_button" />-->
-    
-              <!-- Footer -->
-          <include
+        <!-- Footer -->
+        <!-- include
               android:id="@+id/footerLayout"
-              layout="@layout/footer_layout" />
+              layout="@layout/footer_layout" /-->
 
-          <Button
+        <Button
               android:id="@+id/SpeakerPhone"
               android:layout_width="wrap_content"
               android:layout_height="wrap_content"

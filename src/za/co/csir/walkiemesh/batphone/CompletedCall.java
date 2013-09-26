@@ -5,7 +5,6 @@ import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.servald.Peer;
 import za.co.csir.walkiemesh.servald.PeerListService;
 import za.co.csir.walkiemesh.servald.SubscriberId;
-
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,8 +12,8 @@ import android.os.SystemClock;
 import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class CompletedCall extends Activity {
@@ -79,7 +78,8 @@ public class CompletedCall extends Activity {
 			incall.setVisibility(View.VISIBLE);
 		// Changed Help System to local HTML files.
 
-		Button endButton = (Button) this.findViewById(R.id.cancel_call_button);
+		ImageView endButton = (ImageView) this
+				.findViewById(R.id.cancel_call_button);
 		endButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {

@@ -4,6 +4,7 @@
 	<string name="contentDescCall">Call the contact</string>
 	<string name="contentDescChat">Chat with the contact</string>
 	<string name="contentDescSave">Save the contact</string>
+	<string name="contentDescEndCall">End the call</string>
 	
 	<string name="calling">Calling&#8230;</string>
     <string name="contentDescAnswerButton">Answer the incoming call.</string>
