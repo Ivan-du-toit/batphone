@@ -650,8 +650,8 @@ start_servald_instances() {
       # They are extremely useful for the majority of fixtures.
       executeOk_servald config \
          set interfaces.1.file "$DUMMYNET" \
-         set monitor.socket "org.servalproject.servald.monitor.socket.$TFWUNIQUE.$instance_name" \
-         set mdp.socket "org.servalproject.servald.mdp.socket.$TFWUNIQUE.$instance_name"
+         set monitor.socket "za.co.csir.walkiemesh.servald.monitor.socket.$TFWUNIQUE.$instance_name" \
+         set mdp.socket "za.co.csir.walkiemesh.servald.mdp.socket.$TFWUNIQUE.$instance_name"
       configure_servald_server
       start_servald_server
       eval DUMMY$instance_name="\$DUMMYNET"

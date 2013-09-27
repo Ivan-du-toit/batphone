@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!--  ICS background gradient colors -->
+ 	<color name="ics_background_start">#ff020202</color>
+	<color name="ics_background_end">#ff272D33</color>    
+	
+	<color name="answerButtonGreen">#0F870F</color>
+    <color name="declineButtonRed">#D20A0A</color>
+    
+    <color name="transparent">#FF000000</color>
+    
+    <color name="buttonFontColor">#000000</color>
+    <color name="walkieMeshBlack">#000000</color>
+</resources>

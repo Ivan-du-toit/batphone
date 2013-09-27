@@ -5,7 +5,6 @@ import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import za.co.csir.walkiemesh.account.AccountService;
 import za.co.csir.walkiemesh.servald.PeerListService;
 import za.co.csir.walkiemesh.servald.SubscriberId;
-
 import android.app.Activity;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -25,6 +24,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Chronometer;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 public class UnsecuredCall extends Activity {
@@ -47,9 +47,9 @@ public class UnsecuredCall extends Activity {
 			updateUI();
 		}
 	};
-	private Button endButton;
-	private Button incomingEndButton;
-	private Button incomingAnswerButton;
+	private ImageView endButton;
+	private ImageView incomingEndButton;
+	private ImageView incomingAnswerButton;
 	private Chronometer chron;
 
 	private String stateSummary()
@@ -182,7 +182,7 @@ public class UnsecuredCall extends Activity {
 			}
 		});
 
-		endButton = (Button) this.findViewById(R.id.cancel_call_button);
+		endButton = (ImageView) this.findViewById(R.id.cancel_call_button);
 		endButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -190,7 +190,8 @@ public class UnsecuredCall extends Activity {
 			}
 		});
 
-		incomingEndButton = (Button) this.findViewById(R.id.incoming_decline);
+		incomingEndButton = (ImageView) this
+				.findViewById(R.id.incoming_decline);
 		incomingEndButton.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -198,7 +199,7 @@ public class UnsecuredCall extends Activity {
 			}
 		});
 
-		incomingAnswerButton = (Button) this
+		incomingAnswerButton = (ImageView) this
 				.findViewById(R.id.answer_button_incoming);
 		incomingAnswerButton.setOnClickListener(new OnClickListener() {
 			@Override
@@ -225,7 +226,7 @@ public class UnsecuredCall extends Activity {
 			Intent intent = new Intent(app, UnsecuredCall.class);
 			intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP
 					| Intent.FLAG_ACTIVITY_SINGLE_TOP);
-			inCall.setLatestEventInfo(app, "Serval Phone Call",
+			inCall.setLatestEventInfo(app, "Walkie Mesh Phone Call",
 					callHandler.remotePeer.getDisplayName(),
 					PendingIntent.getActivity(app, 0,
 							intent,

@@ -33,7 +33,6 @@ import java.io.FileNotFoundException;
 import za.co.csir.walkiemesh.servald.Identity;
 import za.co.csir.walkiemesh.servald.ServalD;
 import za.co.csir.walkiemesh.servald.ServalD.RhizomeAddFileResult;
-
 import android.app.IntentService;
 import android.content.Intent;
 import android.net.Uri;

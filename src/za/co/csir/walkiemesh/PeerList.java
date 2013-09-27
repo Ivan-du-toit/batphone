@@ -47,6 +47,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.AsyncTask;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.SystemClock;
 import android.util.Log;
@@ -304,10 +305,13 @@ public class PeerList extends ListActivity {
 		menu.clear();
 		MenuInflater menuInflater = getMenuInflater();
 		menuInflater.inflate(R.menu.main, menu);
-		if (app.getState() == State.Off)
+		if (app.getState() == State.Off) {
 			menu.findItem(R.id.menu_toggleMesh).setTitle("Connect");
-		else
+			// menu.findItem(R.id.menu_toggleMesh).setIcon(R.drawable.play);
+		} else {
 			menu.findItem(R.id.menu_toggleMesh).setTitle("Disconnect");
+			// menu.findItem(R.id.menu_toggleMesh).setIcon(R.drawable.pause);
+		}
 		return super.onPrepareOptionsMenu(menu);
 	}
 
@@ -331,6 +335,7 @@ public class PeerList extends ListActivity {
 				stopMeshService();
 			return true;
 		case R.id.menu_exit:
+			stopMeshService();
 			finish();
 			return true;
 		case R.id.menu_settings:
@@ -357,6 +362,8 @@ public class PeerList extends ListActivity {
 					ServalBatPhoneApplication.EXTRA_STATE, 0);
 			State state = State.values()[stateOrd];
 			stateChanged(state);
+			if (Build.VERSION.SDK_INT >= 11)
+				invalidateOptionsMenu();
 		}
 	};
 

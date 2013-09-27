@@ -25,15 +25,8 @@
  
 	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
           android:layout_width="fill_parent"
-          android:layout_height="fill_parent" >
-
-          <!-- Header -->
-
-          <include
-              android:id="@+id/headerLayout"
-              layout="@layout/header_layout" />
-          
-          <!-- Body -->    
+          android:layout_height="fill_parent"
+          android:background="@drawable/app_background_ics" >
 
 		<TextView
 		    android:id="@+id/welcome"
@@ -56,7 +49,6 @@
 
 		<Button
 		    android:id="@+id/done"
-		    style="@style/sbtnrhizome"
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
 		    android:layout_below="@+id/status"

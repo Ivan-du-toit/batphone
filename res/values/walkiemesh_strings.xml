@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Peerlist screen -->
+	<string name="contentDescCall">Call the contact</string>
+	<string name="contentDescChat">Chat with the contact</string>
+	<string name="contentDescSave">Save the contact</string>
+	<string name="contentDescEndCall">End the call</string>
+	
+	<string name="calling">Calling&#8230;</string>
+    <string name="contentDescAnswerButton">Answer the incoming call.</string>
+    <string name="contentDescDeclineButton">Decline the incoming call.</string>
+    
+    <string name="callSummaryDone">Done</string>
+    <string name="deleteMessageThread">Delete</string>
+</resources>

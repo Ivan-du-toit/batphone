@@ -13,7 +13,6 @@ import za.co.csir.walkiemesh.servald.Identity;
 import za.co.csir.walkiemesh.servald.ServalD;
 import za.co.csir.walkiemesh.servald.ServalD.RhizomeAddFileResult;
 import za.co.csir.walkiemesh.servald.SubscriberId;
-
 import android.content.ContentProvider;
 import android.content.ContentValues;
 import android.database.Cursor;

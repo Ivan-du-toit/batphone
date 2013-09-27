@@ -128,7 +128,7 @@ int Throw(JNIEnv *env, const char *class, const char *msg)
   return -1;
 }
 
-/* JNI entry point to command line.  See org.servalproject.servald.ServalD class for the Java side.
+/* JNI entry point to command line.  See za.co.csir.walkiemesh.servald.ServalD class for the Java side.
    JNI method descriptor: "(Ljava/util/List;[Ljava/lang/String;)I"
 */
 JNIEXPORT jint JNICALL Java_za_co_csir_walkiemesh_servald_ServalD_rawCommand(JNIEnv *env, jobject this, jobject outv, jobjectArray args)
@@ -799,7 +799,7 @@ int app_server_start(const struct cli_parsed *parsed, void *context)
 	      (void)close(fd);
 	    /* The execpath option is provided so that a JNI call to "start" can be made which
 	       creates a new server daemon process with the correct argv[0].  Otherwise, the servald
-	       process appears as a process with argv[0] = "org.servalproject". */
+	       process appears as a process with argv[0] = "za.co.csir.walkiemesh". */
 	    if (execpath) {
 	    /* Need the cast on Solaris because it defines NULL as 0L and gcc doesn't see it as a
 	       sentinal. */

@@ -13,7 +13,6 @@ import java.util.Map;
 
 import za.co.csir.walkiemesh.R;
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
-
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences.Editor;
@@ -47,7 +46,7 @@ public class NetworkManager {
 	}
 
 	public static boolean isOurApConfig(WifiConfiguration config) {
-		return config.SSID.contains("servalproject");
+		return config.SSID.contains("walkiemesh");
 	}
 
 	public void updateApState() {

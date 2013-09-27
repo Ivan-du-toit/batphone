@@ -59,7 +59,6 @@ import za.co.csir.walkiemesh.system.BluetoothService;
 import za.co.csir.walkiemesh.system.ChipsetDetection;
 import za.co.csir.walkiemesh.system.CoreTask;
 import za.co.csir.walkiemesh.system.NetworkManager;
-
 import android.app.Application;
 import android.app.Notification;
 import android.app.NotificationManager;
@@ -474,11 +473,11 @@ public class ServalBatPhoneApplication extends Application {
 					.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
 			Notification n = new Notification(R.drawable.ic_serval_logo,
-					"A new version of Serval Mesh is available",
+					"A new version of Walkie Mesh is available",
 					System.currentTimeMillis());
 
 			n.setLatestEventInfo(this, "Software Update",
-					"A new version of Serval Mesh is available",
+					"A new version of Walkie Mesh is available",
 					PendingIntent.getActivity(this, 0, i,
 							PendingIntent.FLAG_ONE_SHOT));
 

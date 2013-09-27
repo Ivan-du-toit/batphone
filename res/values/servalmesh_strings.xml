@@ -38,7 +38,7 @@
     <string name="system_permission_meshms_send_description">Allows an application to send MeshMS messages</string>
     
     <!-- Serval Items Content Provider -->
-    <string name="system_content_provider_authority">org.servalproject.provider</string>
+    <string name="system_content_provider_authority">za.co.csir.walkiemesh.provider</string>
     <string name="system_content_provider_label">Main Serval Content Provider</string>
     
     <!-- Messages -->

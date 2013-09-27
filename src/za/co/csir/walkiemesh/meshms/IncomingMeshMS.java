@@ -31,7 +31,6 @@ import za.co.csir.walkiemesh.servald.Peer;
 import za.co.csir.walkiemesh.servald.PeerListService;
 import za.co.csir.walkiemesh.servald.ServalD;
 import za.co.csir.walkiemesh.servald.SubscriberId;
-
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;

@@ -20,7 +20,8 @@
  -->
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent" >
+    android:layout_height="fill_parent" 
+    android:background="@drawable/app_background_ics">
 
     <!-- call information -->
 
@@ -69,26 +70,51 @@
         android:layout_centerHorizontal="true"
         android:text="@string/phone_number" />
     
-    <Button
+    <!-- Speaker commented until enabled -->
+    
+   <!--  <Button
+        android:id="@+id/speaker_button"
+        style="@style/sph_controlButtons"
+        android:layout_alignTop="@+id/cancel_call_button"
+        android:layout_toLeftOf="@+id/cancel_call_button"
+        android:background="@drawable/phone_speaker_button"
+        android:layout_marginRight="20dp" />-->
+
+    <ImageView
         android:id="@+id/cancel_call_button"
-        android:layout_width="wrap_content" 
-   		android:layout_height="wrap_content"
+        android:layout_width="75dp"
+        android:layout_height="50dp"
         android:layout_below="@+id/ph_no_display"
         android:layout_centerHorizontal="true"
-        android:text="@string/endcall"
-        android:drawableLeft="@drawable/phone_endcall_button" />
-    
-    <Button
-        android:id="@+id/SpeakerPhone"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cancel_call_button"
-        android:layout_centerHorizontal="true"
+        android:background="@color/declineButtonRed"
+        android:contentDescription="@string/contentDescEndCall"
+        android:src="@drawable/device_access_end_call" 
         android:layout_marginTop="10dp"
-        android:text="@string/btnSpeakerPhone" />
+        android:layout_marginBottom="5dp"/>
     
-    <!-- Footer -->
-    <include
-        android:id="@+id/footerLayout"
-        layout="@layout/footer_layout" />
+        <!-- Footer -->
+        <!-- include
+              android:id="@+id/footerLayout"
+              layout="@layout/footer_layout" /-->
+
+        <Button
+              android:id="@+id/SpeakerPhone"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/cancel_call_button"
+              android:layout_centerHorizontal="true"
+              android:layout_marginTop="23dp"
+              android:text="@string/btnSpeakerPhone" />
+        
+        <Button
+              android:id="@+id/call_summary_done_button"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_below="@+id/ph_no_display"
+              android:layout_centerHorizontal="true"
+              android:layout_marginTop="20dp"
+              android:visibility="invisible"
+              android:padding="20dp"
+              android:text="@string/callSummaryDone" />
+
 </RelativeLayout>
