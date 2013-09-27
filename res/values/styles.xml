@@ -227,7 +227,7 @@
         <item name="android:textStyle">bold</item>
        	<item name="android:textSize">14sp</item>
         <item name="android:layout_marginTop">10dp</item>
-		<item name="android:textColor">@color/green</item>  
+		<item name="android:textColor">@color/white</item>  
 		<item name="android:layout_marginLeft">5dp</item>
     </style>
     
@@ -280,7 +280,7 @@
   	<!-- Main Content -->
   	<style name="smainTable">
 		<item name="android:layout_centerHorizontal">true</item>
-		<item name="android:layout_marginTop">50dp</item> 
+		<item name="android:layout_marginTop">10dp</item> 
 		<item name="android:orientation">vertical</item>
 		<item name="android:shrinkColumns">*</item>
 		<item name="android:stretchColumns">*</item>
@@ -662,7 +662,7 @@
 		<item name="android:textColor">@color/white</item>
    		<item name="android:textSize">18sp</item>
 		<item name="android:layout_marginBottom">4sp</item> 
-	    <item name="android:layout_marginTop">40dp</item> 	
+	    <item name="android:layout_marginTop">20dp</item> 	
  	</style>
  	
  	<style name="spreptext1" parent="spreptext">
@@ -707,13 +707,13 @@
    <style name="sbtnrhizome"> 	
  		<item name="android:textSize">12sp</item>
 		<item name="android:layout_marginTop">5dp</item>
-		<item name="android:layout_marginBottom">10dp</item>
-		<item name="android:textColor">@color/white</item>  
-		<item name="android:background">@drawable/button_message</item> 		 		
+		<item name="android:layout_marginBottom">5dp</item>
+		<item name="android:textColor">@color/walkieMeshBlack</item>  
+		<!-- item name="android:background">@drawable/button_message</item--> 		 		
 		<item name="android:layout_centerHorizontal">true</item>
 		<item name="android:layout_gravity">center</item>		
-		<item name="android:layout_width">150dp</item>
-   		<item name="android:layout_height">40dp</item>    
+		<item name="android:layout_width">190dp</item>
+   		<item name="android:layout_height">50dp</item>    
  	</style>  
  	
 	<style name="sbtnrhizomeleft" parent="sbtnrhizome"> 		 		

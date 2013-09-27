@@ -315,10 +315,10 @@ public class PeerList extends ListActivity {
 		menuInflater.inflate(R.menu.main, menu);
 		if (app.getState() == State.Off) {
 			menu.findItem(R.id.menu_toggleMesh).setTitle("Connect");
-			// menu.findItem(R.id.menu_toggleMesh).setIcon(R.drawable.play);
+			menu.findItem(R.id.menu_toggleMesh).setIcon(R.drawable.play);
 		} else {
 			menu.findItem(R.id.menu_toggleMesh).setTitle("Disconnect");
-			// menu.findItem(R.id.menu_toggleMesh).setIcon(R.drawable.pause);
+			menu.findItem(R.id.menu_toggleMesh).setIcon(R.drawable.pause);
 		}
 		return super.onPrepareOptionsMenu(menu);
 	}

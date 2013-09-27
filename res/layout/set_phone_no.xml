@@ -75,6 +75,7 @@
               android:layout_height="wrap_content"
               android:layout_below="@+id/phoneInstr"
               android:layout_centerHorizontal="true"
+              android:textColor="@color/walkieMeshBlack"
               android:text="@string/btnPhOk" />
 
           <ProgressBar

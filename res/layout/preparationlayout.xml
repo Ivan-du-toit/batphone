@@ -29,10 +29,15 @@
           android:background="@drawable/app_background_ics" >
 
 		<TextView
+		    android:layout_centerHorizontal="true"
 		    android:id="@+id/welcome"
-		    style="@style/spreptext"
-		    android:layout_below="@+id/logot_image"
-		    android:gravity="left|top"
+		    android:layout_width="wrap_content"
+   			android:layout_height="wrap_content"
+			android:textStyle="bold"
+			android:textColor="@color/white"
+   			android:textSize="18sp"
+			android:layout_marginBottom="4sp" 
+	    	android:layout_marginTop="20dp" 	
 		    android:text="@string/welcomePreparing" />
 					
 		<TextView android:id="@+id/pleaseWait"
@@ -53,7 +58,7 @@
 		    android:layout_height="wrap_content"
 		    android:layout_below="@+id/status"
 		    android:layout_centerHorizontal="true"
-		    android:text="Done"
+		    android:text="@string/done"
 		    android:visibility="gone" />
 	
 </RelativeLayout>

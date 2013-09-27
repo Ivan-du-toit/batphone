@@ -25,12 +25,6 @@
           android:layout_width="fill_parent"
           android:layout_height="fill_parent" 
           android:background="@drawable/app_background_ics">
-
-          <!-- Header -->
-
-          <include
-              android:id="@+id/headerLayout"
-              layout="@layout/header_layout" />
           
           <!-- Body -->
   <TableLayout 
@@ -76,7 +70,7 @@
     		android:text="@string/AccountsSettingsText" />
         </TableRow>  
  <!-- Logs -->         
-        <TableRow 
+        <!-- TableRow 
             android:id="@+id/tableSettings3"
             style="@style/srhizomeTableRow">
 		
@@ -89,7 +83,7 @@
     		style="@style/stextsettings"
 			    android:layout_gravity="center_vertical"
     		android:text="@string/LogShowText" />
-        </TableRow>  
+        </TableRow-->  
  <!-- Reset Wifi -->         
         <TableRow 
             android:id="@+id/tableSettings4"
