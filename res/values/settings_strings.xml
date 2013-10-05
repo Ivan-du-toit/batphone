@@ -49,7 +49,7 @@
     <string name="settings_allowWifi">Allow WiFi</string>    
     
     <!-- Settings Screen -->
-    <string name="settingsscreen_header">Settings Screen</string>
+    <string name="settingsscreen_header">Settings</string>
     <string name="WifiSettingsLabel">Wifi Settings</string>
     <string name="WifiSettingsText">View and Change Wifi Settings</string>
     <string name="AccountsSettingsLabel">Accounts Management</string>

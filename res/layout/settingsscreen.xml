@@ -29,7 +29,13 @@
           <!-- Body -->
   <TableLayout 
         android:id="@+id/tableSettings"   	
-        style="@style/smainTable">
+        android:layout_centerHorizontal="true"
+		android:layout_marginTop="10dp" 
+		android:orientation="vertical"
+		android:shrinkColumns="*"
+		android:stretchColumns="*"
+		android:layout_width="wrap_content"
+   		android:layout_height="wrap_content">
         
         <TableRow android:id="@+id/tablesettingsscreen_header"
             style="@style/srhizomeTableRow2">  
@@ -38,21 +44,44 @@
                 android:id="@+id/settingsscreen_header"
                 style="@style/srhizome_header"
                 android:text="@string/settingsscreen_header"/>
+        </TableRow>
+ <!-- Network Settings -->       
+        <TableRow 
+            android:id="@+id/networkSettingsRow"
+            style="@style/srhizomeTableRow"
+            android:showDividers="middle"
+            android:divider="?android:attr/dividerHorizontal">
+            
+            <Button 
+                android:id="@+id/btnNetworkSettings"
+                style="@style/sbtnrhizome"
+			    android:layout_gravity="center_vertical"
+                android:text="@string/networkSettingsLabel"/>  
+    		        
+			<TextView android:id="@+id/NetworkSettingsText"
+    			style="@style/stextsettings"
+			    android:layout_gravity="center_vertical"
+    			android:text="@string/networkSettingsText" />
+			
         </TableRow>	
  <!-- Wifi Menu -->       
         <TableRow 
             android:id="@+id/tableSettings1"
-            style="@style/srhizomeTableRow">
+            style="@style/srhizomeTableRow"
+            android:showDividers="middle"
+            android:divider="?android:attr/dividerHorizontal">
+            
             <Button 
                 android:id="@+id/btnWifiSettings"
                 style="@style/sbtnrhizome"
 			    android:layout_gravity="center_vertical"
                 android:text="@string/WifiSettingsLabel"/>  
     		        
-		<TextView android:id="@+id/WifiSettingsText"
-    		style="@style/stextsettings"
+			<TextView android:id="@+id/WifiSettingsText"
+    			style="@style/stextsettings"
 			    android:layout_gravity="center_vertical"
-    		android:text="@string/WifiSettingsText" />
+    			android:text="@string/WifiSettingsText" />
+			
         </TableRow>  
  <!-- Accounts -->         
         <TableRow 
@@ -102,7 +131,8 @@
 
         </TableRow>                  
         
-    </TableLayout> 
+    </TableLayout>
+
 
 </RelativeLayout>
 

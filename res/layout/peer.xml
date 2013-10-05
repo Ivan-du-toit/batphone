@@ -12,9 +12,29 @@
         android:padding="4dp"
         android:text="Test Name"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-    
+
+    <TextView
+        android:id="@+id/Number"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Name"
+        android:padding="4dp"
+        android:text="076093215"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/sid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/Name"
+        android:padding="4dp"
+       	android:visibility="invisible"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+
     <RelativeLayout 
-        android:layout_toRightOf="@+id/Name"
+        android:layout_toRightOf="@+id/Number"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
@@ -57,63 +77,4 @@
         android:src="@drawable/device_access_call" />
         
     </RelativeLayout>
-    <!-- ImageView
-        android:id="@+id/call"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/Name"
-        android:paddingBottom="2dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="2dp"
-        android:contentDescription="@string/contentDescCall"
-        android:src="@drawable/device_access_call" />
-
-    <ImageView
-        android:id="@+id/chat"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/Name"
-        android:layout_toLeftOf="@+id/call"
-        android:paddingBottom="2dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="2dp"
-        android:contentDescription="@string/contentDescChat"
-        android:src="@drawable/chat" />
-    
-    <ImageView
-        android:id="@+id/add_contact"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@+id/Number"
-        android:layout_below="@+id/Name"
-        android:paddingBottom="2dp"
-        android:paddingLeft="10dp"
-        android:paddingRight="10dp"
-        android:paddingTop="2dp"
-        android:contentDescription="@string/contentDescSave"
-        android:src="@drawable/save" /-->
-
-    <TextView
-        android:id="@+id/Number"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/Name"
-        android:padding="4dp"
-        android:text="076093215"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
-    <TextView
-        android:id="@+id/sid"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentRight="true"
-        android:layout_below="@+id/Name"
-        android:padding="4dp"
-       	android:visibility="invisible"
-        android:textAppearance="?android:attr/textAppearanceSmall" />
-
 </RelativeLayout>

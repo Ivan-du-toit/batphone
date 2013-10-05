@@ -44,8 +44,20 @@ public class SettingsScreenActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.settingsscreen);
 
+		// Network Settings Screen
+		Button btnNetworkSettings = (Button) this
+				.findViewById(R.id.btnNetworkSettings);
+		btnNetworkSettings.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View arg0) {
+				startActivity(new Intent(getApplicationContext(),
+						Networks.class));
+			}
+		});
+
 		// Wifi Settings Screen
-		Button btnWifiSettings = (Button) this.findViewById(R.id.btnWifiSettings);
+		Button btnWifiSettings = (Button) this
+				.findViewById(R.id.btnWifiSettings);
 		btnWifiSettings.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View arg0) {
@@ -58,7 +70,7 @@ public class SettingsScreenActivity extends Activity {
 		/*
 		 * Button btnLogShow = (Button) this .findViewById(R.id.btnLogShow);
 		 * btnLogShow.setOnClickListener(new View.OnClickListener() {
-		 * 
+		 *
 		 * @Override public void onClick(View arg0) {
 		 * SettingsScreenActivity.this.startActivity(new Intent(
 		 * SettingsScreenActivity.this,

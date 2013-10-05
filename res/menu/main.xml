@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android" >
     <item android:id="@+id/menu_toggleMesh" android:title="Connect" android:icon="@drawable/play" android:showAsAction="ifRoom|withText"></item>
-    <item android:id="@+id/menu_network" android:title="@string/networkSettingsLabel"></item>
+    <!-- item android:id="@+id/menu_network" android:title="@string/networkSettingsLabel"></item-->
     <item android:id="@+id/menu_settings" android:title="@string/settingsLabel" ></item>
     <item android:id="@+id/menu_messages" android:title="@string/messageLabel" ></item>
     <item android:id="@+id/menu_exit" android:title="@string/exitLabel" android:showAsAction="collapseActionView" android:menuCategory="system" ></item>

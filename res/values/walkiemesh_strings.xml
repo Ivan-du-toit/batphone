@@ -14,4 +14,6 @@
     <string name="deleteMessageThread">Delete</string>
     
     <string name="done">Done</string>
+    
+    <string name="networkSettingsText">Select the the network and mode that you want to connect with.</string>
 </resources>

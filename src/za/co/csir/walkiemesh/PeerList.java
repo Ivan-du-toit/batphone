@@ -39,7 +39,6 @@ import za.co.csir.walkiemesh.servald.PeerComparator;
 import za.co.csir.walkiemesh.servald.PeerListService;
 import za.co.csir.walkiemesh.servald.ServalD;
 import za.co.csir.walkiemesh.servald.SubscriberId;
-import za.co.csir.walkiemesh.ui.Networks;
 import android.app.Activity;
 import android.app.ListActivity;
 import android.content.BroadcastReceiver;
@@ -350,10 +349,10 @@ public class PeerList extends ListActivity {
 			startActivity(new Intent(getApplicationContext(),
 					za.co.csir.walkiemesh.ui.SettingsScreenActivity.class));
 			return true;
-		case R.id.menu_network:
-			startActivity(new Intent(getApplicationContext(),
-					Networks.class));
-			return true;
+			// case R.id.menu_network:
+			// startActivity(new Intent(getApplicationContext(),
+			// Networks.class));
+			// return true;
 		case R.id.menu_messages:
 			startActivity(new Intent(getApplicationContext(),
 					za.co.csir.walkiemesh.messages.MessagesListActivity.class));

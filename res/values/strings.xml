@@ -111,5 +111,5 @@
 	
 	<!-- Menu strings -->
 	<string name="exitLabel">Exit</string>
-	<string name="networkSettingsLabel">Mesh Settings</string>
+	<string name="networkSettingsLabel">Network Settings</string>
 </resources>   
