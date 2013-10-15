@@ -28,7 +28,6 @@ import java.util.Collection;
 import java.util.List;
 
 import za.co.csir.walkiemesh.ServalBatPhoneApplication;
-
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.net.wifi.WifiConfiguration;
@@ -255,7 +254,7 @@ public class WifiApControl {
 			String name = "ap_default";
 			SharedPreferences prefs = app.getSharedPreferences(name, 0);
 			Editor ed = prefs.edit();
-			ed.putString("ssid", "ap.servalproject.org");
+			ed.putString("ssid", "Open Hotspot Mode");
 			ed.commit();
 			apNetworks.add(new WifiApNetwork(readProfile(name)));
 		}
