@@ -16,7 +16,6 @@ import za.co.csir.walkiemesh.system.WifiAdhocNetwork;
 import za.co.csir.walkiemesh.system.WifiApControl;
 import za.co.csir.walkiemesh.system.WifiApNetwork;
 import za.co.csir.walkiemesh.ui.SimpleAdapter.ViewBinder;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;

@@ -1,0 +1,56 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".HelpActivity" >
+
+    <TextView
+        android:id="@+id/textView1"
+        style="@style/helpScreenHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/meshHelpHeader" />
+
+    <TextView
+        android:id="@+id/textView2"
+        style="@style/helpScreenText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView1"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="15dp"
+        android:text="@string/meshHelpDesc"
+        android:textColor="@color/white" />
+
+    <TextView
+        android:id="@+id/textView3"
+        style="@style/helpScreenHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="24dp"
+        android:text="@string/hotspotHelpHeader" />
+
+    <TextView
+        android:id="@+id/textView4"
+        style="@style/helpScreenText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView3"
+        android:layout_alignRight="@+id/textView3"
+        android:layout_below="@+id/textView3"
+        android:layout_marginTop="23dp"
+        android:text="@string/hotspotHelpDesc"
+        android:textColor="@color/white" />
+
+</RelativeLayout>
