@@ -9,7 +9,6 @@ import za.co.csir.walkiemesh.servald.DnaResult;
 import za.co.csir.walkiemesh.servald.IPeer;
 import za.co.csir.walkiemesh.servald.LookupResults;
 import za.co.csir.walkiemesh.servald.ServalD;
-
 import android.app.ListActivity;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -33,6 +32,7 @@ public class CallDirector extends ListActivity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		Log.i("BatPhone", "Calling");
 
 		this.setContentView(R.layout.call_director);
 		Intent intent = this.getIntent();
