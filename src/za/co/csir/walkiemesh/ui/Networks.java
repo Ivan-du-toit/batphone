@@ -16,7 +16,6 @@ import za.co.csir.walkiemesh.system.WifiAdhocNetwork;
 import za.co.csir.walkiemesh.system.WifiApControl;
 import za.co.csir.walkiemesh.system.WifiApNetwork;
 import za.co.csir.walkiemesh.ui.SimpleAdapter.ViewBinder;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.BroadcastReceiver;
@@ -210,38 +209,25 @@ public class Networks extends Activity implements OnNetworkChange,
 	}
 
 	private void connectAdhocDialog(final WifiAdhocNetwork network) {
-		new AlertDialog.Builder(this)
-				.setTitle(
-						getNetworkString(R.string.adhocconnecttitle,
-								network))
-				.setMessage(network.getDetails(this))
-				.setNegativeButton(android.R.string.cancel, null)
-				.setPositiveButton(
-						getNetworkString(R.string.connectbutton, network),
-						new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog,
-									int button) {
-								connect(network);
-							}
-						})
-				.setNeutralButton(
-						getNetworkString(R.string.settingsbutton,
-								network),
-						new DialogInterface.OnClickListener() {
-							@Override
-							public void onClick(DialogInterface dialog,
-									int button) {
-								Intent intent = new Intent(
-										Networks.this,
-										AdhocPreferences.class);
-								intent.putExtra(
-										AdhocPreferences.EXTRA_PROFILE_NAME,
-										network.preferenceName);
-								startActivity(intent);
-							}
-						})
-				.show();
+		connect(network);
+		/*
+		 * new AlertDialog.Builder(this) .setTitle(
+		 * getNetworkString(R.string.adhocconnecttitle, network))
+		 * .setMessage(network.getDetails(this))
+		 * .setNegativeButton(android.R.string.cancel, null) .setPositiveButton(
+		 * getNetworkString(R.string.connectbutton, network), new
+		 * DialogInterface.OnClickListener() {
+		 * 
+		 * @Override public void onClick(DialogInterface dialog, int button) {
+		 * connect(network); } }) .setNeutralButton(
+		 * getNetworkString(R.string.settingsbutton, network), new
+		 * DialogInterface.OnClickListener() {
+		 * 
+		 * @Override public void onClick(DialogInterface dialog, int button) {
+		 * Intent intent = new Intent( Networks.this, AdhocPreferences.class);
+		 * intent.putExtra( AdhocPreferences.EXTRA_PROFILE_NAME,
+		 * network.preferenceName); startActivity(intent); } }) .show();
+		 */
 
 	}
 
