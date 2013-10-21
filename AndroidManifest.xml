@@ -17,14 +17,19 @@
  * You should have received a copy of the GNU General Public License
  * along with this source code; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- -->
+-->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-      package="za.co.csir.walkiemesh" android:versionName="@string/version"
-      android:installLocation="auto">
-    <uses-sdk android:minSdkVersion="8" android:targetSdkVersion="14"/>
-    
+    package="za.co.csir.walkiemesh"
+    android:installLocation="auto"
+    android:versionName="@string/version" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="14" />
+
     <!-- Batphone permissions -->
-    <!-- permission 
+    <!--
+    permission 
         android:label="@string/rhizome_share_file_permission_label" 
         android:protectionLevel="dangerous" 
         android:description="@string/rhizome_share_file_permission_description" 
@@ -41,172 +46,211 @@
         android:label="@string/system_permission_control_label" 
         android:protectionLevel="signature" 
         android:name="za.co.csir.walkiemesh.START_STOP"
-        /-->
-    
+        /
+    -->
+
+
     <!-- Serval MeshMS Permissions -->
-    <permission android:name="za.co.csir.walkiemesh.meshms.SEND_MESHMS" 
-        android:description="@string/system_permission_meshms_send_description" 
-        android:protectionLevel="dangerous" 
-        android:permissionGroup="android.permission-group.MESSAGES" 
+    <permission
+        android:name="za.co.csir.walkiemesh.meshms.SEND_MESHMS"
+        android:description="@string/system_permission_meshms_send_description"
         android:label="@string/system_permission_meshms_send_label"
-        />
+        android:permissionGroup="android.permission-group.MESSAGES"
+        android:protectionLevel="dangerous" />
 
     <!-- Serval Specific permissions -->
-    <uses-permission android:name="za.co.csir.walkiemesh.meshms.SEND_MESHMS"/>
-    <!-- uses-permission android:name="za.co.csir.walkiemesh.rhizome.RECEIVE_FILE"/-->
-    
-    <!--  android permissions -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
-	<uses-permission android:name="android.permission.ACCESS_WIFI_STATE"></uses-permission>
-	<uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
-	<uses-permission android:name="android.permission.INTERNET"></uses-permission>
-	<uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
-	<uses-permission android:name="android.permission.BLUETOOTH"></uses-permission>
-	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"></uses-permission>
-	<uses-permission android:name="android.permission.VIBRATE"></uses-permission>
-	<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"></uses-permission>
-	<uses-permission android:name="android.permission.RECORD_AUDIO"></uses-permission>
-	<uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS"></uses-permission>
-	<uses-permission android:name="android.permission.WRITE_SETTINGS"></uses-permission>
-	<uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"></uses-permission>
-	<uses-permission android:name="android.permission.READ_CONTACTS"></uses-permission>
-	<uses-permission android:name="android.permission.WRITE_CONTACTS"></uses-permission>
-	<uses-permission android:name="android.permission.CALL_PHONE"></uses-permission>
-	<uses-permission android:name="android.permission.WAKE_LOCK"></uses-permission>
-	<uses-permission android:name="android.permission.DISABLE_KEYGUARD"></uses-permission>
-	<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" ></uses-permission>
-	<uses-permission android:name="android.permission.GET_ACCOUNTS" ></uses-permission>
-	<uses-permission android:name="android.permission.BROADCAST_STICKY" ></uses-permission>
-    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"></uses-permission>
-	<uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
-	<uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
-	<uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.READ_PROFILE"/>
-        <!-- uses features -->
-    <!-- uses-feature android:name="android.hardware.camera" android:required="false" /-->
-	<uses-feature android:name="android.hardware.wifi" android:required="true" />
-	<uses-feature android:name="android.hardware.bluetooth" android:required="false" />
-	<uses-feature android:name="android.hardware.telephony" android:required="false" />
-	<uses-feature android:name="android.hardware.microphone" android:required="false" />
-	<!-- uses-feature android:name="android.hardware.location" android:required="false" />
+    <uses-permission android:name="za.co.csir.walkiemesh.meshms.SEND_MESHMS" />
+    <!-- uses-permission android:name="za.co.csir.walkiemesh.rhizome.RECEIVE_FILE"/ -->
+
+
+    <!-- android permissions -->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.INTERNET" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.VIBRATE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.RECORD_AUDIO" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.PROCESS_OUTGOING_CALLS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.READ_CONTACTS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_CONTACTS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.CALL_PHONE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WAKE_LOCK" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.DISABLE_KEYGUARD" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS" >
+    </uses-permission>
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <!-- uses features -->
+    <!-- uses-feature android:name="android.hardware.camera" android:required="false" / -->
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.bluetooth"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.microphone"
+        android:required="false" />
+    <!--
+    uses-feature android:name="android.hardware.location" android:required="false" />
 	<uses-feature android:name="android.hardware.location.gps" android:required="false" />
-	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" /-->
-	<uses-feature android:name="android.hardware.touchscreen" android:required="false" />
-	
-    
-    
-    <application android:icon="@drawable/ic_launcher" android:label="@string/app_name" 
-		android:name="ServalBatPhoneApplication">
-        
-        <activity android:name="PreparationWizard"
-            android:screenOrientation="portrait"
-            android:label="Walkie Mesh Setup">
+	<uses-feature android:name="android.hardware.camera.autofocus" android:required="false" /
+    -->
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false" />
+
+    <application
+        android:name="za.co.csir.walkiemesh.ServalBatPhoneApplication"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name" >
+        <activity
+            android:name="za.co.csir.walkiemesh.PreparationWizard"
+            android:label="Walkie Mesh Setup"
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="android.intent.action.PREPARATION" />
-
             </intent-filter>
         </activity>
-        <activity android:name="Main"
-            android:screenOrientation="portrait"
+        <activity
+            android:name="za.co.csir.walkiemesh.Main"
             android:launchMode="singleTask"
-            >
-        <!--intent-filter>   
+            android:screenOrientation="portrait" >
+
+            <!--
+            intent-filter>   
             	<action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter-->
+            </intent-filter
+            -->
         </activity>
-        <!-- activity android:name=".ui.ShareUsActivity"
+        <!--
+             activity android:name=".ui.ShareUsActivity"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
-            /-->
-  		<activity android:name=".ui.SettingsScreenActivity"
+            /
+        -->
+        <activity
+            android:name="za.co.csir.walkiemesh.ui.SettingsScreenActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="za.co.csir.walkiemesh.ui.AccountsSettingsActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="za.co.csir.walkiemesh.ui.Networks"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="za.co.csir.walkiemesh.ui.AdhocPreferences"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="za.co.csir.walkiemesh.ui.SetupActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="za.co.csir.walkiemesh.ui.help.HtmlHelp"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="za.co.csir.walkiemesh.ui.help.LicenceScreen"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait" />
+        <!--
+            activity android:name=".ui.help.DonateScreen"
             android:screenOrientation="portrait"
             android:launchMode="singleTop"
-            />     
-            
-    <activity android:name=".ui.AccountsSettingsActivity"
-            android:screenOrientation="portrait"
+            /
+        -->
+        <activity
+            android:name="za.co.csir.walkiemesh.ui.help.AboutScreen"
             android:launchMode="singleTop"
-            />   
-    <activity android:name=".ui.Networks"
-            android:screenOrientation="portrait"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="za.co.csir.Setup"
             android:launchMode="singleTop"
-        />
-    <activity android:name=".ui.AdhocPreferences"
-            android:screenOrientation="portrait"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="za.co.csir.walkiemesh.wizard.SetPhoneNumber"
             android:launchMode="singleTop"
-            />             
-    <activity android:name=".ui.SetupActivity"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"
-            />             
-      
- 		<activity android:name=".ui.help.HtmlHelp"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"
-            />
-        		<activity android:name=".ui.help.LicenceScreen"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"
-            />
- 		<!-- activity android:name=".ui.help.DonateScreen"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"
-            /-->
-		<activity android:name=".ui.help.AboutScreen"
-           	android:screenOrientation="portrait"
-            android:launchMode="singleTop"
-            />
-        
-        <activity android:name="za.co.csir.Setup"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"
-            />
-        <activity android:name=".wizard.SetPhoneNumber"
-            android:screenOrientation="portrait"
-            android:launchMode="singleTop"
-            />
-
-        <activity android:name=".batphone.CallDirector"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="za.co.csir.walkiemesh.batphone.CallDirector"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"
-            android:taskAffinity="za.co.csir.walkiemesh.Call"
-            />
-
-        <activity android:name=".batphone.UnsecuredCall"
+            android:taskAffinity="za.co.csir.walkiemesh.Call" />
+        <activity
+            android:name="za.co.csir.walkiemesh.batphone.UnsecuredCall"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"
-            android:taskAffinity="za.co.csir.walkiemesh.Call"
-            >
+            android:taskAffinity="za.co.csir.walkiemesh.Call" >
             <intent-filter>
-	            <action android:name="android.intent.action.VIEW"/>
+                <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
-	            <data android:mimeType="vnd.android.cursor.item/za.co.csir.walkiemesh.unsecuredSid"/>
-	        </intent-filter>
-	    </activity>
-	    
-        <activity android:name=".batphone.CompletedCall"
+
+                <data android:mimeType="vnd.android.cursor.item/za.co.csir.walkiemesh.unsecuredSid" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="za.co.csir.walkiemesh.batphone.CompletedCall"
             android:excludeFromRecents="true"
             android:screenOrientation="portrait"
-            android:taskAffinity="za.co.csir.walkiemesh.Call"
-            />
-
-        <activity android:name=".LogActivity" 
-            android:screenOrientation="portrait"
+            android:taskAffinity="za.co.csir.walkiemesh.Call" />
+        <activity
+            android:name="za.co.csir.walkiemesh.LogActivity"
             android:launchMode="singleTop"
-            />
-        <activity android:name="PeerList" 
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="za.co.csir.walkiemesh.PeerList"
             android:label="Peer List"
-            android:screenOrientation="portrait"
             android:launchMode="singleTop"
-            >
+            android:screenOrientation="portrait" >
             <intent-filter>
                 <action android:name="za.co.csir.walkiemesh.PICK_FROM_PEER_LIST" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-            <intent-filter android:label="@string/app_name">   
-            	<action android:name="android.intent.action.MAIN" />
+            <intent-filter android:label="@string/app_name" >
+                <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -231,61 +275,65 @@
 	        	<action android:name="android.intent.action.MEDIA_MOUNTED" />
 	        	<action android:name="android.intent.action.MEDIA_UNMOUNTED" />
                 <data android:scheme="file" />
-	        </intent-filter>
-	    </receiver>
-		 
-	    <service android:name=".Control"
-	             android:enabled="true"/>
-	    
-	    <service android:name=".account.AccountService">  
-	        <intent-filter>  
-	            <action android:name="android.accounts.AccountAuthenticator" />
-	        </intent-filter>  
-	        <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator" />  
-	    </service>
-	    
-	    <service 
-	        android:name=".account.SyncService"
-	        android:process=":contacts"
-	        android:exported="true">
-			<intent-filter>
-				<action android:name="android.content.SyncAdapter" />
-			</intent-filter>
-			<meta-data
-			    android:name="android.content.SyncAdapter"
-				android:resource="@xml/sync_contacts" />
-			<meta-data
-			    android:name="android.provider.CONTACTS_STRUCTURE"
-				android:resource="@xml/contacts" />
-	    </service>
-	    
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="za.co.csir.walkiemesh.Control"
+            android:enabled="true" />
+        <service android:name="za.co.csir.walkiemesh.account.AccountService" >
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.accounts.AccountAuthenticator"
+                android:resource="@xml/authenticator" />
+        </service>
+        <service
+            android:name="za.co.csir.walkiemesh.account.SyncService"
+            android:exported="true"
+            android:process=":contacts" >
+            <intent-filter>
+                <action android:name="android.content.SyncAdapter" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.content.SyncAdapter"
+                android:resource="@xml/sync_contacts" />
+            <meta-data
+                android:name="android.provider.CONTACTS_STRUCTURE"
+                android:resource="@xml/contacts" />
+        </service>
 
         <!-- Rhizome application activities -->
-        <activity android:name=".rhizome.RhizomeMain" 
+        <activity
+            android:name="za.co.csir.walkiemesh.rhizome.RhizomeMain"
             android:label="@string/rhizome_main_appname"
-            android:screenOrientation="portrait"
             android:launchMode="singleTop"
-            />
-        <activity android:name=".rhizome.RhizomeList" 
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="za.co.csir.walkiemesh.rhizome.RhizomeList"
             android:label="@string/rhizome_list_appname"
-            android:screenOrientation="portrait"
             android:launchMode="singleTop"
-            />
-        <activity android:name=".rhizome.RhizomeSaved" 
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="za.co.csir.walkiemesh.rhizome.RhizomeSaved"
             android:label="@string/rhizome_saved_appname"
-            android:screenOrientation="portrait"
             android:launchMode="singleTop"
-            />
-    	<activity android:name=".rhizome.RhizomeStorage" 
-    	    android:screenOrientation="portrait"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="za.co.csir.walkiemesh.rhizome.RhizomeStorage"
             android:launchMode="singleTop"
-    	    />
-
-    	<activity android:name=".rhizome.ShareFileActivity" 
-    	    android:label="@string/sf_name">
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="za.co.csir.walkiemesh.rhizome.ShareFileActivity"
+            android:label="@string/sf_name" >
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="*/*" />
             </intent-filter>
         </activity>
@@ -296,47 +344,50 @@
         <activity android:name=".rhizome.ManifestViewActivity" android:label="@string/mv_name" />
         -->
 
-		<service android:label="@string/rhizome_share_file_permission_label" 
-		    android:name=".rhizome.RhizomeIntentService" 
-		    android:permission="za.co.csir.walkiemesh.rhizome.ADD_FILE">
-			<intent-filter>
-				<action android:name="za.co.csir.walkiemesh.rhizome.ADD_FILE"/>
-			</intent-filter>
-		</service>
+        <service
+            android:name="za.co.csir.walkiemesh.rhizome.RhizomeIntentService"
+            android:label="@string/rhizome_share_file_permission_label"
+            android:permission="za.co.csir.walkiemesh.rhizome.ADD_FILE" >
+            <intent-filter>
+                <action android:name="za.co.csir.walkiemesh.rhizome.ADD_FILE" />
+            </intent-filter>
+        </service>
 
         <!-- serval meshms service -->
-        <service android:name=".meshms.OutgoingMeshMS"
-                 android:enabled="true"
-                 android:exported="true"
-                 android:permission="za.co.csir.walkiemesh.meshms.SEND_MESHMS"
-                 >
+        <service
+            android:name="za.co.csir.walkiemesh.meshms.OutgoingMeshMS"
+            android:enabled="true"
+            android:exported="true"
+            android:permission="za.co.csir.walkiemesh.meshms.SEND_MESHMS" >
             <intent-filter>
                 <action android:name="za.co.csir.walkiemesh.meshms.SEND_MESHMS" />
             </intent-filter>
         </service>
 
-        <provider android:authorities="@string/system_content_provider_authority"
-                  android:name=".provider.MainContentProvider"
-                  android:exported="false"
-                  android:enabled="true"
-                  android:label="@string/system_content_provider_label"
-                  />
+        <provider
+            android:name="za.co.csir.walkiemesh.provider.MainContentProvider"
+            android:authorities="@string/system_content_provider_authority"
+            android:enabled="true"
+            android:exported="false"
+            android:label="@string/system_content_provider_label" />
+        <provider
+            android:name="za.co.csir.walkiemesh.provider.RhizomeProvider"
+            android:authorities="za.co.csir.walkiemesh.files"
+            android:enabled="true"
+            android:exported="true"
+            android:label="Shared Files" />
 
-        <provider android:authorities="za.co.csir.walkiemesh.files"
-                  android:name=".provider.RhizomeProvider"
-                  android:exported="true"
-                  android:enabled="true"
-                  android:label="Shared Files"
-                  />
-        
-        <activity android:name=".messages.MessagesListActivity"
-		    android:screenOrientation="portrait"
+        <activity
+            android:name="za.co.csir.walkiemesh.messages.MessagesListActivity"
             android:launchMode="singleTop"
-		    ></activity>
-		<activity android:name=".messages.ShowConversationActivity"
-		    android:screenOrientation="portrait"
-		    >
-		    <!-- intent-filter>
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="za.co.csir.walkiemesh.messages.ShowConversationActivity"
+            android:screenOrientation="portrait" >
+
+            <!--
+            intent-filter>
 		        <action android:name="android.intent.action.SENDTO" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="sms" />
@@ -345,26 +396,35 @@
 		        <action android:name="android.intent.action.SENDTO" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <data android:scheme="smsto" />
-			</intent-filter-->
-		</activity>
-		<activity android:name=".ui.ContactsActivity"
-		    android:screenOrientation="portrait"
+			</intent-filter
+            -->
+        </activity>
+        <activity
+            android:name="za.co.csir.walkiemesh.ui.ContactsActivity"
             android:launchMode="singleTop"
-		    ></activity>
-		
-		<!--  
+            android:screenOrientation="portrait" >
+        </activity>
+
+        <!--
 		<activity android:name=".ourPeerlist"
 		    android:screenOrientation="portrait"
 		    android:launchMode="singleTop"
 		    ></activity>
-		 -->
-		
-		<service android:enabled="true" android:exported="true" android:name=".system.StateCheckIntentService">
-			<intent-filter>
-				<action android:name="za.co.csir.walkiemesh.ACTION_STATE_CHECK"/>
-			</intent-filter>
-		</service>
+        -->
 
+        <service
+            android:name="za.co.csir.walkiemesh.system.StateCheckIntentService"
+            android:enabled="true"
+            android:exported="true" >
+            <intent-filter>
+                <action android:name="za.co.csir.walkiemesh.ACTION_STATE_CHECK" />
+            </intent-filter>
+        </service>
+
+        <activity
+            android:name="za.co.csir.walkiemesh.ui.HelpActivity"
+            android:label="@string/title_activity_help" >
+        </activity>
     </application>
 
 </manifest>

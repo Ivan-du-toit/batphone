@@ -18,33 +18,35 @@
   General Public License
  * along with this source code; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- -->
-  <!-- @author Romana Challans <romana@servalproject.org> -->
-  
+-->
+<!-- @author Romana Challans <romana@servalproject.org> -->
+
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
 
-     <!-- Serval General -->
+    <!-- Serval General -->
     <string name="header">Walkie Mesh</string>
     <string name="logoid">Serval Project Logo</string>
     <string name="url"></string>
     <string name="warning1"></string>
     <string name="warning2"></string>
-	<string name="app_name">Walkie Mesh</string>
-	<string name="agree">I agree</string>
-	<string name="cancel">Cancel</string>
-	
-	<!-- Serval Main -->
-	<!-- These must say Serval Mesh, not Serval Network, because Serval provides the protocol, not the infrastructure.
-	This has important implications for telecommunications law in various countries. -->
-	<string name="callLabel">Call</string>    
-    <string name="messageLabel">Messages</string>    
-    <string name="contactsLabel">Contacts</string>    
-    <string name="mapsLabel">Maps</string>    
-    <string name="sharingLabel">Share Files</string>    
-    <string name="servalLabel">Share Us</string>    
-    <string name="settingsLabel">Settings</string>  
-    <string name="powerLabel">Power</string>    
-    <string name="helpLabel">Help</string>	
+    <string name="app_name">Walkie Mesh</string>
+    <string name="agree">I agree</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- Serval Main -->
+    <!--
+    These must say Serval Mesh, not Serval Network, because Serval provides the protocol, not the infrastructure.
+	This has important implications for telecommunications law in various countries.
+    -->
+    <string name="callLabel">Call</string>
+    <string name="messageLabel">Messages</string>
+    <string name="contactsLabel">Contacts</string>
+    <string name="mapsLabel">Maps</string>
+    <string name="sharingLabel">Share Files</string>
+    <string name="servalLabel">Share Us</string>
+    <string name="settingsLabel">Settings</string>
+    <string name="powerLabel">Power</string>
+    <string name="helpLabel">Help</string>
     <string name="state_power_on">Mesh on</string>
     <string name="state_power_off">Mesh off</string>
     <string name="state_installing">Installing&#8230;</string>
@@ -53,63 +55,66 @@
     <string name="state_stopping">Connect</string>
     <string name="state_broken">Broken!</string>
 
-	
-	<!-- Serval Buttons -->
-	<string name="btnwizard">SETUP WIZARD</string>
-	<string name="btnPhOk">OK</string>
-	<string name="btnSpeakerPhone">Toggle Speakerphone</string>
-	
-	
-	<!-- Serval Phone Set -->
-	<string name="cancelcall">Cancel</string>
-	<string name="searchpeers">Search Peer List</string>
-	<string name="callcellular">Call via cellular network</string>
+    <!-- Serval Buttons -->
+    <string name="btnwizard">SETUP WIZARD</string>
+    <string name="btnPhOk">OK</string>
+    <string name="btnSpeakerPhone">Toggle Speakerphone</string>
+
+    <!-- Serval Phone Set -->
+    <string name="cancelcall">Cancel</string>
+    <string name="searchpeers">Search Peer List</string>
+    <string name="callcellular">Call via cellular network</string>
 
     <!-- Serval General -->
     <string name="setphone">Enter Phone No.</string>
     <string name="setname">Display Name.</string>
     <string name="statusstar">Status Indicator</string>
-    
-	<!-- Serval About -->
-	<string name="aboutTitle">About</string>	
-	<string name="emailEnquiries"></string>  
-    
-	<!-- Serval Donations -->
-	<string name="donateTitle">Make a Donation</string>	
-	<string name="donateButton">Donate via PayPal</string>	
-	  
+
+    <!-- Serval About -->
+    <string name="aboutTitle">About</string>
+    <string name="emailEnquiries"></string>
+
+    <!-- Serval Donations -->
+    <string name="donateTitle">Make a Donation</string>
+    <string name="donateButton">Donate via PayPal</string>
+
     <!-- Serval Instruction -->
     <string name="setdetails">Set Name and Number</string>
     <string name="phoneInstr">Please enter your phone number.\nIt cannot match an emergency number, \nand must be at least 5 digits long.</string>
-	      
-	<!-- Serval Security -->
+
+    <!-- Serval Security -->
     <string name="security_header">Serval Security</string>
-    	
-	<!-- Serval Maps -->
-	<string name="mapInfo">You do not currently have Serval Maps installed. 
+
+    <!-- Serval Maps -->
+    <string name="mapInfo">You do not currently have Serval Maps installed. 
 	    \n\nServal Maps is currently under development and it will be coming to the 
 	    Android Marketplace soon. 
 	    \n\nFor more information please visit the Serval Maps web site 
 	    \nhttp://developer.servalproject.org/wiki
 	    \nIn the meantime, if you have any queries, 
 	    \nplease contact us at \n\n</string>
+    <string name="broadcast_meshms_message">Broadcast messages are sent to the whole network.</string>
 
-	<string name="broadcast_meshms_message">Broadcast messages are sent to the whole network.</string>
+    <!-- Wifi setup / warnings -->
+    <string name="openhotspottitle">%1$s</string>
+    <string name="openhotspotmessage">Starting an open hotspot will allow other users to consume your cellular data and may cost you money.</string>
+    <string name="adhoctesttitle">Test Mesh support</string>
+    <string name="adhoctestmessage">Connecting to a Mesh network requires root permission and may not work on this device.</string>
+    <string name="testbutton">Test</string>
+    <string name="adhocconnecttitle">%1$s</string>
+    <string name="adhocconnectmessage">Channel: %2$d\nAddress: %3$s</string>
+    <string name="connectbutton">Connect</string>
+    <string name="settingsbutton">Settings</string>
 
+    <!-- Menu strings -->
+    <string name="exitLabel">Exit</string>
+    <string name="networkSettingsLabel">Network Settings</string>
+    <string name="title_activity_help">HelpActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="meshHelpHeader">Mesh Mode</string>
+    <string name="meshHelpDesc">To activate mesh mode, go to <b>Network Settings</b> and then click on <b>Mesh Mode</b></string>
+    <string name="hotspotHelpHeader">Hotspot Mode</string>
+    <string name="hotspotHelpDesc">To create a new hotspot for others to connect to, go to <b>Network Settings</b> and then click on <b>Open Hotspot Mode</b></string>
 
-	<!--  Wifi setup / warnings -->
-	<string name="openhotspottitle">%1$s</string>
-	<string name="openhotspotmessage">Starting an open hotspot will allow other users to consume your cellular data and may cost you money.</string>
-	<string name="adhoctesttitle">Test Mesh support</string>
-	<string name="adhoctestmessage">Connecting to a Mesh network requires root permission and may not work on this device.</string>
-	<string name="testbutton">Test</string>
-	<string name="adhocconnecttitle">%1$s</string>
-	<string name="adhocconnectmessage">Channel: %2$d\nAddress: %3$s</string>
-	<string name="connectbutton">Connect</string>
-	<string name="settingsbutton">Settings</string>
-				
-	
-	<!-- Menu strings -->
-	<string name="exitLabel">Exit</string>
-	<string name="networkSettingsLabel">Network Settings</string>
-</resources>   
+</resources>
