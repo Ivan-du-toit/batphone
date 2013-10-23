@@ -29,4 +29,14 @@
         android:text="@string/peerlistHelpDesc"
         android:textColor="@color/white" />
 
+    <Button
+        android:id="@+id/btnMoreHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView2"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_below="@+id/textView2"
+        android:layout_marginTop="15dp"
+        android:text="@string/peerHelpMore" />
+
 </RelativeLayout>

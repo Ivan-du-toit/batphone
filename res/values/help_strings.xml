@@ -20,8 +20,10 @@
     <string name="hotspotHelpDesc">The other mode of operation is to connect to a normal wifi hotspot (It can be created on the device or externally). Select one of the existing hotspot configurations or connect to an existing hotspot to use this mode of operation.</string>
     <string name="title_activity_peerlist_help">Peer list Help</string>
     <string name="peerlistHelpHeader">Peer List</string>
-    <string name="peerlistHelpDesc">Here you will see all the phones that are on your network and can be interacted with. \n\nFor more <b>Help</b> go to <b>Settings</b></string>
+    <string name="peerlistHelpDesc">Here you will see all the phones that are on your network and can be interacted with.</string>
     <string name="title_activity_brief_overview">Brief Overview</string>
     <string name="overviewHeader">Overview</string>
     <string name="overviewDesc">The Peer List is where you will see all the other phones on your network mode. These can all be interacted with. \n\nIf you press the <b>Menu</b> button on your phone, you will be able to view the <b>Settings</b> and your personal <b>Messages</b>.\n\nFor further help, go to <b>Settings</b></string>
+    <string name="peerHelpMore">More Help</string>
+    <string name="helpSettingsBtnDesc">Different Mode Descriptions</string>
 </resources>

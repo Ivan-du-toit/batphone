@@ -40,6 +40,7 @@ import za.co.csir.walkiemesh.servald.PeerListService;
 import za.co.csir.walkiemesh.servald.ServalD;
 import za.co.csir.walkiemesh.servald.SubscriberId;
 import za.co.csir.walkiemesh.ui.BriefOverview;
+import za.co.csir.walkiemesh.ui.PeerlistHelp;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ListActivity;
@@ -398,8 +399,10 @@ public class PeerList extends ListActivity {
 					za.co.csir.walkiemesh.messages.MessagesListActivity.class));
 			return true;
 		case R.id.menu_help:
-			startActivity(new Intent(getApplicationContext(),
-					za.co.csir.walkiemesh.ui.PeerlistHelp.class));
+			Intent help = new Intent(getApplicationContext(),
+					PeerlistHelp.class);
+			help.putExtra("showButton", true);
+			startActivity(help);
 			return true;
 		default:
 			return super.onOptionsItemSelected(item);
