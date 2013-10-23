@@ -1,26 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
- * Copyright (C) 2011 The Serval Project
- * 
- * This file is part of Serval Software (http://www.servalproject.org)
- * 
- * Serval Software is free software; you can redistribute it and/or modify
- * it under the terms of the GNU General Public License as published by
- * the Free Software Foundation; either version 3 of the License, or
- * (at your option) any later version.
- * 
- * This source code is distributed in the hope that it will be useful,
- * but WITHOUT ANY WARRANTY; without even the implied warranty of
- * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
- * GNU General Public License for more details.
- * 
- * You should have received a copy of the GNU
-  General Public License
- * along with this source code; if not, write to the Free Software
- * Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
- -->
- 
- <!-- @author Romana Challans <romana@servalproject.com> -->
  
  <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
      	
@@ -34,5 +12,13 @@
     <string name="versiontitle">Serval Version:</string>
 	<string name="licencetype">GNU General Public License(GPL) v3</string>
 	<string name="licenceurl">http://www.gnu.org/licenses/gpl.html</string>
-	  
+	
+	<!-- Walkie Mesh Help -->
+	<string name="meshHelpHeader">Mesh Mode</string>
+    <string name="meshHelpDesc">Mesh mode allows the devices to connect to each other forming a distributed network which does not have a central control point. This allows bigger networks and do not require hotspots. To activate mesh mode, click on <b>Mesh Mode</b>. Mesh mode requires the device to support IBSS wifi and also requires root premission.</string>
+    <string name="hotspotHelpHeader">Hotspot Mode</string>
+    <string name="hotspotHelpDesc">The other mode of opperation is to connect to a normal wifi hotspot (It kan be created on the device or externally). Select one of the existing hotspot configurations or connect to a existing hotspot to use this mode of opperation.</string>
+    <string name="title_activity_peerlist_help">Peer list Help</string>
+    <string name="peerlistHelpHeader">Peer List</string>
+    <string name="peerlistHelpDesc">Here you will see all the phones that are on your network and can be interacted with. \n\nFor more <b>Help</b> go to <b>Settings</b></string>
 </resources>

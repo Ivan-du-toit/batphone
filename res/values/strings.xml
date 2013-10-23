@@ -112,12 +112,6 @@
     <string name="title_activity_help">Settings Help</string>
     <string name="action_settings">Settings</string>
     <string name="hello_world">Hello world!</string>
-    <string name="meshHelpHeader">Mesh Mode</string>
-    <string name="meshHelpDesc">To activate mesh mode, click on <b>Mesh Mode</b>. This will enable the device to work without a WiFi hotspot.</string>
-    <string name="hotspotHelpHeader">Hotspot Mode</string>
-    <string name="hotspotHelpDesc">To create a new hotspot for others to connect to, click on <b>Open Hotspot Mode</b>. This will enable the device to act as a WiFi hotspot and allow others to connect to you.</string>
-    <string name="title_activity_peerlist_help">Peer list Help</string>
-    <string name="peerlistHelpHeader">Peer List</string>
-    <string name="peerlistHelpDesc">Here you will see all the phones that are on your network and can be interacted with. \n\nFor more <b>Help</b> go to <b>Settings</b></string>
+    
 
 </resources>
