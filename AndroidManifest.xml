@@ -254,26 +254,31 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-	    <receiver android:name=".batphone.BatPhone">
-	        <!--intent-filter android:priority="1">
+
+        <receiver android:name="za.co.csir.walkiemesh.batphone.BatPhone" >
+
+            <!--
+             intent-filter android:priority="1">
 	        	<action android:name="android.intent.action.NEW_OUTGOING_CALL" />
- 	        </intent-filter-->
-	        <intent-filter>
-	        	<action android:name="android.intent.action.BOOT_COMPLETED" />
-	        	<action android:name="android.intent.action.AIRPLANE_MODE" />
-	        	<action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
-	        	<action android:name="android.net.wifi.WIFI_AP_STATE_CHANGED" />
-	        	<action android:name="android.net.wifi.supplicant.STATE_CHANGE" />
-	        	<action android:name="android.net.wifi.STATE_CHANGE"/>
-	        	<action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
-	        	<action android:name="android.net.wifi.SCAN_RESULTS"/>
-	        	<action android:name="za.co.csir.walkiemesh.ADHOC_STATE_CHANGED_ACTION" />
-	        	<action android:name="za.co.csir.walkiemesh.MODE_ALARM"/>
-	        </intent-filter>
-	        <intent-filter>
-	        	<action android:name="android.intent.action.MEDIA_EJECT" />
-	        	<action android:name="android.intent.action.MEDIA_MOUNTED" />
-	        	<action android:name="android.intent.action.MEDIA_UNMOUNTED" />
+ 	        </intent-filter
+            -->
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.AIRPLANE_MODE" />
+                <action android:name="android.net.wifi.WIFI_STATE_CHANGED" />
+                <action android:name="android.net.wifi.WIFI_AP_STATE_CHANGED" />
+                <action android:name="android.net.wifi.supplicant.STATE_CHANGE" />
+                <action android:name="android.net.wifi.STATE_CHANGE" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+                <action android:name="android.net.wifi.SCAN_RESULTS" />
+                <action android:name="za.co.csir.walkiemesh.ADHOC_STATE_CHANGED_ACTION" />
+                <action android:name="za.co.csir.walkiemesh.MODE_ALARM" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_EJECT" />
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
+
                 <data android:scheme="file" />
             </intent-filter>
         </receiver>
@@ -424,6 +429,10 @@
         <activity
             android:name="za.co.csir.walkiemesh.ui.HelpActivity"
             android:label="@string/title_activity_help" >
+        </activity>
+        <activity
+            android:name="za.co.csir.walkiemesh.ui.PeerlistHelp"
+            android:label="@string/title_activity_peerlist_help" >
         </activity>
     </application>
 

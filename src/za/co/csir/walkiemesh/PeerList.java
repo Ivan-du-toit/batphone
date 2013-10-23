@@ -357,6 +357,10 @@ public class PeerList extends ListActivity {
 			startActivity(new Intent(getApplicationContext(),
 					za.co.csir.walkiemesh.messages.MessagesListActivity.class));
 			return true;
+		case R.id.menu_help:
+			startActivity(new Intent(getApplicationContext(),
+					za.co.csir.walkiemesh.ui.PeerlistHelp.class));
+			return true;
 		default:
 			return super.onOptionsItemSelected(item);
 		}

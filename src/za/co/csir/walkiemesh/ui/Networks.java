@@ -26,6 +26,9 @@ import android.content.IntentFilter;
 import android.content.SharedPreferences.Editor;
 import android.net.wifi.WifiConfiguration.KeyMgmt;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.AdapterView;
@@ -217,12 +220,12 @@ public class Networks extends Activity implements OnNetworkChange,
 		 * .setNegativeButton(android.R.string.cancel, null) .setPositiveButton(
 		 * getNetworkString(R.string.connectbutton, network), new
 		 * DialogInterface.OnClickListener() {
-		 * 
+		 *
 		 * @Override public void onClick(DialogInterface dialog, int button) {
 		 * connect(network); } }) .setNeutralButton(
 		 * getNetworkString(R.string.settingsbutton, network), new
 		 * DialogInterface.OnClickListener() {
-		 * 
+		 *
 		 * @Override public void onClick(DialogInterface dialog, int button) {
 		 * Intent intent = new Intent( Networks.this, AdhocPreferences.class);
 		 * intent.putExtra( AdhocPreferences.EXTRA_PROFILE_NAME,
@@ -323,4 +326,37 @@ public class Networks extends Activity implements OnNetworkChange,
 			break;
 		}
 	}
+
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+
+		MenuInflater menuInflater = getMenuInflater();
+		menuInflater.inflate(R.menu.help, menu);
+		return super.onCreateOptionsMenu(menu);
+	}
+
+	@Override
+	public boolean onOptionsItemSelected(MenuItem item) {
+
+		switch (item.getItemId())
+		{
+		case R.id.settings_help:
+
+			startActivity(new Intent(getApplicationContext(),
+					za.co.csir.walkiemesh.ui.HelpActivity.class));
+
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+
+	@Override
+	public boolean onPrepareOptionsMenu(Menu menu) {
+		menu.clear();
+		MenuInflater menuInflater = getMenuInflater();
+		menuInflater.inflate(R.menu.help, menu);
+		return super.onPrepareOptionsMenu(menu);
+	}
+
 }
