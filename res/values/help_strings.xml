@@ -15,9 +15,9 @@
 	
 	<!-- Walkie Mesh Help -->
 	<string name="meshHelpHeader">Mesh Mode</string>
-    <string name="meshHelpDesc">Mesh mode allows the devices to connect to each other forming a distributed network which does not have a central control point. This allows bigger networks and do not require hotspots. To activate mesh mode, click on <b>Mesh Mode</b>. Mesh mode requires the device to support IBSS wifi and also requires root premission.</string>
+    <string name="meshHelpDesc">Mesh mode allows the devices to connect to each other forming a distributed network which does not have a central control point. This allows for bigger networks and does not require hotspots. To activate mesh mode, click on <b>Mesh Mode</b>. Mesh mode requires the device to support IBSS WiFi and also requires root permission.</string>
     <string name="hotspotHelpHeader">Hotspot Mode</string>
-    <string name="hotspotHelpDesc">The other mode of opperation is to connect to a normal wifi hotspot (It kan be created on the device or externally). Select one of the existing hotspot configurations or connect to a existing hotspot to use this mode of opperation.</string>
+    <string name="hotspotHelpDesc">The other mode of operation is to connect to a normal wifi hotspot (It can be created on the device or externally). Select one of the existing hotspot configurations or connect to an existing hotspot to use this mode of operation.</string>
     <string name="title_activity_peerlist_help">Peer list Help</string>
     <string name="peerlistHelpHeader">Peer List</string>
     <string name="peerlistHelpDesc">Here you will see all the phones that are on your network and can be interacted with. \n\nFor more <b>Help</b> go to <b>Settings</b></string>
