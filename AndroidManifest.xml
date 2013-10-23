@@ -434,6 +434,10 @@
             android:name="za.co.csir.walkiemesh.ui.PeerlistHelp"
             android:label="@string/title_activity_peerlist_help" >
         </activity>
+        <activity
+            android:name="za.co.csir.walkiemesh.ui.BriefOverview"
+            android:label="@string/title_activity_brief_overview" >
+        </activity>
     </application>
 
 </manifest>

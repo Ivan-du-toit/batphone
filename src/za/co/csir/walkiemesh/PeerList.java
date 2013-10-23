@@ -39,10 +39,13 @@ import za.co.csir.walkiemesh.servald.PeerComparator;
 import za.co.csir.walkiemesh.servald.PeerListService;
 import za.co.csir.walkiemesh.servald.ServalD;
 import za.co.csir.walkiemesh.servald.SubscriberId;
+import za.co.csir.walkiemesh.ui.BriefOverview;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.ListActivity;
 import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.os.AsyncTask;
@@ -140,6 +143,43 @@ public class PeerList extends ListActivity {
 				}
 			}
 		});
+
+		boolean firstRun = getSharedPreferences("PREFERENCE", MODE_PRIVATE)
+				.getBoolean("isFirstRun", true);
+
+		if (firstRun) {
+
+			DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
+
+				@Override
+				public void onClick(DialogInterface dialog, int which) {
+					switch (which) {
+					case DialogInterface.BUTTON_POSITIVE:
+						startActivity(new Intent(getApplicationContext(),
+								BriefOverview.class));
+						getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+								.putBoolean("isFirstRun", false).commit();
+						break;
+
+					case DialogInterface.BUTTON_NEGATIVE:
+						getSharedPreferences("PREFERENCE", MODE_PRIVATE).edit()
+								.putBoolean("isFirstRun", false).commit();
+						break;
+
+					default:
+						break;
+					}
+
+				}
+			};
+
+			AlertDialog.Builder builder = new AlertDialog.Builder(this);
+			builder.setMessage(
+					"Do you want to see a brief overview of the app?")
+					.setPositiveButton("Yes", dialogClickListener)
+					.setNegativeButton("No", dialogClickListener).show();
+
+		}
 
 	}
 
