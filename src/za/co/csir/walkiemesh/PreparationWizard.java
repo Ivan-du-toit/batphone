@@ -33,7 +33,6 @@ import za.co.csir.walkiemesh.system.NetworkManager;
 import za.co.csir.walkiemesh.system.WifiControl;
 import za.co.csir.walkiemesh.system.WifiControl.Completion;
 import za.co.csir.walkiemesh.system.WifiControl.CompletionReason;
-
 import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
@@ -45,6 +44,7 @@ import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class PreparationWizard extends Activity implements LogOutput,
@@ -54,6 +54,7 @@ public class PreparationWizard extends Activity implements LogOutput,
 	protected static final int CREATE_PROGRESS_DIALOG = 1;
 	private TextView status;
 	private Button done;
+	private ProgressBar busy;
 	private ServalBatPhoneApplication app;
 
 	private HandlerThread handlerThread;
@@ -71,6 +72,7 @@ public class PreparationWizard extends Activity implements LogOutput,
 		setContentView(R.layout.preparationlayout);
 		status = (TextView) this.findViewById(R.id.status);
 		done = (Button) this.findViewById(R.id.done);
+		busy = (ProgressBar) this.findViewById(R.id.busy);
 		app = (ServalBatPhoneApplication) this.getApplication();
 		done.setOnClickListener(this);
 		// Are we recovering from a crash / reinstall?
@@ -164,6 +166,9 @@ public class PreparationWizard extends Activity implements LogOutput,
 			@Override
 			public void run() {
 				done.setVisibility(View.VISIBLE);
+				busy.setVisibility(View.INVISIBLE);
+				status.setText(status.getText()
+						+ "\n\nJust connect to the mesh again to complete the connection.");
 			}
 		});
 	}
