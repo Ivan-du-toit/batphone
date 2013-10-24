@@ -254,7 +254,7 @@ public class WifiApControl {
 			String name = "ap_default";
 			SharedPreferences prefs = app.getSharedPreferences(name, 0);
 			Editor ed = prefs.edit();
-			ed.putString("ssid", "Open Hotspot Mode");
+			ed.putString("ssid", "ap.servalproject.org");
 			ed.commit();
 			apNetworks.add(new WifiApNetwork(readProfile(name)));
 		}
