@@ -6,15 +6,46 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="@drawable/app_background_ics"
     tools:context=".HelpCentralActivity" >
 
     <Button
-        android:id="@+id/btnSettingsHelp"
+        android:id="@+id/btnOverviewHelp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
         android:layout_marginTop="15dp"
+        android:text="@string/helpOverviewBtnDesc" />
+    
+    <Button
+        android:id="@+id/btnSettingsHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_below="@+id/btnOverviewHelp"
+		android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15dp"
         android:text="@string/helpSettingsBtnDesc" />
+        
+    <Button
+        android:id="@+id/btnPeerListHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_below="@+id/btnSettingsHelp"
+		android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/helpPeerListBtnDesc" />
+    
+    <Button
+        android:id="@+id/btnTroubleHelp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+		android:layout_below="@+id/btnPeerListHelp"
+		android:layout_alignParentLeft="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="15dp"
+        android:text="@string/helpTroubleShootingBtnDesc" />
 
 </RelativeLayout>

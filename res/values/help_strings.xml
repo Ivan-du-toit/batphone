@@ -15,15 +15,20 @@
 	
 	<!-- Walkie Mesh Help -->
 	<string name="meshHelpHeader">Mesh Mode</string>
-    <string name="meshHelpDesc">Mesh mode allows the devices to connect to each other forming a distributed network which does not have a central control point. This allows for bigger networks and does not require hotspots. To activate mesh mode, click on <b>Mesh Mode</b>. Mesh mode requires the device to support IBSS WiFi and also requires root permission.</string>
+    <string name="meshHelpDesc">Mesh mode allows the devices to connect to each other forming a distributed network which does not have a central control point. This allows for bigger networks and does not require hotspots.\n\nTo activate mesh mode, open the settings screen and then on the network settings page click on <b>Mesh Mode</b>.\n\nMesh mode requires the device to support IBSS WiFi and also requires root permission.</string>
     <string name="hotspotHelpHeader">Hotspot Mode</string>
-    <string name="hotspotHelpDesc">The other mode of operation is to connect to a normal wifi hotspot (It can be created on the device or externally). Select one of the existing hotspot configurations or connect to an existing hotspot to use this mode of operation.</string>
-    <string name="title_activity_peerlist_help">Peer list Help</string>
-    <string name="peerlistHelpHeader">Peer List</string>
-    <string name="peerlistHelpDesc">Here you will see all the phones that are on your network and can be interacted with.</string>
+    <string name="hotspotHelpDesc">The other mode of operation is to connect to a normal wifi hotspot (It can be created on the device or externally). Select one of the existing hotspot configurations on the network settings screen or connect to an existing hotspot to use this mode of operation.</string>
+    <string name="title_activity_peerlist_help">Main Screen Help</string>
+    <string name="peerlistHelpHeader">Main Screen Help</string>
+    <string name="peerlistHelpDesc">Here you will see all the phones that are on your network. From here you can easily call them or send a message. You can also save the peers in your android contacts.</string>
     <string name="title_activity_brief_overview">Brief Overview</string>
     <string name="overviewHeader">Overview</string>
-    <string name="overviewDesc">The Peer List is where you will see all the other phones on your network mode. These can all be interacted with. \n\nIf you press the <b>Menu</b> button on your phone, you will be able to view the <b>Settings</b> and your personal <b>Messages</b>.\n\nFor further help, press the <b>Help</b> button on the <b>Menu</b></string>
-    <string name="peerHelpMore">More Help</string>
-    <string name="helpSettingsBtnDesc">Different Mode Descriptions</string>
+    <string name="overviewDesc">The main view is where you will see all the other phones on your network running this application.\n\nIf you see no other devices please follow the trouble shooting guide in the help section. Use the menu or action bar to configure the application or to get help.</string>
+    <string name="troubleHeader">Trouble Shooting Guide</string>
+    <string name="troubleDesc">Please make sure you understand the two network modes by reading the network mode help.\n\nThen make sure that you are connected to the correct network. Also make sure that the <b>Android Walkie Mesh</b> service is running by checking to see if the Walkie Mesh icon is in the android notification tray.</string>
+    <string name="peerHelpMore">Learn More</string>
+    <string name="helpOverviewBtnDesc">Help Overview</string>
+    <string name="helpSettingsBtnDesc">Network Mode Help</string>
+    <string name="helpTroubleShootingBtnDesc">Trouble Shooting Guide</string>
+    <string name="helpPeerListBtnDesc">Main Screen Help</string>
 </resources>

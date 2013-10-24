@@ -427,20 +427,24 @@
         </service>
 
         <activity
-            android:name="za.co.csir.walkiemesh.ui.HelpActivity"
+            android:name="za.co.csir.walkiemesh.ui.help.HelpActivity"
             android:label="@string/title_activity_help" >
         </activity>
         <activity
-            android:name="za.co.csir.walkiemesh.ui.PeerlistHelp"
+            android:name="za.co.csir.walkiemesh.ui.help.PeerlistHelp"
             android:label="@string/title_activity_peerlist_help" >
         </activity>
         <activity
-            android:name="za.co.csir.walkiemesh.ui.BriefOverview"
+            android:name="za.co.csir.walkiemesh.ui.help.BriefOverview"
             android:label="@string/title_activity_brief_overview" >
         </activity>
         <activity
-            android:name="za.co.csir.walkiemesh.ui.HelpCentralActivity"
+            android:name="za.co.csir.walkiemesh.ui.help.HelpCentralActivity"
             android:label="@string/title_activity_help_central" >
+        </activity>
+        <activity
+            android:name="za.co.csir.walkiemesh.ui.help.TroubleShooting"
+            android:label="@string/title_trouble_shooting" >
         </activity>
     </application>
 

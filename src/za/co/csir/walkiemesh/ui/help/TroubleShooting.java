@@ -1,22 +1,19 @@
-package za.co.csir.walkiemesh.ui;
+package za.co.csir.walkiemesh.ui.help;
 
 import za.co.csir.walkiemesh.R;
-import za.co.csir.walkiemesh.ServalBatPhoneApplication;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class PeerlistHelp extends Activity {
-	public ServalBatPhoneApplication app;
+public class TroubleShooting extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_peerlist_help);
+		setContentView(R.layout.trouble_shooting_guide);
 
-		app = (ServalBatPhoneApplication) this.getApplication();
 		Button btnMoreHelp = (Button) this.findViewById(R.id.btnMoreHelp);
 		btnMoreHelp.setOnClickListener(new View.OnClickListener() {
 
@@ -24,9 +21,9 @@ public class PeerlistHelp extends Activity {
 			public void onClick(View v) {
 				startActivity(new Intent(getApplicationContext(),
 						HelpCentralActivity.class));
+				finish();
 			}
 		});
-
 	}
 
 }

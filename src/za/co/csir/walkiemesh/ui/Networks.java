@@ -343,7 +343,7 @@ public class Networks extends Activity implements OnNetworkChange,
 		case R.id.settings_help:
 
 			startActivity(new Intent(getApplicationContext(),
-					za.co.csir.walkiemesh.ui.HelpActivity.class));
+					za.co.csir.walkiemesh.ui.help.HelpActivity.class));
 
 			return true;
 		default:

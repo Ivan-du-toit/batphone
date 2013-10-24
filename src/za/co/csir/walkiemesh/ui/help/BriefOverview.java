@@ -1,4 +1,4 @@
-package za.co.csir.walkiemesh.ui;
+package za.co.csir.walkiemesh.ui.help;
 
 import za.co.csir.walkiemesh.R;
 import android.app.Activity;
@@ -7,24 +7,23 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class HelpCentralActivity extends Activity {
+public class BriefOverview extends Activity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_help_central);
+		setContentView(R.layout.activity_brief_overview);
 
-		Button btnSettingsHelp = (Button) this
-				.findViewById(R.id.btnSettingsHelp);
-		btnSettingsHelp.setOnClickListener(new View.OnClickListener() {
+		Button btnMoreHelp = (Button) this.findViewById(R.id.btnMoreHelp);
+		btnMoreHelp.setOnClickListener(new View.OnClickListener() {
 
 			@Override
 			public void onClick(View v) {
 				startActivity(new Intent(getApplicationContext(),
-						HelpActivity.class));
+						HelpCentralActivity.class));
+				finish();
 			}
 		});
-
 	}
 
 }

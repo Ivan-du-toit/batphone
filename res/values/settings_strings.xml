@@ -56,7 +56,7 @@
     <string name="AccountsSettingsText">View and Change Various Accounts Settings</string>
     <string name="LogShowLabel">View Logs</string>
     <string name="LogShowText">View Serval Mesh Logfile</string>
-    <string name="PhoneResetLabel">Reset Details</string>
+    <string name="PhoneResetLabel">Edit Details</string>
     <string name="PhoneResetText">Reset Number and Name</string>
     <string name="PhoneDetails">Phone No:</string>
     <string name="ShowResetWifi">Mesh Testing</string>

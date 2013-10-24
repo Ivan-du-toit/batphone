@@ -60,5 +60,14 @@
 		    android:layout_centerHorizontal="true"
 		    android:text="@string/done"
 		    android:visibility="gone" />
+		
+		<ProgressBar
+	        android:id="@+id/busy"
+	        style="?android:attr/progressBarStyleLarge"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentBottom="true"
+	        android:layout_centerHorizontal="true"
+	        android:layout_marginBottom="23dp" />
 	
 </RelativeLayout>

@@ -39,8 +39,8 @@ import za.co.csir.walkiemesh.servald.PeerComparator;
 import za.co.csir.walkiemesh.servald.PeerListService;
 import za.co.csir.walkiemesh.servald.ServalD;
 import za.co.csir.walkiemesh.servald.SubscriberId;
-import za.co.csir.walkiemesh.ui.BriefOverview;
-import za.co.csir.walkiemesh.ui.PeerlistHelp;
+import za.co.csir.walkiemesh.ui.help.BriefOverview;
+import za.co.csir.walkiemesh.ui.help.HelpCentralActivity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.ListActivity;
@@ -400,7 +400,7 @@ public class PeerList extends ListActivity {
 			return true;
 		case R.id.menu_help:
 			Intent help = new Intent(getApplicationContext(),
-					PeerlistHelp.class);
+					HelpCentralActivity.class);
 			help.putExtra("showButton", true);
 			startActivity(help);
 			return true;
